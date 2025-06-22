@@ -24,7 +24,7 @@ export const { handlers, signIn, signOut, auth } = NextAuth({
           name: profile.name || "",
           email: profile.email || "",
           image: profile.picture || "",
-          role: profile.role ? profile.role :"user", // Default role for Google users
+          role: profile.role ? profile.role :"USER", // Default role for Google users
         };
       }
     }),

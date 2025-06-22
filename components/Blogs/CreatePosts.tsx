@@ -7,29 +7,17 @@ import { useRouter } from "next/navigation";
 import { CldUploadButton, CloudinaryUploadWidgetResults  } from "next-cloudinary";
 import Image from "next/image";
 import toast from "react-hot-toast";
-import { TCategory } from "@/types";
 
 export default function CreatePostForm() {
   const [links, setLinks] = useState<string[]>([]);
   const [linkInput, setLinkInput] = useState("");
   const [title, setTitle] = useState("");
   const [content, setContent] = useState("");
-  const [categories, setCategories] = useState<TCategory[]>([]);
   const [selectedCategory, setSelectedCategory] = useState("");
   const [imageUrl, setImageUrl] = useState("");
   const [publicId, setPublicId] = useState("");
 
   const router = useRouter();
-
-  useEffect(() => {
-    const fetchAllCategories = async () => {
-      const res = await fetch("api/categories");
-      const catNames = await res.json();
-      setCategories(catNames);
-    };
-
-    fetchAllCategories();
-  }, []);
 
   const handleImageUpload = (result: CloudinaryUploadWidgetResults) => {
     console.log("result: ", result);
@@ -86,7 +74,7 @@ export default function CreatePostForm() {
     }
 
     try {
-      console.log(imageUrl)
+      
       const res = await fetch("api/posts/", {
         method: "POST",
         headers: {
@@ -96,16 +84,15 @@ export default function CreatePostForm() {
           title,
           content,
           links,
-          selectedCategory,
           imageUrl,
           publicId,
         }),
       });
+      console.log("res: ", res);
 
       if (res.ok) {
         toast.success("Post created successfully");
-        router.push("/dashboard");
-        router.refresh();
+      
       } else {
         toast.error("Something went wrong.");
       }
@@ -238,18 +225,7 @@ export default function CreatePostForm() {
           </button>
         )}
 
-        <select
-          onChange={(e) => setSelectedCategory(e.target.value)}
-          className="p-3 rounded-md border appearance-none"
-        >
-          <option value="">Select A Category</option>
-          {categories &&
-            categories.map((category) => (
-              <option key={category.id} value={category.catName}>
-                {category.catName}
-              </option>
-            ))}
-        </select>
+
 
         <button  className="bg-green-600 text-white py-3 rounded-md text-base font-semibold hover:bg-green-700 transition-all duration-200" type="submit">
           Create Post

@@ -5,7 +5,6 @@ import { prisma } from "@/db"
 import { AuthError } from "next-auth";
 import { redirect } from "next/navigation";
 
-
 export const  login = async (provider:string )=>{
     await signIn(provider, {
        redirectTo:"/",
