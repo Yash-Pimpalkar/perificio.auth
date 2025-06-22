@@ -101,7 +101,7 @@ export default function Navbar() {
             <div className="flex flex-shrink-0 items-center">
               <Link href="/">
                 <img
-                  className="h-8 w-auto"
+                  className="h-5 w-auto "
                   src="/perificio-logo.png"
                   alt="Perificio"
                 />
