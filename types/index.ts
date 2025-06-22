@@ -36,3 +36,15 @@ export type CloudinaryUploadWidgetResults = {
   };
 };
 
+
+export interface TPdf {
+  id: string;
+  title: string;
+  pdfUrl: string;
+  publicId: string;
+  uploaderEmail: string;
+  uploadedAt?: string; // or Date, depending on how you handle timestamps
+}
+
+
+

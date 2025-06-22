@@ -121,3 +121,14 @@ model Contact {
   message   String
   createdAt DateTime @default(now())
 }
+
+model Pdf {
+  id            String   @id @default(auto()) @map("_id") @db.ObjectId
+  title         String
+  description   String?
+  pdfUrl        String
+  publicId      String
+  uploaderEmail String
+  uploadedAt    DateTime? @default(now())
+}
+

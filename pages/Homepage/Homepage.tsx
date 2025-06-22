@@ -4,7 +4,8 @@ import ViewBlogs from '@/components/Blogs/ViewBlogs';
 import AnimatedSection from '@/components/AnimatedComponent/AnimatedSection';
 import { TPost } from '@/types';
 import MovingImages from '@/components/HeroContainer/MovingImages';
-
+import PdfCard from '@/components/Blogs/pdfs';
+import MappedPdf from '@/components/Blogs/MappedPdf';
 
 interface MarketDataItem {
   name: string;
@@ -219,7 +220,10 @@ const Homepage = () => {
       </section>
       </AnimatedSection>
       {/* Blog/Knowledge Base Section */}
-
+     
+     <section className="py-12 md:py-20 bg-white">
+      <MappedPdf />
+      </section>
 
       {/* Contact Section */}
       <section id="contact" className="py-12 md:py-20 bg-[#F0F8FF]"> {/* Alice Blue background */}
