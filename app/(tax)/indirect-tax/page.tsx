@@ -1,6 +1,7 @@
 "use client"
 import React from 'react'
 import Link from 'next/link';
+
 const page = () => {
   const indirectTaxServices = [
     {
@@ -28,29 +29,35 @@ const page = () => {
       description: 'Advisory on Reverse Charge Mechanism (RCM) and Input Service Distributor (ISD) provisions.',
       icon: '🔄', // Refresh/Cycle icon
     },
-    // You can add more services here if needed, following the same structure
+    // NEW SERVICE ADDED HERE
+    {
+      title: 'Litigation & Appeals Support',
+      description: 'Representation and advisory for GST disputes, assessments, and appeals before authorities.',
+      icon: '⚖️', // Balance/Justice icon
+    },
   ];
 
   return (
-    <div className="min-h-screen bg-gray-50 font-inter text-gray-900 overflow-hidden">
+    // Main container with a suitable light orange background color
+    <div className="min-h-screen bg-orange-50 font-inter text-gray-900 overflow-hidden">
       <main className="w-full max-w-7xl mx-auto py-8 sm:py-12 lg:py-16 px-4 sm:px-6 lg:px-8 space-y-12 sm:space-y-16 lg:space-y-20">
 
-        {/* Hero Section - Matched to FEMA/NCA style */}
-        <section className="relative w-full py-20 px-6 rounded-xl overflow-hidden shadow-xl"
+        {/* Hero Section - Now with Orange Gradient Background and Blue Header */}
+        <section
+          className="relative w-full py-20 px-6 rounded-xl overflow-hidden shadow-xl"
           style={{
-            background: 'linear-gradient(135deg, #E8F5E9 0%, #C8E6C9 100%)', // Soft green and light-green gradient
+            background: 'linear-gradient(135deg, #FFF8E1 0%, #FFDDA0 100%)', // Soft orange gradient
           }}>
           <div className="text-center relative z-10">
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-gray-800 mb-4 font-poppins leading-tight">
+            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-blue-900 mb-4 font-poppins leading-tight">
               Indirect Taxation Services
             </h1>
-            <p className="text-lg sm:text-xl text-gray-600 font-inter max-w-3xl mx-auto mb-8">
+            <p className="text-lg sm:text-xl text-gray-700 font-inter max-w-3xl mx-auto mb-8">
               Navigating the dynamic landscape of Indirect Taxes, particularly GST, requires specialized knowledge and continuous updates.
               At Tax Consulting, we provide comprehensive and proactive solutions to ensure seamless compliance and optimize your indirect tax obligations.
             </p>
-            {/* Changed bg-primaryBlue to bg-blue-600 for a visible blue color */}
             <Link
-              href="#services" // You might want to link this to a specific section on the page or another relevant page
+              href="#services"
               className="inline-block bg-blue-600 hover:bg-blue-700 text-white font-semibold font-poppins px-8 py-4 rounded-lg shadow-md transition transform hover:scale-105"
             >
               Explore Our Indirect Tax Services
@@ -58,24 +65,27 @@ const page = () => {
           </div>
         </section>
 
-        {/* Key Expertise Section - Matched to FEMA/NCA style */}
-        <section id="services" className="py-8 bg-white rounded-xl shadow-lg border border-gray-100">
-          <h2 className="text-3xl sm:text-4xl font-bold text-gray-800 text-center mb-10 font-poppins">
+        {/* Key Expertise Section - Orange Gradient Background, Cards with Solid Light Orange */}
+        <section id="services"
+                 className="py-8 rounded-xl shadow-lg border border-orange-100"
+                 style={{ background: 'linear-gradient(to right, #FFF3E0 0%, #FFECB3 100%)' }}>
+          <h2 className="text-3xl sm:text-4xl font-bold text-blue-800 text-center mb-10 font-poppins">
             Our Expertise Includes:
           </h2>
+          {/* The grid will automatically adjust to accommodate the new box */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 px-6 sm:px-8">
             {indirectTaxServices.map((service, index) => (
               <div
                 key={index}
-                className="bg-white p-6 sm:p-7 rounded-xl shadow-md hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1 flex flex-col items-center text-center border border-gray-100"
+                className="bg-orange-50 p-6 sm:p-7 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 flex flex-col items-center text-center border border-orange-200"
               >
-                <div className="text-5xl sm:text-6xl mb-4 text-primaryBlue"> {/* Using primaryBlue for icons */}
+                <div className="text-5xl sm:text-6xl mb-4 text-blue-600">
                   {service.icon}
                 </div>
-                <h3 className="text-xl sm:text-2xl font-semibold text-gray-800 mb-3 font-poppins">
+                <h3 className="text-xl sm:text-2xl font-semibold text-blue-700 mb-3 font-poppins">
                   {service.title}
                 </h3>
-                <p className="text-gray-600 leading-relaxed font-inter text-sm sm:text-base">
+                <p className="text-gray-700 leading-relaxed font-inter text-sm sm:text-base">
                   {service.description}
                 </p>
               </div>
@@ -83,9 +93,11 @@ const page = () => {
           </div>
         </section>
 
-        {/* Professional Call to Action Section - Matched to NCA/FEMA style */}
-        <section className="bg-gradient-to-br from-blue-50 to-indigo-100 p-8 sm:p-10 rounded-xl shadow-lg text-center">
-          <h2 className="text-2xl sm:text-3xl font-bold text-gray-800 mb-4 font-poppins">
+        {/* Professional Call to Action Section - Orange Gradient Background, Blue Header */}
+        <section
+          className="p-8 sm:p-10 rounded-xl shadow-lg text-center"
+          style={{ background: 'linear-gradient(135deg, #FFE0B2 0%, #FFCC80 100%)' }}>
+          <h2 className="text-2xl sm:text-3xl font-bold text-blue-800 mb-4 font-poppins">
             Simplify Your GST Compliance!
           </h2>
           <p className="text-gray-700 text-md sm:text-lg max-w-2xl mx-auto mb-8 font-inter">
@@ -97,7 +109,7 @@ const page = () => {
         </section>
       </main>
 
-      {/* Global Font Imports (or define in styles/globals.css for better performance) */}
+      {/* Global Font Imports */}
       <style jsx global>{`
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@400;600;700;800&display=swap');
 
@@ -112,4 +124,4 @@ const page = () => {
   );
 }
 
-export default page
+export default page;
