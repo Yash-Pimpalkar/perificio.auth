@@ -50,7 +50,8 @@ const page = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-gray-50 font-inter text-gray-900 overflow-hidden">
+    // Main container with a suitable light orange background color
+    <div className="min-h-screen bg-orange-50 font-inter text-gray-900 overflow-hidden">
       {/* Head section for page metadata - only if this is a top-level page */}
       {/* <Head>
         <title>RERA Compliance & Regulation - Corporate Legal Services</title>
@@ -60,16 +61,16 @@ const page = () => {
 
       <main className="w-full max-w-7xl mx-auto py-8 sm:py-12 lg:py-16 px-4 sm:px-6 lg:px-8 space-y-12 sm:space-y-16 lg:space-y-20">
 
-        {/* Hero Section for RERA */}
+        {/* Hero Section for RERA - Now with Orange Gradient Background */}
         <section className="relative w-full py-20 px-6 rounded-xl overflow-hidden shadow-xl"
           style={{
-            background: 'linear-gradient(135deg, #F0F9FF 0%, #D0EEF6 100%)', // Soft blue and light-blue gradient
+            background: 'linear-gradient(135deg, #FFF8E1 0%, #FFDDA0 100%)', // Soft orange gradient
           }}>
           <div className="text-center relative z-10">
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-gray-800 mb-4 font-poppins leading-tight">
+            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-blue-900 mb-4 font-poppins leading-tight"> {/* Deep blue header */}
               RERA: Your Assurance in <span className="text-blue-700">Real Estate</span>
             </h1>
-            <p className="text-lg sm:text-xl text-gray-600 font-inter max-w-3xl mx-auto">
+            <p className="text-lg sm:text-xl text-gray-700 font-inter max-w-3xl mx-auto"> {/* Adjusted text color */}
               Empowering homebuyers and ensuring transparency in every property transaction.
             </p>
             <a href="#key-features" className="mt-8 inline-block bg-blue-600 hover:bg-blue-700 text-white font-semibold font-poppins px-8 py-3 rounded-lg shadow-lg transition transform hover:scale-105">
@@ -78,24 +79,26 @@ const page = () => {
           </div>
         </section>
 
-        {/* Key Features Section */}
-        <section id="key-features" className="py-8 bg-white rounded-xl shadow-lg border border-gray-100">
-          <h2 className="text-3xl sm:text-4xl font-bold text-gray-800 text-center mb-10 font-poppins">
+        {/* Key Features Section - Now with Orange Gradient Background and Orange Cards */}
+        <section id="key-features"
+                 className="py-8 rounded-xl shadow-lg border border-orange-100"
+                 style={{ background: 'linear-gradient(to right, #FFF3E0 0%, #FFECB3 100%)' }}> {/* Section with a different orange gradient */}
+          <h2 className="text-3xl sm:text-4xl font-bold text-blue-800 text-center mb-10 font-poppins"> {/* Deep blue header */}
             Why RERA Matters For You
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 px-6 sm:px-8">
             {reraHighlights.map((feature, index) => (
               <div
                 key={index}
-                className="bg-white p-6 sm:p-7 rounded-xl shadow-md hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1 flex flex-col items-center text-center border border-gray-100"
+                className="bg-orange-50 p-6 sm:p-7 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 flex flex-col items-center text-center border border-orange-200" // Light orange card background
               >
-                <div className="text-5xl sm:text-6xl mb-4 text-blue-600">
+                <div className="text-5xl sm:text-6xl mb-4 text-blue-600"> {/* Blue icon */}
                   {feature.icon}
                 </div>
-                <h3 className="text-xl sm:text-2xl font-semibold text-gray-800 mb-3 font-poppins">
+                <h3 className="text-xl sm:text-2xl font-semibold text-blue-700 mb-3 font-poppins"> {/* Blue header */}
                   {feature.title}
                 </h3>
-                <p className="text-gray-600 leading-relaxed font-inter text-sm sm:text-base">
+                <p className="text-gray-700 leading-relaxed font-inter text-sm sm:text-base"> {/* Adjusted text color */}
                   {feature.description}
                 </p>
               </div>
@@ -103,12 +106,13 @@ const page = () => {
           </div>
         </section>
 
-        {/* Call to Action / Consultation Section */}
-        <section className="bg-gradient-to-br from-blue-50 to-indigo-100 p-8 sm:p-10 rounded-xl shadow-lg text-center">
-          <h2 className="text-2xl sm:text-3xl font-bold text-gray-800 mb-4 font-poppins">
+        {/* Call to Action / Consultation Section - Now with Orange Gradient Background */}
+        <section className="p-8 sm:p-10 rounded-xl shadow-lg text-center"
+          style={{ background: 'linear-gradient(135deg, #FFE0B2 0%, #FFCC80 100%)' }}> {/* Another orange gradient */}
+          <h2 className="text-2xl sm:text-3xl font-bold text-blue-800 mb-4 font-poppins"> {/* Deep blue header */}
             Need Expert Guidance on RERA?
           </h2>
-          <p className="text-gray-700 text-md sm:text-lg max-w-2xl mx-auto mb-8 font-inter">
+          <p className="text-gray-700 text-md sm:text-lg max-w-2xl mx-auto mb-8 font-inter"> {/* Adjusted text color */}
             Our legal experts provide comprehensive advice on RERA compliance, buyer rights, and dispute resolution.
           </p>
           <a href="/contact" className="inline-block bg-red-600 hover:bg-red-700 text-white font-semibold font-poppins px-8 py-4 rounded-lg shadow-md transition transform hover:scale-105">
