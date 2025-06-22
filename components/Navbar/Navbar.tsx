@@ -2,18 +2,36 @@
 
 import { useSession, signOut } from "next-auth/react";
 import Link from "next/link";
-import Image from "next/image";
 import { useState } from "react";
 import { CgProfile } from "react-icons/cg";
-import { ChevronDownIcon } from '@heroicons/react/20/solid' ;
+import {
+  Disclosure,
+  DisclosureButton,
+  DisclosurePanel,
+  Menu,
+  MenuButton,
+  MenuItem,
+  MenuItems,
+} from "@headlessui/react";
+import { Bars3Icon, XMarkIcon, BellIcon, ChevronDownIcon } from "@heroicons/react/24/outline";
+import Image from "next/image";
 
-type MenuItem = {
+// Types
+
+type MenuLink = {
   name: string;
   href?: string;
-  submenu?: MenuItem[];
 };
 
-const menuConfig: Record<string, MenuItem[]> = {
+type MenuItemWithSubmenu = MenuLink & {
+  submenu?: MenuLink[];
+};
+
+type Role = "USER" | "ADMIN" | "SUPERADMIN";
+
+// Menu Config
+
+const menuConfig: Record<Role, MenuItemWithSubmenu[]> = {
   USER: [
     { name: "Home", href: "/" },
     {
@@ -64,109 +82,158 @@ const menuConfig: Record<string, MenuItem[]> = {
   ],
 };
 
-const Navbar = () => {
+export default function Navbar() {
   const { data: session } = useSession();
-  const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
-   console.log("Session Data:", session);
-const role = session?.user?.role || "USER";
-const menu = menuConfig[role];
-
-  // console.log("User Role:", role);
-  // console.log("Session Data:", session?.user);
+  const role = (session?.user?.role?.toUpperCase() as Role) || "USER";
+  const menu = menuConfig[role] || [];
 
   return (
-    <nav className="w-full bg-white shadow-md px-6 py-4 flex items-center justify-between relative z-50">
-      <Link href="/" className="text-2xl font-bold text-blue-600">
-        Perificio
-      </Link>
-
-      {/* Menu - Desktop */}
-      <div className="hidden md:flex gap-x-6 text-gray-700 text-sm font-medium relative">
-        {menu.map((item) =>
-          item.submenu ? (
-            <div
-              key={item.name}
-              className="relative"
-              onMouseEnter={() => setActiveDropdown(item.name)}
-              onMouseLeave={() => setActiveDropdown(null)}
-            >
-              <button className="flex items-center gap-1 hover:text-blue-500">
-                {item.name}
-                <ChevronDownIcon className="w-4 h-4" />
-              </button>
-              {activeDropdown === item.name && (
-                <div className="absolute top-full left-0 mt-2 bg-white border shadow-md rounded-md z-10 w-40">
-                  {item.submenu.map((sub) => (
-                    <Link
-                      key={sub.name}
-                      href={sub.href || "#"}
-                      className="block px-4 py-2 text-sm hover:bg-blue-50"
-                    >
-                      {sub.name}
-                    </Link>
-                  ))}
-                </div>
-              )}
-            </div>
-          ) : (
-            <Link
-              key={item.name}
-              href={item.href || "#"}
-              className="hover:text-blue-500"
-            >
-              {item.name}
-            </Link>
-          )
-        )}
-      </div>
-
-      {/* Right - Profile or Login */}
-      <div className="hidden md:flex items-center gap-x-4">
-        {!session?.user ? (
-          <Link href="/sign-in">
-            <div className="bg-blue-600 text-white text-sm px-4 py-2 rounded hover:bg-blue-700 transition">
-              Login
-            </div>
-          </Link>
-        ) : (
-          <div className="relative">
-            <button onClick={() => setActiveDropdown("profile")}>
-              {session.user.image ? (
-                <Image
-                  src={session.user.image}
-                  alt="Profile"
-                  width={32}
-                  height={32}
-                  className="rounded-full"
-                />
-              ) : (
-                <CgProfile className="w-8 h-8 text-gray-600" />
-              )}
-            </button>
-            {activeDropdown === "profile" && (
-              <div className="absolute right-0 mt-2 w-56 bg-white shadow-lg rounded-md border z-10">
-                <div className="p-4 border-b">
-                  <p className="font-medium text-sm">{session.user.name}</p>
-                  <p className="text-xs text-gray-500">{session.user.email}</p>
-                </div>
-                <div className="p-2">
-                  <button
-                    onClick={() => {
-                      signOut({ callbackUrl: "/" });
-                      setActiveDropdown(null);
-                    }}
-                    className="w-full text-left text-sm px-4 py-2 text-gray-700 hover:bg-gray-100 rounded"
-                  >
-                    Sign Out
-                  </button>
-                </div>
-              </div>
-            )}
+    <Disclosure as="nav" className="bg-white">
+      <div className="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
+        <div className="relative flex h-16 items-center justify-between">
+          <div className="absolute inset-y-0 left-0 flex items-center sm:hidden">
+            <DisclosureButton className="relative inline-flex items-center justify-center rounded-md p-2 text-black hover:bg-gray-200 hover:text-black">
+              <Bars3Icon className="block h-6 w-6" aria-hidden="true" />
+              <XMarkIcon className="hidden h-6 w-6" aria-hidden="true" />
+            </DisclosureButton>
           </div>
-        )}
-      </div>
-    </nav>
-  );
-};
+          <div className="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start">
+            <div className="flex flex-shrink-0 items-center">
+              <Link href="/">
+                <img
+                  className="h-8 w-auto"
+                  src="/perificio-logo.png"
+                  alt="Perificio"
+                />
+              </Link>
+            </div>
+            <div className="hidden sm:ml-6 sm:block">
+              <div className="flex space-x-4">
+                {menu.map((item) => (
+                  item.submenu ? (
+                    <Menu key={item.name} as="div" className="relative inline-block text-left">
+                      <div>
+                        <MenuButton className="inline-flex items-center text-black hover:bg-gray-200 hover:text-black px-3 py-2 rounded-md text-sm font-medium">
+                          {item.name}
+                          <ChevronDownIcon className="ml-1 h-4 w-4" />
+                        </MenuButton>
+                      </div>
+                      <MenuItems className="absolute left-0 z-10 mt-2 w-40 origin-top-left rounded-md bg-white shadow-lg ring-1 ring-black/5 focus:outline-none">
+                        {item.submenu.map((sub) => (
+                          <MenuItem key={sub.name}>
+                            <Link
+                              href={sub.href || "#"}
+                              className="block px-4 py-2 text-sm text-black hover:bg-gray-100"
+                            >
+                              {sub.name}
+                            </Link>
+                          </MenuItem>
+                        ))}
+                      </MenuItems>
+                    </Menu>
+                  ) : (
+                    <Link
+                      key={item.name}
+                      href={item.href || "#"}
+                      className="text-black hover:bg-gray-200 hover:text-black px-3 py-2 rounded-md text-sm font-medium"
+                    >
+                      {item.name}
+                    </Link>
+                  )
+                ))}
+              </div>
+            </div>
+          </div>
 
-export default Navbar;
+          <div className="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
+            <Menu as="div" className="relative ml-3">
+              <div>
+                <MenuButton className="relative flex items-center gap-2 rounded-full bg-white text-sm">
+                  {session?.user?.image ? (
+                    <Image
+                      src={session.user.image}
+                      alt="User"
+                      width={32}
+                      height={32}
+                      className="rounded-full"
+                    />
+                  ) : (
+                    <CgProfile className="w-8 h-8 text-black" />
+                  )}</MenuButton>
+              </div>
+              <MenuItems className="absolute right-0 z-10 mt-2 w-56 origin-top-right rounded-md bg-white py-1 shadow-lg ring-1 ring-black/5 focus:outline-none">
+                {session?.user ? (
+                  <>
+                    <div className="px-4 py-2 text-sm text-gray-700 border-b">
+                      <p className="font-medium">{session?.user?.name}</p>
+                      <p className="text-xs text-gray-500">{session?.user?.email}</p>
+                    </div>
+                    <MenuItem>
+                      <Link href="#" className="block px-4 py-2 text-sm text-black hover:bg-gray-100">
+                        Your Profile
+                      </Link>
+                    </MenuItem>
+                    <MenuItem>
+                      <Link href="#" className="block px-4 py-2 text-sm text-black hover:bg-gray-100">
+                        Settings
+                      </Link>
+                    </MenuItem>
+                    <MenuItem>
+                      <button
+                        onClick={() => signOut({ callbackUrl: "/" })}
+                        className="w-full text-left px-4 py-2 text-sm text-black hover:bg-gray-100"
+                      >
+                        Sign out
+                      </button>
+                    </MenuItem>
+                  </>
+                ) : (
+                  <MenuItem>
+                    <Link
+                      href="/sign-in"
+                      className="block px-4 py-2 text-sm text-black hover:bg-gray-100"
+                    >
+                      Sign In
+                    </Link>
+                  </MenuItem>
+                )}
+              </MenuItems>
+            </Menu>
+          </div>
+        </div>
+      </div>
+
+      <DisclosurePanel className="sm:hidden">
+        <div className="space-y-1 px-2 pt-2 pb-3">
+          {menu.map((item) => (
+            item.submenu ? (
+              <div key={item.name} className="space-y-1">
+                <span className="block px-3 py-2 text-base font-medium text-black">
+                  {item.name}
+                </span>
+                {item.submenu.map((sub) => (
+                  <Link
+                    key={sub.name}
+                    href={sub.href || "#"}
+                    className="block rounded-md px-5 py-2 text-sm font-medium text-black hover:bg-gray-100"
+                  >
+                    {sub.name}
+                  </Link>
+                ))}
+              </div>
+            ) : (
+              <DisclosureButton
+                key={item.name}
+                as="a"
+                href={item.href || "#"}
+                className="block rounded-md px-3 py-2 text-base font-medium text-black hover:bg-gray-200 hover:text-black"
+              >
+                {item.name}
+              </DisclosureButton>
+            )
+          ))}
+        </div>
+      </DisclosurePanel>
+    </Disclosure>
+  );
+}

@@ -2,14 +2,13 @@
 
 import React, { useState } from "react";
 import { loginWithCreds } from "@/actions/auth";
-import AuthButton from "../Buttons/AuthButton";
 import { useFormStatus } from "react-dom";
 import { useSearchParams } from "next/navigation";
 import { HiEye, HiEyeOff } from "react-icons/hi";
 
 const LoginForm = () => {
   const searchParams = useSearchParams();
-  const error = searchParams.get("error");
+  const error = searchParams?.get("error");
   const [showPassword, setShowPassword] = useState(false);
   const { pending } = useFormStatus();
   return (

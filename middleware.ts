@@ -19,12 +19,7 @@ export default async function middleware(request: NextRequest) {
      const isAdminProtected = adminRoutes.some((route) =>
         request.nextUrl.pathname.startsWith(route)
     );
-     
-    if(!session && isProtectedRoute) {
-        const absoluteUrl =  new URL("/",request.nextUrl.origin);
-        return NextResponse.redirect(absoluteUrl.toString());
-    }
-
+    
     
     if(!session && isAdminProtected) {
         const absoluteUrl =  new URL("/sign-in",request.nextUrl.origin);

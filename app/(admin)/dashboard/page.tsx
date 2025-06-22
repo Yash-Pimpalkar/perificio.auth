@@ -37,8 +37,6 @@ const AdminDashboard = () => {
   useEffect(() => {
     const checkSession = async () => {
       const session = await auth()
-      console.log(session)
-      if(!session)  {redirect('/sign-in')}
       if (!session || session?.user?.role !== 'ADMIN') {
         redirect('/sign-in');
       } else {
