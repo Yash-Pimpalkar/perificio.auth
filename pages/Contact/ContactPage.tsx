@@ -1,46 +1,28 @@
 'use client';
 
-import { auth } from '@/auth';
+import { Contact } from '@/types';
 import React, { useEffect, useState } from 'react';
 import { AiOutlineDelete } from 'react-icons/ai';
 
-interface Contact {
-  id: string;
-  name: string;
-  email: string;
-  phone?: string;
-  subject: string;
-  message: string;
-  createdAt: string;
+
+
+
+interface ContactPageProps {
+  initialContacts: Contact[];
 }
 
 const ITEMS_PER_PAGE = 5;
 
-const ContactPage =async () => {
-  const session = await auth()
+export default function ContactPage({ initialContacts }: { initialContacts: Contact[] }) {
   const [contacts, setContacts] = useState<Contact[]>([]);
-  const [loading, setLoading] = useState(true);
   const [page, setPage] = useState(1);
+
+  useEffect(() => {
+    setContacts(initialContacts);
+  }, [initialContacts]);
 
   const totalPages = Math.ceil(contacts.length / ITEMS_PER_PAGE);
   const paginatedContacts = contacts.slice((page - 1) * ITEMS_PER_PAGE, page * ITEMS_PER_PAGE);
-
-  const fetchContacts = async () => {
-    try {
-      setLoading(true);
-      const res = await fetch('/api/contact');
-      const data = await res.json();
-      setContacts(data);
-    } catch (err) {
-      console.error('Failed to load contacts', err);
-    } finally {
-      setLoading(false);
-    }
-  };
-
-  useEffect(() => {
-    fetchContacts();
-  }, []);
 
   const handleDelete = async (id: string) => {
     if (!confirm('Are you sure you want to delete this message?')) return;
@@ -54,7 +36,6 @@ const ContactPage =async () => {
       console.error('Delete failed:', err);
     }
   };
-
   const handleDeleteAll = async () => {
     if (!confirm('⚠ Are you sure you want to delete all contact messages?')) return;
 
@@ -88,10 +69,8 @@ const ContactPage =async () => {
         </header>
 
         <div className="overflow-x-auto bg-white rounded-lg shadow border border-gray-200">
-          {loading ? (
-            <p className="p-6 text-gray-500 text-center">Loading...</p>
-          ) : contacts.length === 0 ? (
-            <p className="p-6 text-gray-500 text-center">No contact submissions found.</p>
+          {contacts.length === 0 ? (
+            <p className="p-6 text-center text-gray-500">No contact submissions found.</p>
           ) : (
             <table className="min-w-full table-auto divide-y divide-gray-200">
               <thead className="bg-gray-100">
@@ -167,4 +146,4 @@ const ContactPage =async () => {
   );
 };
 
-export default ContactPage;
+

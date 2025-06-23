@@ -6,6 +6,7 @@ import { TPost } from '@/types';
 import MovingImages from '@/components/HeroContainer/MovingImages';
 import PdfCard from '@/components/Blogs/pdfs';
 import MappedPdf from '@/components/Blogs/MappedPdf';
+import QuickContactSection from '@/components/QuickContact/Quickcontact';
 
 interface MarketDataItem {
   name: string;
@@ -226,57 +227,9 @@ const Homepage = () => {
       </section>
 
       {/* Contact Section */}
-      <section id="contact" className="py-12 md:py-20 bg-[#F0F8FF]"> {/* Alice Blue background */}
-        <div className="container mx-auto px-4 flex flex-col md:flex-row items-center justify-between max-w-6xl">
-          <div className="md:w-1/2 text-center md:text-left mb-8 md:mb-0">
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-montserrat font-extrabold text-[#1D4ED8] leading-tight mb-4">
-              <span className="block">GOT QUESTIONS?</span>
-              <span className="block text-[#B91C1C]">LET'S TALK!</span>
-            </h2>
-            <p className="text-base sm:text-lg md:text-xl text-gray-700 max-w-md mx-auto md:mx-0">
-              Schedule a <span className="font-bold">FREE</span> call with our expert Financial Advisor and gain personalized insights today.
-            </p>
-          </div>
-
-          <div className="md:w-1/2 w-full max-w-lg bg-white border border-gray-200 rounded-xl p-6 sm:p-8 shadow-lg">
-            <div className="flex justify-center mb-4 sm:mb-6">
-              <img src="/logo.png" alt="Logo" className="h-8 sm:h-10" />
-            </div>
-            <hr className="mb-4 sm:mb-6" />
-
-            <form className="space-y-4 sm:space-y-5">
-              <div>
-                <label htmlFor="name" className="block mb-1 text-sm font-medium text-gray-700">Name *</label>
-                <input type="text" id="name" required placeholder="Your Name"
-                  className="w-full border border-gray-300 p-2 sm:p-3 rounded-md focus:ring-2 focus:ring-[#1D4ED8] outline-none text-sm" />
-              </div>
-
-              <div>
-                <label htmlFor="mobile" className="block mb-1 text-sm font-medium text-gray-700">Mobile Number *</label>
-                <div className="flex items-center border border-gray-300 rounded-md p-2 sm:p-3">
-                  <span className="mr-2 text-base sm:text-xl">🇮🇳</span>
-                  <input type="tel" id="mobile" required placeholder="Enter your number"
-                    className="w-full outline-none focus:ring-0 text-sm" />
-                </div>
-              </div>
-
-              <div>
-                <label htmlFor="email" className="block mb-1 text-sm font-medium text-gray-700">Email *</label>
-                <input type="email" id="email" required placeholder="your@email.com"
-                  className="w-full border border-gray-300 p-2 sm:p-3 rounded-md focus:ring-2 focus:ring-[#1D4ED8] outline-none text-sm" />
-              </div>
-
-              <div className="space-y-2">
-                <label htmlFor="terms" className="flex items-center text-xs sm:text-sm text-gray-700">
-                  <input type="checkbox" id="terms" className="mr-2 accent-[#1D4ED8]" required />
-                  I agree to the <a href="#" className="text-[#1D4ED8] underline ml-1">Terms & Conditions</a> and <a href="#" className="text-[#1D4ED8] underline ml-1">Privacy Policy</a>
-                </label>
-              </div>
-
-
-            </form>
-          </div>
-        </div>
+      <section id="contact">
+         {/* Alice Blue background */}
+        <QuickContactSection />
       </section>
 
       {/* Floating Help Button */}

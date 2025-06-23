@@ -70,7 +70,7 @@ const menuConfig: Record<Role, MenuItemWithSubmenu[]> = {
         { name: "View All Pdf", href: "/view-pdf" },
       ],
     },
-    { name: "Contact", href: "/show-contact" },
+    { name: "Contact", href: "/show-contacts" },
   ],
   SUPERADMIN: [
     { name: "Home", href: "/" },

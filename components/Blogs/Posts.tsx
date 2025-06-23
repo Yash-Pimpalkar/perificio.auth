@@ -29,7 +29,7 @@ export default async function Post({
 }: PostProps) {
   const session = await auth();
   
-  const isEditable = session?.user?.email === authorEmail;
+  const isEditable = session?.user?.role === "ADMIN";
 
   const formattedDate = new Date(date).toLocaleDateString("en-US", {
     month: "short",

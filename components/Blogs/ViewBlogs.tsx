@@ -52,7 +52,7 @@ export default async function ViewBlogs() {
           ))}
         </div>
         <div className="flex items-center justify-center pt-4">
-        <a href="#" className="inline-block bg-[#1D4ED8] hover:bg-[#3B82F6] text-white font-montserrat font-semibold px-6 py-3 rounded-lg shadow-md transition transform hover:scale-105 text-base">
+        <a href="/all-blogs" className="inline-block bg-[#1D4ED8] hover:bg-[#3B82F6] text-white font-montserrat font-semibold px-6 py-3 rounded-lg shadow-md transition transform hover:scale-105 text-base">
             View All Blogs
           </a>
         </div>
