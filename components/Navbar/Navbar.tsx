@@ -67,7 +67,7 @@ const menuConfig: Record<Role, MenuItemWithSubmenu[]> = {
       name: "Files",
       submenu: [
         { name: "Upload Pdf", href: "/upload-pdf" },
-        { name: "View All Pdf", href: "/view-pdf" },
+        { name: "View All Pdf", href: "/all-pdfs" },
       ],
     },
     { name: "Contact", href: "/show-contacts" },

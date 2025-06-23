@@ -1,5 +1,6 @@
 "use client";
 
+import { auth } from "@/auth";
 import { TPdf } from "@/types";
 import { useEffect, useState } from "react";
 

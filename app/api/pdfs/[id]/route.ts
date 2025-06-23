@@ -26,15 +26,30 @@ export async function DELETE(
   { params }: { params: { id: string } }
 ) {
   const session = await auth();
+
   if (!session?.user?.email) {
     return NextResponse.json({ error: "Not authenticated" }, { status: 401 });
   }
 
   try {
-    const pdf = await prisma.pdf.delete({ where: { id: params.id } });
-    return NextResponse.json(pdf);
+    const existingPdf = await prisma.pdf.findUnique({
+      where: { id: params.id },
+    });
+
+    if (!existingPdf) {
+      return NextResponse.json({ error: "PDF not found" }, { status: 404 });
+    }
+
+    // Optional: Only allow uploader to delete their PDF
+    // if (existingPdf.uploaderEmail !== session.user.email) {
+    //   return NextResponse.json({ error: "Forbidden" }, { status: 403 });
+    // }
+
+    await prisma.pdf.delete({ where: { id: params.id } });
+
+    return NextResponse.json({ success: true });
   } catch (error) {
     console.error("Delete error:", error);
-    return NextResponse.json({ message: "Error deleting PDF" }, { status: 500 });
+    return NextResponse.json({ error: "Error deleting PDF" }, { status: 500 });
   }
 }
