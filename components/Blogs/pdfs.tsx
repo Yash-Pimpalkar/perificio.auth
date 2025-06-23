@@ -1,7 +1,7 @@
+import Image from "next/image";
 import Link from "next/link";
 import { auth } from "@/auth";
 import DeleteButton from "./DeleteButton";
-import { DocumentTextIcon } from "@heroicons/react/24/solid";
 
 interface PdfCardProps {
   id: string;
@@ -31,18 +31,26 @@ export default async function PdfCard({
     year: "numeric",
   });
 
-  return (
-    <div className="bg-white rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1 hover:scale-[1.02] w-full max-w-sm flex flex-col h-[400px]">
+  const pdfThumbnail = `https://res.cloudinary.com/YOUR_CLOUD_NAME/image/upload/w_600,h_400,c_fill/pg_1/${publicId}.jpg`;
 
-      {/* Header */}
-      <div className="bg-gray-100 h-48 flex items-center justify-center relative rounded-t-xl">
-        <DocumentTextIcon className="h-16 w-16 text-blue-600" />
+  return (
+    <div className="bg-white rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1 hover:scale-[1.02] w-full max-w-sm flex flex-col h-[400px]
+       px-12 sm:px-6 lg:px-4">
+
+      {/* Thumbnail from Cloudinary */}
+      <div className="relative w-full h-48">
+        <Image
+          src={pdfThumbnail}
+          alt={`Thumbnail for ${title}`}
+          fill
+          className="object-cover rounded-t-xl"
+        />
         <div className="absolute top-3 right-3 bg-white/80 px-2 py-1 rounded-full text-xs font-semibold border border-gray-200">
           PDF
         </div>
       </div>
 
-      {/* Body */}
+      {/* Text Section */}
       <div className="p-4 sm:p-6 text-left flex-1 overflow-hidden">
         <h3 className="text-lg sm:text-xl font-bold text-[#1D4ED8] mb-1 line-clamp-2">
           {title}
@@ -61,6 +69,7 @@ export default async function PdfCard({
           href={pdfUrl}
           target="_blank"
           rel="noopener noreferrer"
+          aria-label={`View PDF: ${title}`}
           className="text-blue-600 hover:underline font-semibold text-sm"
         >
           View PDF →

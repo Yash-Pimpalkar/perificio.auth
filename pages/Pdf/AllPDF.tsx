@@ -3,7 +3,7 @@
 import { TPdf } from "@/types";
 import { useEffect, useState } from "react";
 
-export default function PdfGalleryClient() {
+export default function AllPDFS() {
   const [pdfs, setPdfs] = useState<TPdf[] | null>(null);
 
   const getPdfs = async (): Promise<TPdf[] | null> => {
@@ -29,7 +29,7 @@ export default function PdfGalleryClient() {
   return (
     <>
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-        {pdfs?.slice(0, 3)?.map((pdf) => (
+        {pdfs?.map((pdf) => (
           <div key={pdf.id} className="bg-white p-4 rounded shadow">
             <h3 className="font-bold">{pdf.title}</h3>
             <p className="text-sm text-gray-500">
@@ -45,14 +45,6 @@ export default function PdfGalleryClient() {
             </a>
           </div>
         ))}
-      </div>
-      <div className="flex items-center justify-center pt-4">
-        <a
-          href="/all-pdfs"
-          className="inline-block bg-[#1D4ED8] hover:bg-[#3B82F6] text-white font-montserrat font-semibold px-6 py-3 rounded-lg shadow-md transition transform hover:scale-105 text-base"
-        >
-          View All PDFS
-        </a>
       </div>
     </>
   );
