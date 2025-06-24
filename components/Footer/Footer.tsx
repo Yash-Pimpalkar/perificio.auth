@@ -1,12 +1,10 @@
 import React from "react";
 import { FaFacebookF, FaInstagram, FaLinkedinIn, FaEnvelope, FaMapMarkerAlt, FaPhoneAlt } from "react-icons/fa";
 import { RiMoneyDollarCircleFill, RiBuilding2Fill, RiLinkM, RiNewspaperFill } from "react-icons/ri"; 
-import { Metadata } from "next";
 const Footer = () => {
   return (
     <footer className="relative bg-[#032a5b] text-white px-6 md:px-20 pt-16 pb-20 text-sm font-inter overflow-hidden">
       {/* Optional: Subtle top border with a gradient for a premium feel */}
-
       {/* Main Grid */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-y-12 gap-x-10 z-10 relative">
 
@@ -133,7 +131,7 @@ const Footer = () => {
       </div>
 
       {/* Disclaimer & Copyright - MODIFIED */}
-      <div className="absolute  border-t border-white/20 mt-16 pt-8 text-xs text-white/60 z-10 text-center">
+      <div className=" bottom-0  sticky border-t border-white/20 mt-16 pt-8 text-xs text-white/60 z-0 text-center">
         {/* Expanded description about Perficio */}
         <p className="text-white/80 text-sm leading-relaxed mb-6 max-w-5xl mx-auto">
             Perficio Advisory Services, established in Mumbai in 2023 , is a forward-thinking firm dedicated to accomplishing excellence in Health, Wealth, and Taxation Planning. We offer integrated, tailored advisory solutions , believing true success lies at the intersection of financial discipline, physical well-being, and regulatory compliance. Our commitment is to add meaningful value to our clients' financial lives with high moral standards.
