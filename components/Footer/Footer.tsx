@@ -65,15 +65,15 @@ const Footer = () => {
             <RiMoneyDollarCircleFill className="text-2xl" /> Our Services
           </h3>
           <ul className="space-y-3 text-white/80 text-base">
-            <li><a href="#" className="hover:text-white transition-colors duration-200">Direct Tax Consulting</a></li>
-            <li><a href="#" className="hover:text-white transition-colors duration-200">Indirect Tax Solutions</a></li>
-            <li><a href="#" className="hover:text-white transition-colors duration-200">MCA Services</a></li> 
-            <li><a href="#" className="hover:text-white transition-colors duration-200">RERA Advisory</a></li>
-            <li><a href="#" className="hover:text-white transition-colors duration-200">FEMA Regulations</a></li>
-            <li><a href="#" className="hover:text-white transition-colors duration-200">Insurance</a></li> 
-            <li><a href="#" className="hover:text-white transition-colors duration-200">Investment Planning</a></li>
-            <li><a href="#" className="hover:text-white transition-colors duration-200">Real Estate Guidance</a></li>
-            <li><a href="#" className="hover:text-white transition-colors duration-200">NRI Financial Services</a></li>
+            <li><a href="direct-tax" className="hover:text-white transition-colors duration-200">Direct Tax Consulting</a></li>
+            <li><a href="indirect-tax" className="hover:text-white transition-colors duration-200">Indirect Tax Solutions</a></li>
+            <li><a href="mca" className="hover:text-white transition-colors duration-200">MCA Services</a></li> 
+            <li><a href="rera" className="hover:text-white transition-colors duration-200">RERA Advisory</a></li>
+            <li><a href="fema" className="hover:text-white transition-colors duration-200">FEMA Regulations</a></li>
+            <li><a href="insurance" className="hover:text-white transition-colors duration-200">Insurance</a></li> 
+            <li><a href="invest" className="hover:text-white transition-colors duration-200">Investment Planning</a></li>
+            <li><a href="real-estate" className="hover:text-white transition-colors duration-200">Real Estate Guidance</a></li>
+            <li><a href="nri" className="hover:text-white transition-colors duration-200">NRI Financial Services</a></li>
           </ul>
         </div>
 
@@ -83,7 +83,7 @@ const Footer = () => {
             <RiLinkM className="text-2xl" /> Important Links
           </h3>
           <ul className="space-y-3 text-white/80 text-base">
-            <li><a href="#" className="hover:text-white transition-colors duration-200">Blog & Insights</a></li>
+            <li><a href="all-blogs" className="hover:text-white transition-colors duration-200">Blog & Insights</a></li>
             <li><a href="#" className="hover:text-white transition-colors duration-200">Careers</a></li>
             <li><a href="#" className="hover:text-white transition-colors duration-200">FAQs</a></li>
             <li><a href="#" className="hover:text-white transition-colors duration-200">Privacy Policy</a></li>

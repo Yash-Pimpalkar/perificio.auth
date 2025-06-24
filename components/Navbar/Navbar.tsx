@@ -39,7 +39,7 @@ const menuConfig: Record<Role, MenuItemWithSubmenu[]> = {
       submenu: [
         { name: "Direct Tax", href: "/direct-tax" },
         { name: "Indirect Tax", href: "/indirect-tax" },
-        { name: "MCA", href: "/nca" },
+        { name: "MCA", href: "/mca" },
         { name: "RERA", href: "/rera" },
         { name: "FEMA", href: "/fema" },
       ],

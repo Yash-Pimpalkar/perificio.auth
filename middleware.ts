@@ -9,7 +9,7 @@ const protectedRoutes = ["/dashboard", "/settings", "/profile"];
 
 export default async function middleware(request: NextRequest) {
     const session = await auth();
-    const adminRoutes = ["/dashboard", "/admin", "/upload-pdf"];
+    const adminRoutes = ["/dashboard", "/admin", "/upload-pdf","create-post","edit-post/*","show-contacts"];
     const url = request.nextUrl;
     const isAdmin = session?.user?.role === "ADMIN" || session?.user?.role === "SUPERADMIN";
 

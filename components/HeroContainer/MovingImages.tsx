@@ -2,9 +2,6 @@
 
 import React, { useEffect, useRef } from "react";
 import gsap from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
-
-gsap.registerPlugin(ScrollTrigger);
 
 const bannerImages = [
   { src: "/assets/gst-banner.png", url: "/services/gst" },
@@ -12,10 +9,14 @@ const bannerImages = [
   { src: "/assets/rera-banner.png", url: "/services/rera" },
 ];
 
-const MovingImages = () => {
-  const sectionRef = useRef(null);
+const MovingImages: React.FC = () => {
+  const sectionRef = useRef<HTMLElement | null>(null);
+  const containerRef = useRef<HTMLDivElement | null>(null);
 
   useEffect(() => {
+    if (!sectionRef.current || !containerRef.current) return;
+
+    // Fade-in animation
     gsap.fromTo(
       sectionRef.current,
       { opacity: 0, y: 50 },
@@ -24,12 +25,31 @@ const MovingImages = () => {
         y: 0,
         duration: 1.2,
         ease: "power2.out",
-        scrollTrigger: {
-          trigger: sectionRef.current,
-          start: "top 90%",
-        },
       }
     );
+
+    const container = containerRef.current;
+    const items = container.querySelectorAll<HTMLAnchorElement>("a");
+
+    if (items.length === 0) return;
+
+    const totalWidth = Array.from(items)
+      .slice(0, items.length / 2) // only count the original set (half of doubled array)
+      .reduce((acc, item) => acc + item.offsetWidth + 32, 0); // 32 is approx gap (gap-8)
+
+    let x = 0;
+
+    const speed = 1; // px per tick (adjust this for scroll speed)
+
+    const ticker = gsap.ticker.add(() => {
+      x -= speed;
+      if (-x >= totalWidth) x = 0;
+      gsap.set(container, { x });
+    });
+
+    return () => {
+      gsap.ticker.remove(ticker);
+    };
   }, []);
 
   return (
@@ -37,8 +57,11 @@ const MovingImages = () => {
       ref={sectionRef}
       className="w-full min-h-screen flex flex-col items-center justify-center px-4 md:px-10 bg-gradient-to-br from-[#FFE0B2] to-[#FFCC80] text-[#1D4ED8] text-center"
     >
-      <div className="w-full overflow-hidden relative group py-4 md:py-8">
-        <div className="scroll-left flex gap-4 md:gap-8 group-hover:[animation-play-state:paused]">
+      <div className="w-full overflow-hidden relative py-4 md:py-8">
+        <div
+          ref={containerRef}
+          className="flex gap-8 w-max"
+        >
           {[...bannerImages, ...bannerImages].map((banner, index) => (
             <a
               key={index}
