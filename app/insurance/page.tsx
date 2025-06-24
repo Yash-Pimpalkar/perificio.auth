@@ -1,8 +1,7 @@
 "use client";
 import Head from "next/head";
 import React from "react";
-// Make sure you have installed react-icons: npm install react-icons
-import { FaShieldAlt, FaHandshake, FaUserTie, FaStar, FaQuoteLeft, FaQuestionCircle, FaLightbulb, FaCheckCircle, FaChartLine, FaClipboardCheck, FaUsers, FaArrowRight, FaCalculator, FaFileContract, FaUserFriends, FaBalanceScale, FaGraduationCap, FaClipboardList } from "react-icons/fa"; // Imported all necessary icons, including new ones for the added sections
+import { FaShieldAlt, FaHandshake, FaUserTie, FaStar, FaQuoteLeft, FaQuestionCircle, FaLightbulb, FaCheckCircle, FaChartLine, FaClipboardCheck, FaUsers, FaArrowRight, FaCalculator, FaFileContract, FaUserFriends, FaBalanceScale, FaGraduationCap, FaClipboardList } from "react-icons/fa";
 import { useState, ChangeEvent, FormEvent } from 'react';
 
 interface FormState {
@@ -11,6 +10,7 @@ interface FormState {
   email: string;
   agreedToTerms: boolean;
 }
+
 const servicesData = [
   {
     title: "Term Insurance Planning",
@@ -54,7 +54,7 @@ const howItWorksSteps = [
   {
     step: "1. Initial Consultation",
     icon: <FaUsers className="text-blue-700 text-4xl mb-4" />,
-    description: "We begin with a free, no-obligation call to understand your financial goals, existing coverage, and specific needs.",
+    description: "We begin with an introductory call to understand your financial goals, existing coverage, and specific needs.",
   },
   {
     step: "2. Personalized Analysis",
@@ -73,34 +73,18 @@ const howItWorksSteps = [
   },
 ];
 
-const toolsOfferings = [
-  {
-    name: "Term Cover Calculator (Income-based)",
-    icon: <FaCalculator className="text-red-600 text-3xl" />,
-  },
-  {
-    name: "80D Deduction Estimator",
-    icon: <FaCalculator className="text-blue-700 text-3xl" />,
-  },
-  {
-    name: "Premium Affordability Planner",
-    icon: <FaCalculator className="text-red-600 text-3xl" />,
-  },
-];
-
-
 const trustReasons = [
   {
     text: "We are not insurance sellers—we are your unbiased advisor.",
-    icon: <FaBalanceScale className="text-blue-600 text-xl" /> // Icon for unbiased advice
+    icon: <FaBalanceScale className="text-blue-600 text-xl" />
   },
   {
     text: "CA-led opinion on financial impact, not just premium cost.",
-    icon: <FaGraduationCap className="text-red-600 text-xl" /> // Icon for expert opinion
+    icon: <FaGraduationCap className="text-red-600 text-xl" />
   },
   {
     text: "We assist in choosing, reviewing, and even claiming.",
-    icon: <FaClipboardList className="text-blue-600 text-xl" /> // Icon for comprehensive assistance
+    icon: <FaClipboardList className="text-blue-600 text-xl" />
   },
 ];
 
@@ -130,7 +114,7 @@ const faqs = [
   },
   {
     question: "What is the process for getting insurance advice?",
-    answer: "Our process starts with a free initial consultation to understand your needs. Following this, we conduct a personalized analysis, provide tailored recommendations, and offer seamless assistance with implementation and ongoing support, including claim processes.",
+    answer: "Our process starts with an initial consultation to understand your needs. Following this, we conduct a personalized analysis, provide tailored recommendations, and offer seamless assistance with implementation and ongoing support, including claim processes.",
   },
   {
     question: "Do you assist with claim settlements?",
@@ -143,7 +127,7 @@ const faqs = [
 ];
 
 
-export default function page() {
+export default function Page() {
   const [form, setForm] = useState<FormState>({
     name: '',
     mobile: '',
@@ -152,7 +136,7 @@ export default function page() {
   });
 
   const [submitted, setSubmitted] = useState(false);
-  const [openFAQ, setOpenFAQ] = useState<number | null>(null); // Optional index for FAQ
+  const [openFAQ, setOpenFAQ] = useState<number | null>(null);
 
   const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
     const { name, value, type, checked } = e.target;
@@ -176,6 +160,7 @@ export default function page() {
   const toggleFAQ = (index: number) => {
     setOpenFAQ(openFAQ === index ? null : index);
   };
+
   return (
     <>
       <Head>
@@ -187,68 +172,68 @@ export default function page() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </Head>
 
-      <main className="bg-white text-gray-900">
+      <main className="bg-orange-50 text-gray-900 font-inter">
         {/* Hero Section */}
-        <section className="w-full min-h-[90vh] flex flex-col md:flex-row items-center justify-between px-4 sm:px-6 md:px-8 lg:px-12 xl:px-20 2xl:px-32 py-16 bg-gradient-to-b from-white to-blue-50 relative overflow-hidden">
+        <section className="w-full min-h-[90vh] flex flex-col md:flex-row items-center justify-between px-4 sm:px-6 md:px-8 lg:px-12 xl:px-20 2xl:px-32 py-16 bg-gradient-to-b from-orange-50 to-orange-100 relative overflow-hidden">
           <div className="absolute top-0 left-0 w-full h-full bg-cover bg-center opacity-10" style={{ backgroundImage: "url('/assets/abstract-shapes.svg')" }}></div>
 
           <div className="flex-1 flex flex-col justify-center items-start text-left max-w-xl z-10">
-            <h1 className="text-4xl sm:text-5xl md:text-6xl font-extrabold mb-4 leading-tight text-blue-900">
+            <h1 className="text-4xl sm:text-5xl md:text-6xl font-extrabold mb-4 leading-tight text-blue-900 font-poppins">
               <span className="text-red-600">Protect</span> What You Have <span className="text-blue-700">Built</span>
             </h1>
-            <p className="text-lg md:text-xl text-gray-700 mb-8 max-w-2xl">
+            <p className="text-lg md:text-xl text-gray-700 mb-8 max-w-2xl font-inter">
               Informed financial planning isn't complete without protection. We assist you in choosing tax-efficient, goal-aligned
               insurance products that safeguard your income, family, and future assets—without overpaying or overcommitting.
             </p>
             <a
               href="#contact-form-section"
-              className="inline-block bg-blue-700 hover:bg-blue-800 text-white font-bold px-10 py-4 rounded-full shadow-lg transition transform hover:scale-105 duration-300 ease-in-out"
+              className="inline-block bg-blue-700 hover:bg-blue-800 text-white font-bold px-10 py-4 rounded-full shadow-lg transition transform hover:scale-105 duration-300 ease-in-out font-poppins"
             >
-              Book Free 15-Min Advisory Call <span className="ml-2 text-xl">📞</span>
+              Schedule a Discovery Call <span className="ml-2 text-xl">📞</span>
             </a>
           </div>
           <div className="flex-1 flex justify-center items-center mt-10 md:mt-0 md:ml-8 w-full max-w-lg z-10">
             <img
               src="/assets/Hero2.jpg"
               alt="Family protected by insurance, financial security"
-              className="rounded-2xl shadow-xl w-full h-auto object-cover transform hover:scale-105 transition duration-300 ease-in-out border-4 border-blue-200"
+              className="rounded-2xl shadow-xl w-full h-auto object-cover transform hover:scale-105 transition duration-300 ease-in-out border-4 border-orange-200"
             />
           </div>
         </section>
 
-        {/* Introduction to Services Section (Kept as is, as it complements the new slogan) */}
-        <section className="w-full px-4 sm:px-6 md:px-8 lg:px-12 xl:px-20 2xl:px-32 py-12 bg-blue-50 text-center">
-          <p className="text-xl text-gray-700 max-w-3xl mx-auto">
+        {/* Introduction to Services Section */}
+        <section className="w-full px-4 sm:px-6 md:px-8 lg:px-12 xl:px-20 2xl:px-32 py-12 bg-orange-100 text-center border-t border-orange-200">
+          <p className="text-xl text-gray-700 max-w-3xl mx-auto font-inter">
             At Perificio, we provide **personalized and tax-optimized insurance solutions**, ensuring peace of mind for you and your loved ones. Our recommendations are always in your best interest.
           </p>
         </section>
 
         {/* New - Decide Right Insurance Mix CTA */}
         <section className="w-full bg-red-600 text-white py-12 px-4 sm:px-6 md:px-8 lg:px-12 xl:px-20 2xl:px-32 text-center shadow-lg">
-            <h2 className="text-2xl md:text-3xl font-bold mb-4">
-                Need help deciding on the right insurance mix?
-            </h2>
-            <a
-                href="#contact-form-section"
-                className="inline-block bg-white text-red-600 hover:bg-gray-100 font-bold px-8 py-3 rounded-full shadow-md transition transform hover:scale-105 duration-300 ease-in-out text-lg"
-            >
-                Book a free 15-min advisory call with our team today <FaArrowRight className="inline-block ml-2" />
-            </a>
+          <h2 className="text-2xl md:text-3xl font-bold mb-4 font-poppins">
+            Need help deciding on the right insurance mix?
+          </h2>
+          <a
+            href="#contact-form-section"
+            className="inline-block bg-white text-red-600 hover:bg-gray-100 font-bold px-8 py-3 rounded-full shadow-md transition transform hover:scale-105 duration-300 ease-in-out text-lg font-poppins"
+          >
+            Schedule an initial advisory call with our team today <FaArrowRight className="inline-block ml-2" />
+          </a>
         </section>
 
         {/* Our Support/Services Section */}
-        <section className="w-full px-4 sm:px-6 md:px-8 lg:px-12 xl:px-20 2xl:px-32 py-16 bg-white border-t border-gray-100">
-          <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center text-blue-900">
+        <section className="w-full px-4 sm:px-6 md:px-8 lg:px-12 xl:px-20 2xl:px-32 py-16 bg-orange-50 border-t border-orange-100">
+          <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center text-blue-900 font-poppins">
             Our Support Includes
           </h2>
           <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
             {servicesData.map((service, index) => (
-              <div key={index} className="bg-gray-50 rounded-xl shadow-md p-6 flex flex-col items-start text-left border border-gray-100 hover:shadow-lg transition duration-300 ease-in-out">
+              <div key={index} className="bg-orange-100 rounded-xl shadow-md p-6 flex flex-col items-start text-left border border-orange-200 hover:shadow-lg transition duration-300 ease-in-out">
                 <div className="flex items-center mb-4">
                   {service.icon}
-                  <h3 className="text-xl font-semibold text-blue-800 ml-3">{service.title}</h3>
+                  <h3 className="text-xl font-semibold text-blue-800 ml-3 font-poppins">{service.title}</h3>
                 </div>
-                <ul className="text-gray-700 list-disc list-inside text-base space-y-2">
+                <ul className="text-gray-700 list-disc list-inside text-base space-y-2 font-inter">
                   {service.points.map((point, pIndex) => (
                     <li key={pIndex}>{point}</li>
                   ))}
@@ -259,91 +244,72 @@ export default function page() {
         </section>
 
         {/* How It Works Section */}
-        <section className="w-full px-4 sm:px-6 md:px-8 lg:px-12 xl:px-20 2xl:px-32 py-16 bg-blue-100 border-t border-blue-200">
-          <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center text-blue-900">
+        <section className="w-full px-4 sm:px-6 md:px-8 lg:px-12 xl:px-20 2xl:px-32 py-16 bg-orange-100 border-t border-orange-200">
+          <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center text-blue-900 font-poppins">
             Our Simple Advisory Process
           </h2>
           <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
             {howItWorksSteps.map((step, index) => (
-              <div key={index} className="bg-white rounded-xl shadow-md p-6 flex flex-col items-center text-center border border-blue-300 hover:shadow-lg transition duration-300 ease-in-out">
+              <div key={index} className="bg-white rounded-xl shadow-md p-6 flex flex-col items-center text-center border border-orange-300 hover:shadow-lg transition duration-300 ease-in-out">
                 {step.icon}
-                <h3 className="text-xl font-semibold text-blue-800 mb-2">{step.step}</h3>
-                <p className="text-gray-700 text-base">{step.description}</p>
+                <h3 className="text-xl font-semibold text-blue-800 mb-2 font-poppins">{step.step}</h3>
+                <p className="text-gray-700 text-base font-inter">{step.description}</p>
               </div>
             ))}
           </div>
         </section>
-
-        {/* Tools We Offer Section */}
-        <section className="w-full px-4 sm:px-6 md:px-8 lg:px-12 xl:px-20 2xl:px-32 py-16 bg-white border-t border-gray-100">
-          <h2 className="text-3xl md:text-4xl font-bold mb-10 text-center text-blue-900">
-            Tools We Offer
-          </h2>
-          <div className="max-w-4xl mx-auto grid gap-6 md:grid-cols-3">
-            {toolsOfferings.map((tool, index) => (
-              <div
-                key={index}
-                className="flex flex-col items-center justify-center gap-3 bg-blue-50 rounded-lg shadow-md p-6 border border-blue-200 hover:shadow-lg transition duration-300 ease-in-out text-center"
-              >
-                {tool.icon}
-                <span className="text-blue-800 font-medium text-lg">{tool.name}</span>
-              </div>
-            ))}
-          </div>
-        </section>
-
 
         {/* Why Clients Trust Us Section */}
-        <section className="w-full px-4 sm:px-6 md:px-8 lg:px-12 xl:px-20 2xl:px-32 py-16 bg-blue-100 border-t border-blue-200">
-          <h2 className="text-3xl md:text-4xl font-bold mb-10 text-center text-blue-900">
+        <section className="w-full px-4 sm:px-6 md:px-8 lg:px-12 xl:px-20 2xl:px-32 py-16 bg-orange-100 border-t border-orange-200">
+          <h2 className="text-3xl md:text-4xl font-bold mb-10 text-center text-blue-900 font-poppins">
             Why Clients Trust Us
           </h2>
-          <div className="max-w-3xl mx-auto grid gap-6 md:grid-cols-1"> {/* Changed to 1 column for clearer presentation of bullet points */}
+          <div className="max-w-3xl mx-auto grid gap-6 md:grid-cols-1">
             {trustReasons.map((reason, index) => (
               <div
                 key={index}
-                className="flex items-center gap-4 bg-white rounded-lg shadow-md p-6 border border-blue-300 hover:shadow-lg transition duration-300 ease-in-out"
+                className="flex items-center gap-4 bg-white rounded-lg shadow-md p-6 border border-orange-300 hover:shadow-lg transition duration-300 ease-in-out"
               >
                 {reason.icon}
-                <span className="text-gray-800 font-medium text-lg">{reason.text}</span>
+                <span className="text-gray-800 font-medium text-lg font-inter">{reason.text}</span>
               </div>
             ))}
           </div>
         </section>
 
         {/* Testimonials Section */}
-        <section className="w-full px-4 sm:px-6 md:px-8 lg:px-12 xl:px-20 2xl:px-32 py-16 bg-white border-t border-gray-100">
-          <h2 className="text-3xl md:text-4xl font-bold mb-10 text-center text-blue-900">
+        <section className="w-full px-4 sm:px-6 md:px-8 lg:px-12 xl:px-20 2xl:px-32 py-16 bg-orange-50 border-t border-orange-100">
+          <h2 className="text-3xl md:text-4xl font-bold mb-10 text-center text-blue-900 font-poppins">
             What Our Clients Say
           </h2>
           <div className="grid gap-8 md:grid-cols-1 lg:grid-cols-3">
             {testimonials.map((testimonial, index) => (
-              <div key={index} className="bg-gray-50 rounded-xl shadow-md p-6 flex flex-col items-center text-center border border-gray-100 hover:shadow-lg transition duration-300 ease-in-out">
+              <div key={index} className="bg-orange-100 rounded-xl shadow-md p-6 flex flex-col items-center text-center border border-orange-200 hover:shadow-lg transition duration-300 ease-in-out">
                 <FaQuoteLeft className="text-red-600 text-4xl mb-4" />
-                <p className="italic text-gray-700 mb-4 flex-grow">"{testimonial.quote}"</p>
-                <p className="font-semibold text-blue-700">- {testimonial.author}</p>
+                <p className="italic text-gray-700 mb-4 flex-grow font-inter">"{testimonial.quote}"</p>
+                <p className="font-semibold text-blue-700 font-poppins">- {testimonial.author}</p>
               </div>
             ))}
           </div>
         </section>
 
         {/* FAQs Section */}
-        <section className="w-full px-4 sm:px-6 md:px-8 lg:px-12 xl:px-20 2xl:px-32 py-16 bg-blue-50 border-t border-blue-100">
-          <h2 className="text-3xl md:text-4xl font-bold mb-10 text-center text-blue-900">
+        <section className="w-full px-4 sm:px-6 md:px-8 lg:px-12 xl:px-20 2xl:px-32 py-16 bg-orange-100 border-t border-orange-200">
+          <h2 className="text-3xl md:text-4xl font-bold mb-10 text-center text-blue-900 font-poppins">
             Frequently Asked Questions
           </h2>
           <div className="max-w-3xl mx-auto space-y-4">
             {faqs.map((faq, index) => (
-              <div key={index} className="bg-white rounded-lg shadow-md border border-gray-100">
+              <div key={index} className="bg-white rounded-lg shadow-md border border-orange-200">
                 <button
-                  className="flex justify-between items-center w-full p-5 text-left font-semibold text-lg text-blue-800 focus:outline-none"
+                  className="flex justify-between items-center w-full p-5 text-left font-semibold text-lg text-blue-800 focus:outline-none font-poppins"
                   onClick={() => toggleFAQ(index)}
                 >
                   {faq.question}
                   <FaQuestionCircle className={`transform transition-transform duration-300 ${openFAQ === index ? 'rotate-180 text-red-600' : 'rotate-0 text-blue-600'}`} />
                 </button>
                 {openFAQ === index && (
-                  <div className="px-5 pb-5 text-gray-700 text-base border-t border-gray-200">
+                  <div className="px-5 pb-5 text-gray-700 text-base border-t border-orange-200 font-inter">
                     <p>{faq.answer}</p>
                   </div>
                 )}
@@ -355,31 +321,31 @@ export default function page() {
         {/* Contact Form Section */}
         <section
           id="contact-form-section"
-          className="w-full py-16 px-4 sm:px-6 md:px-8 lg:px-12 xl:px-20 2xl:px-32 bg-gray-50 flex flex-col md:flex-row items-center justify-center gap-12 font-inter"
+          className="w-full py-16 px-4 sm:px-6 md:px-8 lg:px-12 xl:px-20 2xl:px-32 bg-orange-50 flex flex-col md:flex-row items-center justify-center gap-12 font-inter"
         >
           {/* Left Section: Text Content */}
           <div className="md:w-1/2 text-center md:text-left max-w-lg">
-            <h2 className="text-4xl md:text-5xl font-montserrat font-bold text-blue-900 mb-6 leading-tight">
-              GOT QUESTIONS? <span className="text-red-600">LET'S TALK!</span>
+            <h2 className="text-4xl md:text-5xl font-poppins font-bold text-blue-900 mb-6 leading-tight">
+              READY TO PROTECT YOUR FUTURE?
             </h2>
-            <p className="text-lg md:text-xl text-gray-700">
+            <p className="text-lg md:text-xl text-gray-700 font-inter">
               Schedule a Call with Our Financial Advisor and Get Expert Insights Today!
             </p>
           </div>
 
           {/* Right Section: Contact Form */}
-          <div className="md:w-1/2 max-w-md bg-white p-8 rounded-xl shadow-xl border border-gray-100">
+          <div className="md:w-1/2 max-w-md bg-white p-8 rounded-xl shadow-xl border border-orange-100">
             <div className="text-center mb-6">
               {/* Logo Placeholder */}
               <div className="mb-4">
-                <span className="text-3xl font-montserrat font-extrabold text-[#1D4ED8]">Perficio</span>
+                <span className="text-3xl font-poppins font-extrabold text-[#1D4ED8]">Perficio</span>
               </div>
-              <hr className="border-t border-gray-200" />
+              <hr className="border-t border-orange-200" />
             </div>
 
             <form onSubmit={handleSubmit} className="flex flex-col gap-6">
               <div>
-                <label htmlFor="name" className="block text-gray-700 text-base font-medium mb-2">
+                <label htmlFor="name" className="block text-gray-700 text-base font-poppins mb-2">
                   Name *
                 </label>
                 <input
@@ -389,17 +355,17 @@ export default function page() {
                   value={form.name}
                   onChange={handleChange}
                   required
-                  className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-gray-800"
+                  className="w-full px-4 py-2 border border-orange-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-gray-800 font-inter"
                   placeholder="Your Name"
                 />
               </div>
 
               <div>
-                <label htmlFor="mobile" className="block text-gray-700 text-base font-medium mb-2">
+                <label htmlFor="mobile" className="block text-gray-700 text-base font-poppins mb-2">
                   Mobile Number *
                 </label>
                 <div className="flex">
-                  <span className="inline-flex items-center px-3 border border-r-0 border-gray-300 rounded-l-lg bg-gray-50 text-gray-500 text-base">
+                  <span className="inline-flex items-center px-3 border border-r-0 border-orange-300 rounded-l-lg bg-orange-50 text-gray-500 text-base font-inter">
                     IN +91
                   </span>
                   <input
@@ -409,14 +375,14 @@ export default function page() {
                     value={form.mobile}
                     onChange={handleChange}
                     required
-                    className="flex-1 px-4 py-2 border border-gray-300 rounded-r-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-gray-800"
+                    className="flex-1 px-4 py-2 border border-orange-300 rounded-r-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-gray-800 font-inter"
                     placeholder="Enter your number"
                   />
                 </div>
               </div>
 
               <div>
-                <label htmlFor="email" className="block text-gray-700 text-base font-medium mb-2">
+                <label htmlFor="email" className="block text-gray-700 text-base font-poppins mb-2">
                   Email *
                 </label>
                 <input
@@ -426,7 +392,7 @@ export default function page() {
                   value={form.email}
                   onChange={handleChange}
                   required
-                  className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-gray-800"
+                  className="w-full px-4 py-2 border border-orange-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-gray-800 font-inter"
                   placeholder="your@email.com"
                 />
               </div>
@@ -439,9 +405,9 @@ export default function page() {
                   checked={form.agreedToTerms}
                   onChange={handleChange}
                   required
-                  className="h-4 w-4 text-blue-600 border-gray-300 rounded focus:ring-blue-500"
+                  className="h-4 w-4 text-blue-600 border-orange-300 rounded focus:ring-blue-500"
                 />
-                <label htmlFor="agreedToTerms" className="ml-2 text-gray-700 text-sm">
+                <label htmlFor="agreedToTerms" className="ml-2 text-gray-700 text-sm font-inter">
                   I agree to the{" "}
                   <a href="/terms-conditions" className="text-blue-600 hover:underline">
                     Terms & Conditions
@@ -455,13 +421,13 @@ export default function page() {
 
               <button
                 type="submit"
-                className="w-full bg-red-600 hover:bg-red-700 text-white font-bold py-3 rounded-lg shadow-md transition duration-300 ease-in-out text-lg mt-4"
+                className="w-full bg-red-600 hover:bg-red-700 text-white font-bold py-3 rounded-lg shadow-md transition duration-300 ease-in-out text-lg mt-4 font-poppins"
               >
                 Continue
               </button>
 
               {submitted && (
-                <p className="text-center text-green-600 font-semibold mt-4">
+                <p className="text-center text-green-600 font-semibold mt-4 font-inter">
                   Your request has been sent successfully! We will contact you shortly.
                 </p>
               )}
@@ -469,6 +435,17 @@ export default function page() {
           </div>
         </section>
       </main>
+      {/* Global Font Imports (Ensure these are in your global CSS or _app.tsx if using Next.js for global application) */}
+      <style jsx global>{`
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@400;600;700;800&display=swap');
+
+        .font-inter {
+            font-family: 'Inter', sans-serif;
+        }
+        .font-poppins {
+            font-family: 'Poppins', sans-serif;
+        }
+      `}</style>
     </>
   );
 }

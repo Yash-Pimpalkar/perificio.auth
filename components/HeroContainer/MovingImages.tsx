@@ -35,7 +35,7 @@ const MovingImages = () => {
   return (
     <section
       ref={sectionRef}
-      className="w-full min-h-screen flex flex-col items-center justify-center px-4 md:px-10 bg-gradient-to-br from-[#E0F2FE] to-[#BFDBFE] text-[#1D4ED8] text-center"
+      className="w-full min-h-screen flex flex-col items-center justify-center px-4 md:px-10 bg-gradient-to-br from-[#FFE0B2] to-[#FFCC80] text-[#1D4ED8] text-center"
     >
       <div className="w-full overflow-hidden relative group py-4 md:py-8">
         <div className="scroll-left flex gap-4 md:gap-8 group-hover:[animation-play-state:paused]">

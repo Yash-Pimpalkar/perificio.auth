@@ -1,4 +1,3 @@
-
 import React from 'react'
 import ViewBlogs from '@/components/Blogs/ViewBlogs';
 import AnimatedSection from '@/components/AnimatedComponent/AnimatedSection';
@@ -66,7 +65,7 @@ const Homepage = () => {
     {
       title: 'Insurance Advisory',
       description: 'Term & Health Insurance | Tax-Benefit Focused',
-      icon: '�️'
+      icon: '🏥'
     },
     {
       title: 'Taxation Services',
@@ -80,84 +79,6 @@ const Homepage = () => {
     }
   ];
 
-  // Data for the rolling service ads
-  const rollingServiceCards = [
-    {
-      mainService: 'Income Tax Return (ITR)',
-      price: 'Starting ₹1000',
-      tagline: 'Maximize Savings, Minimize Stress! Effortless & Accurate Filing.',
-      icon: '📈'
-    },
-    {
-      mainService: 'GST Return',
-      price: 'Just ₹1000',
-      tagline: 'Stay Compliant, Stay Ahead! Smooth & Timely GST Filing.',
-      icon: '🧾'
-    },
-    {
-      mainService: 'RERA Return',
-      price: 'Only ₹500',
-      tagline: 'Seamless Compliance for Your Real Estate Projects.',
-      icon: '🏗️'
-    }
-  ];
-
-  // New data for the blog posts
-  const blogPosts = [
-    {
-      image: 'https://via.placeholder.com/400x250/1D4ED8/FFFFFF?text=Market+Notes+1', // Placeholder Image 1
-      title: 'Market Morning Notes',
-      date: '5th June 2025',
-      category: 'Perficio Blog',
-      excerpt: 'US indices closed mixed on Wednesday over weak economic data. Investors cautious amidst global tensions.'
-    },
-    {
-      image: 'https://via.placeholder.com/400x250/B91C1C/FFFFFF?text=Market+Insights+2', // Placeholder Image 2
-      title: 'Investing in ELSS: A Tax-Saving Guide',
-      date: '4th June 2025',
-      category: 'Perficio Blog',
-      excerpt: 'ELSS (Equity Linked Savings Scheme) offers dual benefits of tax savings and wealth creation. Learn more...'
-    },
-    {
-      image: 'https://via.placeholder.com/400x250/1D4ED8/FFFFFF?text=Financial+Tips+3', // Placeholder Image 3
-      title: 'Decoding the Budget 2025',
-      date: '3rd June 2025',
-      category: 'Perficio Blog',
-      excerpt: 'A comprehensive analysis of the key announcements in the latest Union Budget and their impact on you.'
-    }
-  ];
-
-  // --- Market Watch Data ---
-  // Initializing with dummy data so the scrollers are never empty on first load
-  const initialCapitalData = [
-    { name: 'AXISBANK', current: 105.50, change: 0.50, percentChange: 0.05, status: 'positive' },
-    { name: 'BAJAJ-AUTO', current: 9555.00, change: 37.50, percentChange: 0.39, status: 'positive' },
-    { name: 'BAJAJFINSV', current: 1980.70, change: 44.70, percentChange: 2.30, status: 'positive' },
-    { name: 'BAJFINANCE', current: 9372.00, change: 438.00, percentChange: 4.90, status: 'positive' },
-    { name: 'BEL', current: 281.90, change: -2.80, percentChange: -0.98, status: 'negative' },
-    { name: 'BHARTIARTL', current: 1370.10, change: -8.70, percentChange: -0.63, status: 'negative' },
-    { name: 'DRREDDY', current: 6500.00, change: 10.00, percentChange: 0.15, status: 'positive' },
-    { name: 'GRASIM', current: 2300.00, change: -15.00, percentChange: -0.65, status: 'negative' },
-  ];
-
-  const initialMutualFundData = [
-    { name: 'SBI Bluechip Fund', nav: 52.35, change: 0.15, percentChange: 0.29, status: 'positive' },
-    { name: 'HDFC Mid-Cap Opp.', nav: 180.12, change: -0.50, percentChange: -0.28, status: 'negative' },
-    { name: 'ICICI Pru. Flexicap', nav: 45.78, change: 0.30, percentChange: 0.66, status: 'positive' },
-    { name: 'Mirae Asset Large Cap', nav: 70.05, change: 0.02, percentChange: 0.03, status: 'positive' },
-    { name: 'Axis Small Cap', nav: 70.05, change: -0.02, percentChange: -0.03, status: 'negative' },
-    { name: 'Kotak Equity Hybrid', nav: 70.05, change: 0.12, percentChange: 0.17, status: 'positive' },
-    { name: 'Parag Parikh Flexi', nav: 70.05, change: 0.08, percentChange: 0.11, status: 'positive' },
-    { name: 'Canara Robeco Bluechip', nav: 70.05, change: -0.05, percentChange: -0.07, status: 'negative' },
-  ];
-
-  const initialCurrencyData = [
-    { name: 'USD/INR', rate: 83.50, change: -0.05, percentChange: -0.06, status: 'negative' },
-    { name: 'EUR/INR', rate: 90.10, change: 0.12, percentChange: 0.13, status: 'positive' },
-    { name: 'GBP/INR', rate: 106.20, change: 0.08, percentChange: 0.08, status: 'positive' },
-    { name: 'JPY/INR', rate: 0.537, change: 0.001, percentChange: 0.19, status: 'positive' },
-  ];
-
 
   const bannerImages = [
     { src: '/assets/gst-banner.png', url: '/services/gst' },
@@ -165,70 +86,74 @@ const Homepage = () => {
     { src: '/assets/rera-banner.png', url: '/services/rera' },
   ];
 
-
-
+  // Define your new banner image path here
+  const headerBanner = '/assets/Header-banner.png'; // Path to your main header banner
 
 
   return (
     <div className="min-h-screen bg-white text-gray-900 font-inter relative">
 
-      {/* Added relative for chatbot positioning */}
-      {/* Dynamic Services Advertising Banner with Rolling Cards  */}
-  
-  <section className="">
-    <MovingImages />
-  </section>
-<AnimatedSection>
-      {/* Testimonials Section */}
-      <section className="py-12 md:py-20 bg-white">
-        <div className="container mx-auto px-4">
-          <h2 className="text-3xl md:text-4xl font-montserrat font-bold text-center mb-8 md:mb-12 text-[#1D4ED8]">
-            What Our <span className="text-[#B91C1C]">Clients Say</span>
-          </h2>
+      {/* Header Banner */}
+      <section className="w-full">
+        <img
+          src={headerBanner}
+          alt="Main Header Banner" // Changed alt text for clarity
+          className="w-full h-auto object-cover" // object-cover ensures it fills the space
+        />
+      </section>
 
-          <div className="overflow-x-auto hide-scrollbar">
-            {/* Added group-hover to the parent of the scrolling div */}
-            <div className="flex gap-4 md:gap-6 min-w-max px-2 sm:px-4 md:px-8 animate-scroll group-hover:[animation-play-state:paused]"
-              style={{ animation: 'scroll 60s linear infinite' }}>
-              {testimonials.concat(testimonials).map((testimonial, index) => (
-                <div key={index} className="w-[280px] sm:w-[320px] flex-shrink-0 bg-white border border-gray-200 rounded-xl p-5 shadow hover:shadow-md transition relative">
-                  <div className="absolute top-3 right-3">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Google_%22G%22_Logo.svg/512px-Google_%22G%22_Logo.svg.png" alt="Google" className="w-4 h-4 sm:w-5 sm:h-5" />
-                  </div>
-                  <div className="flex items-center mb-3">
-                    <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-[#EFF6FF] text-[#1D4ED8] font-bold flex items-center justify-center mr-3 text-sm sm:text-base">
-                      {testimonial.author.split(' ').map(word => word[0]).join('').toUpperCase()}
+      {/* The section for the three sub-banners has been removed */}
+
+      {/* Added relative for chatbot positioning */}
+      {/* Dynamic Services Advertising Banner with Rolling Cards  */}
+
+      <section className="">
+        <MovingImages />
+      </section>
+      <AnimatedSection>
+        {/* Testimonials Section */}
+        <section className="py-12 md:py-20 bg-white">
+          <div className="container mx-auto px-4">
+            <h2 className="text-3xl md:text-4xl font-montserrat font-bold text-center mb-8 md:mb-12 text-[#1D4ED8]">
+              What Our <span className="text-[#B91C1C]">Clients Say</span>
+            </h2>
+
+            <div className="overflow-x-auto hide-scrollbar">
+              {/* Added group-hover to the parent of the scrolling div */}
+              <div className="flex gap-4 md:gap-6 min-w-max px-2 sm:px-4 md:px-8 animate-scroll group-hover:[animation-play-state:paused]"
+                style={{ animation: 'scroll 60s linear infinite' }}>
+                {testimonials.concat(testimonials).map((testimonial, index) => (
+                  <div key={index} className="w-[280px] sm:w-[320px] flex-shrink-0 bg-white border border-gray-200 rounded-xl p-5 shadow hover:shadow-md transition relative">
+                    <div className="absolute top-3 right-3">
+                      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Google_%22G%22_Logo.svg/512px-Google_%22G%22_Logo.svg.png" alt="Google" className="w-4 h-4 sm:w-5 sm:h-5" />
                     </div>
-                    <div>
-                      <p className="font-semibold text-gray-900 text-sm sm:text-base">{testimonial.author}</p>
-                      <p className="text-xs sm:text-sm text-gray-600">{testimonial.role}</p>
+                    <div className="flex items-center mb-3">
+                      <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-[#EFF6FF] text-[#1D4ED8] font-bold flex items-center justify-center mr-3 text-sm sm:text-base">
+                        {testimonial.author.split(' ').map(word => word[0]).join('').toUpperCase()}
+                      </div>
+                      <div>
+                        <p className="font-semibold text-gray-900 text-sm sm:text-base">{testimonial.author}</p>
+                        <p className="text-xs sm:text-sm text-gray-600">{testimonial.role}</p>
+                      </div>
                     </div>
+                    <p className="text-gray-700 text-xs sm:text-sm leading-relaxed">{testimonial.quote}</p>
                   </div>
-                  <p className="text-gray-700 text-xs sm:text-sm leading-relaxed">{testimonial.quote}</p>
-                </div>
-              ))}
+                ))}
+              </div>
             </div>
           </div>
-        </div>
-      </section>
+        </section>
       </AnimatedSection>
-      <AnimatedSection>
-      {/* Market Watch Section */}
-      <section className="py-8 md:py-8 bg-[#F8FAFC]">
-        <div className="container mx-auto px-4">
-          <ViewBlogs />
-        </div>
-      </section>
-      </AnimatedSection>
+
       {/* Blog/Knowledge Base Section */}
-     
-     <section className="py-12 md:py-20 bg-white">
-      <MappedPdf />
+
+      <section className="py-12 md:py-20 bg-orange-50">
+        <MappedPdf />
       </section>
 
       {/* Contact Section */}
       <section id="contact">
-         {/* Alice Blue background */}
+        {/* Alice Blue background */}
         <QuickContactSection />
       </section>
 

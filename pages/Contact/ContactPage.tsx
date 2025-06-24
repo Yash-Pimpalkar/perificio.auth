@@ -1,149 +1,73 @@
-'use client';
+// Hypothetical Public-Facing Contact Page (ContactUs.tsx or similar)
 
-import { Contact } from '@/types';
-import React, { useEffect, useState } from 'react';
-import { AiOutlineDelete } from 'react-icons/ai';
+import React from 'react';
+import { FaPhone, FaEnvelope, FaMapMarkerAlt } from 'react-icons/fa'; // Example icons
 
-
-
-
-interface ContactPageProps {
-  initialContacts: Contact[];
-}
-
-const ITEMS_PER_PAGE = 5;
-
-export default function ContactPage({ initialContacts }: { initialContacts: Contact[] }) {
-  const [contacts, setContacts] = useState<Contact[]>([]);
-  const [page, setPage] = useState(1);
-
-  useEffect(() => {
-    setContacts(initialContacts);
-  }, [initialContacts]);
-
-  const totalPages = Math.ceil(contacts.length / ITEMS_PER_PAGE);
-  const paginatedContacts = contacts.slice((page - 1) * ITEMS_PER_PAGE, page * ITEMS_PER_PAGE);
-
-  const handleDelete = async (id: string) => {
-    if (!confirm('Are you sure you want to delete this message?')) return;
-
-    try {
-      const res = await fetch(`/api/contact?id=${id}`, { method: 'DELETE' });
-      if (res.ok) {
-        setContacts((prev) => prev.filter((c) => c.id !== id));
-      }
-    } catch (err) {
-      console.error('Delete failed:', err);
-    }
-  };
-  const handleDeleteAll = async () => {
-    if (!confirm('⚠ Are you sure you want to delete all contact messages?')) return;
-
-    try {
-      const res = await fetch(`/api/contact?all=true`, { method: 'DELETE' });
-      if (res.ok) {
-        setContacts([]);
-        setPage(1);
-      }
-    } catch (err) {
-      console.error('Delete all failed:', err);
-    }
-  };
-
+export default function ContactUs() {
   return (
-    <section className="min-h-screen bg-gray-50 py-10 px-4 sm:px-6 lg:px-12 font-inter text-gray-900">
-      <div className="max-w-7xl mx-auto">
-        <header className="mb-8 flex flex-col sm:flex-row sm:items-center sm:justify-between">
-          <div>
-            <h1 className="text-4xl font-bold font-poppins text-blue-800">Contact Submissions</h1>
-            <p className="text-gray-600 mt-1">View and manage messages sent through the contact form.</p>
-          </div>
-          {contacts.length > 0 && (
-            <button
-              onClick={handleDeleteAll}
-              className="mt-4 sm:mt-0 bg-red-600 text-white px-4 py-2 rounded-md text-sm hover:bg-red-700 transition"
-            >
-              Delete All
-            </button>
-          )}
-        </header>
-
-        <div className="overflow-x-auto bg-white rounded-lg shadow border border-gray-200">
-          {contacts.length === 0 ? (
-            <p className="p-6 text-center text-gray-500">No contact submissions found.</p>
-          ) : (
-            <table className="min-w-full table-auto divide-y divide-gray-200">
-              <thead className="bg-gray-100">
-                <tr>
-                  <th className="px-6 py-3 text-left text-sm font-medium text-gray-700">Name</th>
-                  <th className="px-6 py-3 text-left text-sm font-medium text-gray-700">Email</th>
-                  <th className="px-6 py-3 text-left text-sm font-medium text-gray-700">Phone</th>
-                  <th className="px-6 py-3 text-left text-sm font-medium text-gray-700">Subject</th>
-                  <th className="px-6 py-3 text-left text-sm font-medium text-gray-700">Message</th>
-                  <th className="px-6 py-3 text-left text-sm font-medium text-gray-700">Date</th>
-                  <th className="px-6 py-3 text-center text-sm font-medium text-gray-700">Actions</th>
-                </tr>
-              </thead>
-              <tbody className="divide-y divide-gray-100">
-                {paginatedContacts.map((contact) => (
-                  <tr key={contact.id} className="hover:bg-gray-50 transition">
-                    <td className="px-6 py-4 text-sm font-medium">{contact.name}</td>
-                    <td className="px-6 py-4 text-sm text-blue-600">{contact.email}</td>
-                    <td className="px-6 py-4 text-sm">{contact.phone || '-'}</td>
-                    <td className="px-6 py-4 text-sm">{contact.subject}</td>
-                    <td className="px-6 py-4 text-sm max-w-xs break-words">{contact.message}</td>
-                    <td className="px-6 py-4 text-sm text-gray-500">
-                      {new Date(contact.createdAt).toLocaleString()}
-                    </td>
-                    <td className="px-6 py-4 text-center">
-                      <button
-                        onClick={() => handleDelete(contact.id)}
-                        className="text-red-600 hover:text-red-800"
-                        title="Delete"
-                      >
-                        <AiOutlineDelete size={20} />
-                      </button>
-                    </td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
-          )}
+    <section className="container mx-auto py-12 px-4">
+      <h1 className="text-4xl font-bold text-center mb-8">Contact Us</h1>
+      
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
+        {/* Contact Form Section (if applicable) */}
+        <div>
+          <h2 className="text-2xl font-semibold mb-4">Send us a message</h2>
+          {/* Your existing contact form JSX would go here */}
+          <form className="space-y-4">
+            <div>
+              <label htmlFor="name" className="block text-sm font-medium text-gray-700">Name</label>
+              <input type="text" id="name" name="name" className="mt-1 block w-full border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:ring-blue-500 focus:border-blue-500" />
+            </div>
+            <div>
+              <label htmlFor="email" className="block text-sm font-medium text-gray-700">Email</label>
+              <input type="email" id="email" name="email" className="mt-1 block w-full border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:ring-blue-500 focus:border-blue-500" />
+            </div>
+            <div>
+              <label htmlFor="message" className="block text-sm font-medium text-gray-700">Message</label>
+              <textarea id="message" name="message" rows={4} className="mt-1 block w-full border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:ring-blue-500 focus:border-blue-500"></textarea>
+            </div>
+            <button type="submit" className="px-6 py-3 bg-blue-600 text-white font-semibold rounded-md hover:bg-blue-700">Submit</button>
+          </form>
         </div>
 
-        {/* Pagination */}
-        {contacts.length > ITEMS_PER_PAGE && (
-          <nav className="flex justify-center mt-6 space-x-2">
-            <button
-              onClick={() => setPage((prev) => Math.max(prev - 1, 1))}
-              disabled={page === 1}
-              className={`px-4 py-2 text-sm font-semibold rounded-md ${
-                page === 1
-                  ? 'bg-gray-200 text-gray-500 cursor-not-allowed'
-                  : 'bg-blue-600 text-white hover:bg-blue-700'
-              }`}
-            >
-              Previous
-            </button>
-            <span className="px-4 py-2 text-sm text-gray-700">
-              Page {page} of {totalPages}
-            </span>
-            <button
-              onClick={() => setPage((prev) => Math.min(prev + 1, totalPages))}
-              disabled={page === totalPages}
-              className={`px-4 py-2 text-sm font-semibold rounded-md ${
-                page === totalPages
-                  ? 'bg-gray-200 text-gray-500 cursor-not-allowed'
-                  : 'bg-blue-600 text-white hover:bg-blue-700'
-              }`}
-            >
-              Next
-            </button>
-          </nav>
-        )}
+        {/* Contact Information Section (where the address would go) */}
+        <div>
+          <h2 className="text-2xl font-semibold mb-4">Our Details</h2>
+          <div className="space-y-4">
+            {/* Address */}
+            <div className="flex items-start">
+              <FaMapMarkerAlt className="text-blue-600 text-2xl mr-3 mt-1 flex-shrink-0" />
+              <div>
+                <h3 className="text-lg font-medium">Office Address</h3>
+                <p className="text-gray-700">
+                  Office no 23/24 | A Wing <br />
+                  Mezzanine Floor | Satyam Shopping Centre <br />
+                  M.G.Road | Ghatkopar (East) <br />
+                  Mumbai-400 077
+                </p>
+              </div>
+            </div>
+
+            {/* Example: Phone Number */}
+            <div className="flex items-center">
+              <FaPhone className="text-blue-600 text-2xl mr-3" />
+              <div>
+                <h3 className="text-lg font-medium">Phone</h3>
+                <p className="text-gray-700">+91 12345 67890</p> {/* Replace with actual phone number */}
+              </div>
+            </div>
+
+            {/* Example: Email Address */}
+            <div className="flex items-center">
+              <FaEnvelope className="text-blue-600 text-2xl mr-3" />
+              <div>
+                <h3 className="text-lg font-medium">Email</h3>
+                <p className="text-gray-700">info@example.com</p> {/* Replace with actual email */}
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
   );
-};
-
-
+}

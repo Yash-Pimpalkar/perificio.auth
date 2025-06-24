@@ -39,78 +39,106 @@ const page = () => {
     ];
 
     return (
-        // Main container with a subtle SOLID light yellow background (consistent with overall page pattern)
-        <div className="min-h-screen bg-amber-50 font-inter text-gray-900 overflow-hidden">
-            {/* Hero Section for Real Estate Page - Now with a yellow gradient */}
-            <section className="relative w-full py-16 md:py-24 text-center rounded-xl overflow-hidden shadow-xl mx-auto max-w-7xl mt-8"
-                style={{
-                    background: 'linear-gradient(135deg, #FFFBEB 0%, #FDE68A 100%)', // Light yellow gradient
-                }}>
-                <div className="container mx-auto px-4">
-                    <h1 className="text-4xl sm:text-5xl lg:text-6xl font-montserrat font-extrabold leading-tight mb-4 max-w-4xl mx-auto text-amber-900"> {/* Deep yellow header */}
-                        Your Trusted Partner in <span className="text-[#B91C1C]">Real Estate.</span> {/* Retaining red accent */}
-                    </h1>
-                    <p className="text-lg sm:text-xl md:text-2xl font-semibold text-amber-800 max-w-3xl mx-auto mb-8"> {/* Darker yellow for paragraph text */}
-                        Navigate the property market with confidence. From investments to management, we guide you every step of the way.
-                    </p>
-                    <Link href="#features" className="inline-block bg-[#B91C1C] hover:bg-[#DC2626] text-white font-montserrat font-semibold px-8 py-4 rounded-lg shadow-xl transition transform hover:scale-105 text-lg md:text-xl"> {/* Retaining red button */}
-                        Discover Our Services
-                    </Link>
-                </div>
-            </section>
+        // Main container with a consistent light orange background
+        <div className="min-h-screen bg-orange-50 font-inter text-gray-900 overflow-hidden">
+            {/* Main content wrapper for consistent spacing and max-width */}
+            <main className="w-full max-w-7xl mx-auto py-8 sm:py-12 lg:py-16 px-4 sm:px-6 lg:px-8 space-y-12 sm:space-y-16 lg:space-y-20">
 
-            {/* Features Section for Real Estate Services - Now with a lighter yellow background/gradient */}
-            <section id="features" className="py-12 md:py-20 bg-gradient-to-br from-white to-amber-100 rounded-xl shadow-lg border border-amber-200 mx-auto max-w-7xl mt-8"> {/* Light yellow gradient and border */}
-                <div className="container mx-auto px-4">
-                    <h2 className="text-3xl md:text-4xl lg:text-5xl font-montserrat font-extrabold text-amber-900 text-center mb-12"> {/* Deep yellow header */}
-                        Why Choose Perficio for Your <span className="text-[#B91C1C]">Property Needs?</span> {/* Retaining red accent */}
-                    </h2>
-
-                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 xl:gap-8">
-                        {features.map((feature, index) => (
-                            <div
-                                key={index}
-                                className="bg-white border border-amber-200 rounded-xl shadow-lg p-6 sm:p-8 flex flex-col items-start text-left hover:shadow-xl transition-shadow duration-300 transform hover:-translate-y-1"
-                            >
-                                <div className="text-5xl sm:text-6xl text-amber-600 mb-4"> {/* Yellow icon color */}
-                                    {feature.icon}
-                                </div>
-                                <h3 className="text-xl sm:text-2xl font-montserrat font-bold text-amber-800 mb-3"> {/* Yellow header */}
-                                    {feature.title}
-                                </h3>
-                                <p className="text-gray-700 text-sm sm:text-base leading-relaxed font-inter">
-                                    {feature.description}
-                                </p>
-                            </div>
-                        ))}
+                {/* Hero Section for Real Estate Page - Using the prominent orange gradient */}
+                <section
+                    className="relative w-full py-20 px-6 rounded-xl overflow-hidden shadow-xl" // Consistent padding and shadow
+                    style={{
+                        background: 'linear-gradient(135deg, #FFF8E1 0%, #FFDDA0 100%)', // Soft orange gradient
+                    }}
+                >
+                    <div className="text-center relative z-10">
+                        {/* Heading with blue-900 and font-poppins */}
+                        <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-blue-900 mb-4 font-poppins leading-tight">
+                            Your Trusted Partner in <span className="text-red-600">Real Estate.</span> {/* Retaining red accent */}
+                        </h1>
+                        {/* Paragraph text with gray-700 and font-inter */}
+                        <p className="text-lg sm:text-xl text-gray-700 font-inter max-w-3xl mx-auto mb-8">
+                            Navigate the property market with confidence. From investments to management, we guide you every step of the way.
+                        </p>
+                        {/* Button with blue-600 background and font-poppins (matching primary CTA) */}
+                        <Link
+                            href="#features"
+                            className="inline-block bg-blue-600 hover:bg-blue-700 text-white font-semibold font-poppins px-8 py-4 rounded-lg shadow-md transition transform hover:scale-105"
+                        >
+                            Discover Our Services
+                        </Link>
                     </div>
-                </div>
-            </section>
+                </section>
 
-            {/* Call to Action/Contact Section - Now with a stronger yellow gradient */}
-            <section className="py-12 md:py-16 bg-gradient-to-br from-amber-500 to-amber-700 rounded-xl shadow-lg text-center mx-auto max-w-7xl mt-8 mb-8"> {/* Stronger yellow gradient */}
-                <div className="container mx-auto px-4">
-                    <h2 className="text-2xl sm:text-3xl md:text-4xl font-montserrat font-bold text-white mb-4"> {/* White text for contrast */}
+                {/* Features Section for Real Estate Services - Using the lighter orange gradient */}
+                <section
+                    id="features"
+                    className="py-8 rounded-xl shadow-lg border border-orange-100" // Consistent border
+                    style={{ background: 'linear-gradient(to right, #FFF3E0 0%, #FFECB3 100%)' }} // Lighter orange gradient
+                >
+                    <div className="container mx-auto px-4">
+                        {/* Heading with blue-800 and font-poppins */}
+                        <h2 className="text-3xl sm:text-4xl font-bold text-blue-800 text-center mb-10 font-poppins">
+                            Why Choose Perficio for Your <span className="text-red-600">Property Needs?</span> {/* Retaining red accent */}
+                        </h2>
+
+                        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 px-6 sm:px-8">
+                            {features.map((feature, index) => (
+                                <div
+                                    key={index}
+                                    // Card styling with bg-orange-50, border-orange-200, and hover effects
+                                    className="bg-orange-50 p-6 sm:p-7 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 flex flex-col items-center text-center border border-orange-200"
+                                >
+                                    {/* Icon color changed to blue-600 */}
+                                    <div className="text-5xl sm:text-6xl mb-4 text-blue-600">
+                                        {feature.icon}
+                                    </div>
+                                    {/* Feature title with blue-700 and font-poppins */}
+                                    <h3 className="text-xl sm:text-2xl font-semibold text-blue-700 mb-3 font-poppins">
+                                        {feature.title}
+                                    </h3>
+                                    {/* Description with gray-700 and font-inter */}
+                                    <p className="text-gray-700 leading-relaxed font-inter text-sm sm:text-base">
+                                        {feature.description}
+                                    </p>
+                                </div>
+                            ))}
+                        </div>
+                    </div>
+                </section>
+
+                {/* Call to Action/Contact Section - Using the tertiary orange gradient */}
+                <section
+                    className="p-8 sm:p-10 rounded-xl shadow-lg text-center"
+                    style={{ background: 'linear-gradient(135deg, #FFE0B2 0%, #FFCC80 100%)' }} // Tertiary orange gradient
+                >
+                    {/* Heading with blue-800 and font-poppins */}
+                    <h2 className="text-2xl sm:text-3xl font-bold text-blue-800 mb-4 font-poppins">
                         Ready to Make Your Next Property Move?
                     </h2>
-                    <p className="text-base sm:text-lg text-amber-100 max-w-2xl mx-auto mb-8"> {/* Light yellow for paragraph */}
+                    {/* Paragraph with gray-700 and font-inter */}
+                    <p className="text-gray-700 text-md sm:text-lg max-w-2xl mx-auto mb-8 font-inter">
                         Schedule a consultation with our real estate experts to find the perfect property solution.
                     </p>
-                    <Link href="/contact" className="inline-block bg-white text-amber-700 hover:bg-gray-100 font-montserrat font-semibold px-8 py-4 rounded-lg shadow-md transition transform hover:scale-105 text-base md:text-lg"> {/* White button with yellow text */}
+                    {/* Button with red-600 background and font-poppins (matching secondary CTA) */}
+                    <Link
+                        href="/contact"
+                        className="inline-block bg-red-600 hover:bg-red-700 text-white font-semibold font-poppins px-8 py-4 rounded-lg shadow-md transition transform hover:scale-105"
+                    >
                         Get Expert Real Estate Advice
                     </Link>
-                </div>
-            </section>
+                </section>
+            </main>
 
-            {/* Tailwind CSS Font Imports (ensure these are in your global CSS or in a <style> block) */}
+            {/* Global Font Imports - It's highly recommended to place this in your _app.js or layout.js for global application */}
             <style jsx global>{`
-                @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=Montserrat:wght@700;800;900&display=swap');
+                @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@400;600;700;800&display=swap');
 
                 .font-inter {
                     font-family: 'Inter', sans-serif;
                 }
-                .font-montserrat {
-                    font-family: 'Montserrat', sans-serif;
+                .font-poppins {
+                    font-family: 'Poppins', sans-serif;
                 }
             `}</style>
         </div>
