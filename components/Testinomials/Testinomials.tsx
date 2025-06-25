@@ -1,47 +1,65 @@
 'use client';
 
-import React, { useEffect, useRef } from 'react';
-import gsap from 'gsap';
+import React, { useEffect, useRef } from "react";
+import gsap from "gsap";
 
 const testimonials = [
   {
-    quote: "Their team helped me structure my term and health cover optimally—saved tax and gave peace of mind.",
+    quote:
+      "Their team helped me structure my term and health cover optimally—saved tax and gave peace of mind.",
     author: "Arjun S.",
     role: "Entrepreneur",
   },
   {
-    quote: "Comprehensive wealth management with a focus on tax efficiency. Exactly what I needed!",
+    quote:
+      "Comprehensive wealth management with a focus on tax efficiency. Exactly what I needed!",
     author: "Priya M.",
     role: "Senior Executive",
   },
   {
-    quote: "The best part is their unbiased approach. They truly put their clients' interests first.",
+    quote:
+      "The best part is their unbiased approach. They truly put their clients' interests first.",
     author: "Rahul K.",
     role: "Business Owner",
   },
 ];
 
 const Testinomials = () => {
-  const sliderRef = useRef<HTMLDivElement>(null);
+  const wrapperRef = useRef<HTMLDivElement>(null);
+  const contentRef = useRef<HTMLDivElement>(null);
+  const animRef = useRef<gsap.core.Tween | null>(null);
 
   useEffect(() => {
-    const slider = sliderRef.current;
-    if (!slider) return;
+    const wrapper = wrapperRef.current;
+    const content = contentRef.current;
+    if (!wrapper || !content) return;
 
-    const totalWidth = slider.scrollWidth / 2;
+    // Duplicate content for seamless looping
+    const totalWidth = content.scrollWidth / 2;
 
-    const animation = gsap.to(slider, {
+    const anim = gsap.to(content, {
       x: `-=${totalWidth}`,
       duration: 30,
-      ease: 'linear',
+      ease: "linear",
       repeat: -1,
       modifiers: {
         x: gsap.utils.unitize((x) => parseFloat(x) % totalWidth),
       },
     });
 
+    animRef.current = anim;
+
+    // Pause/resume on hover
+    const pause = () => anim.pause();
+    const resume = () => anim.resume();
+
+    wrapper.addEventListener("mouseenter", pause);
+    wrapper.addEventListener("mouseleave", resume);
+
     return () => {
-      animation.kill();
+      anim.kill();
+      wrapper.removeEventListener("mouseenter", pause);
+      wrapper.removeEventListener("mouseleave", resume);
     };
   }, []);
 
@@ -52,10 +70,10 @@ const Testinomials = () => {
           What Our <span className="text-[#B91C1C]">Clients Say</span>
         </h2>
 
-        <div className="overflow-hidden">
+        <div className="overflow-hidden" ref={wrapperRef}>
           <div
-            className="flex gap-6 w-max"
-            ref={sliderRef}
+            className="flex gap-6 w-max cursor-pointer"
+            ref={contentRef}
           >
             {[...testimonials, ...testimonials].map((testimonial, index) => (
               <div
@@ -63,18 +81,27 @@ const Testinomials = () => {
                 className="w-[280px] sm:w-[320px] flex-shrink-0 bg-white border border-gray-200 rounded-xl p-5 shadow hover:shadow-md transition relative"
               >
                 <div className="absolute top-3 right-3">
-                  <img
-                    src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Google_%22G%22_Logo.svg/512px-Google_%22G%22_Logo.svg.png"
-                    alt="Google"
-                    className="w-4 h-4 sm:w-5 sm:h-5"
-                  />
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    strokeWidth={1.5}
+                    stroke="currentColor"
+                    className="w-5 h-5 text-[#1D4ED8]"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      d="M9 12h.01M15 12h.01M9 16h6m-7.5 3a9 9 0 1115.732-6.897"
+                    />
+                  </svg>
                 </div>
                 <div className="flex items-center mb-3">
                   <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-[#EFF6FF] text-[#1D4ED8] font-bold flex items-center justify-center mr-3 text-sm sm:text-base">
                     {testimonial.author
-                      .split(' ')
+                      .split(" ")
                       .map((word) => word[0])
-                      .join('')
+                      .join("")
                       .toUpperCase()}
                   </div>
                   <div>
