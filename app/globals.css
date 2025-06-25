@@ -3,7 +3,7 @@
 :root {
   --background: #ffffff;
   --foreground: #000000;
-  --font-heading: 'Segoe UI', 'Segoe UI Variable', system-ui, sans-serif;
+  --font-heading: 'Montserrat','Segoe UI', 'Segoe UI Variable', system-ui, ;
   --font-body: 'Roboto', sans-serif;
 
 }

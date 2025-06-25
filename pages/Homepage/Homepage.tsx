@@ -52,7 +52,7 @@ const Homepage = () => {
   ];
 
   // Define your new banner image path here
-  const headerBanner = '/assets/Header-banner.png'; // Path to your main header banner
+  const headerBanner = '/assets/topp-banner.jpg'; // Path to your main header banner
 
 
   return (
@@ -83,6 +83,12 @@ const Homepage = () => {
       </AnimatedSection>
 
       {/* Blog/Knowledge Base Section */}
+
+      <section>
+        <ViewBlogs />
+      </section>
+
+       
 
       <section className="py-12 md:py-20 bg-orange-50">
         <MappedPdf />
