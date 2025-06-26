@@ -1,8 +1,6 @@
-import type { NextConfig } from "next";
-
-const nextConfig: NextConfig = {
-  /* config options here */
-   images: {
+/** @type {import('next').NextConfig} */
+const nextConfig = {
+  images: {
     domains: [
       "images.pexels.com",
       "avatars.githubusercontent.com",
@@ -10,7 +8,7 @@ const nextConfig: NextConfig = {
       "res.cloudinary.com",
     ],
   },
-   eslint: {
+  eslint: {
     ignoreDuringBuilds: true,
   },
 };
