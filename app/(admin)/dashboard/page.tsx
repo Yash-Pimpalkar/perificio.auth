@@ -32,7 +32,6 @@ const AdminDashboard = () => {
   const [view, setView] = useState<"all" | "users" | "admins" | "posts" | "pdfs">("all");
   const [sessionUser, setSessionUser] = useState<{ name?: string; email?: string; role?: string } | null>(null);
   const router = useRouter();
-  const [message ,setMessage]=(useState<string | null>(null))
   const contentRef = useRef(null);
 
   useEffect(() => {

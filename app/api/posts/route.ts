@@ -39,7 +39,7 @@ export async function POST(req: Request) {
     console.log("Post created");
     return NextResponse.json(newPost);
   } catch (error) {
-    return NextResponse.json({ message: "Could not create post." });
+    return NextResponse.json({ message: "Could not create post.",error });
   }
 }
 

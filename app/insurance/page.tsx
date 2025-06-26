@@ -1,7 +1,7 @@
 "use client";
 import Head from "next/head";
 import React from "react";
-import { FaShieldAlt, FaHandshake, FaUserTie, FaStar, FaQuoteLeft, FaQuestionCircle, FaLightbulb, FaCheckCircle, FaChartLine, FaClipboardCheck, FaUsers, FaArrowRight, FaCalculator, FaFileContract, FaUserFriends, FaBalanceScale, FaGraduationCap, FaClipboardList } from "react-icons/fa";
+import { FaShieldAlt, FaHandshake, FaUserTie, FaQuoteLeft, FaQuestionCircle, FaLightbulb, FaChartLine, FaClipboardCheck, FaUsers, FaArrowRight, FaFileContract,FaBalanceScale, FaGraduationCap, FaClipboardList } from "react-icons/fa";
 import { useState, ChangeEvent, FormEvent } from 'react';
 
 interface FormState {
@@ -182,7 +182,7 @@ export default function Page() {
               <span className="text-red-600">Protect</span> What You Have <span className="text-blue-700">Built</span>
             </h1>
             <p className="text-lg md:text-xl text-gray-700 mb-8 max-w-2xl font-inter">
-              Informed financial planning isn't complete without protection. We assist you in choosing tax-efficient, goal-aligned
+              Informed financial planning isn&apos;t complete without protection. We assist you in choosing tax-efficient, goal-aligned
               insurance products that safeguard your income, family, and future assets—without overpaying or overcommitting.
             </p>
             <a
@@ -286,7 +286,7 @@ export default function Page() {
             {testimonials.map((testimonial, index) => (
               <div key={index} className="bg-orange-100 rounded-xl shadow-md p-6 flex flex-col items-center text-center border border-orange-200 hover:shadow-lg transition duration-300 ease-in-out">
                 <FaQuoteLeft className="text-red-600 text-4xl mb-4" />
-                <p className="italic text-gray-700 mb-4 flex-grow font-inter">"{testimonial.quote}"</p>
+                <p className="italic text-gray-700 mb-4 flex-grow font-inter">&apos;{testimonial.quote}&apos;</p>
                 <p className="font-semibold text-blue-700 font-poppins">- {testimonial.author}</p>
               </div>
             ))}

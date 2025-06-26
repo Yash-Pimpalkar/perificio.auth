@@ -73,9 +73,13 @@ const ContactUsPage: React.FC = () => {
         subject: '',
         message: '',
       });
-    } catch (error: any) {
-      setPopup({ show: true, success: false, message: error.message });
-    }
+    }catch (error) {
+  if (error instanceof Error) {
+    setPopup({ show: true, success: false, message: error.message });
+  } else {
+    setPopup({ show: true, success: false, message: 'An unexpected error occurred.' });
+  }
+}
 
     setTimeout(() => setPopup((prev) => ({ ...prev, show: false })), 3000);
   };
@@ -106,7 +110,7 @@ const ContactUsPage: React.FC = () => {
               Contact <span className="text-red-700">Perficio</span>
             </h1>
             <p className="text-lg sm:text-xl text-gray-700 font-inter max-w-3xl mx-auto mb-8">
-              We're here to assist you with all your financial and legal needs. Reach out today!
+              We&apos;re here to assist you with all your financial and legal needs. Reach out today!
             </p>
             <Link
               href="#contact-form"
@@ -128,7 +132,7 @@ const ContactUsPage: React.FC = () => {
                 Our Details
               </h2>
               <p className="text-gray-700 text-lg font-inter mb-2">
-                We're always ready to listen.
+                We&apos;re always ready to listen.
               </p>
             </div>
 

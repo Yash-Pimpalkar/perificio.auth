@@ -20,6 +20,7 @@ export async function DELETE(req: Request, { params }: Params) {
 
     return NextResponse.json({ message: "User deleted", user });
   } catch (error) {
+    console.error("Error deleting user:", error);
     return NextResponse.json({ error: "User deletion failed" }, { status: 500 });
   }
 }

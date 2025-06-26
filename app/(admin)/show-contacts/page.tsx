@@ -1,6 +1,7 @@
 // app/contact/page.tsx or wherever your route lives
 import ContactPage from '@/pages/Contact/ContactPage';
 import { Contact } from '@prisma/client';
+
 import React from 'react'
 
 const page = async() => {

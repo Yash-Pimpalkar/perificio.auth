@@ -3,59 +3,19 @@ import ViewBlogs from '@/components/Blogs/ViewBlogs';
 import AnimatedSection from '@/components/AnimatedComponent/AnimatedSection';
 import { TPost } from '@/types';
 import MovingImages from '@/components/HeroContainer/MovingImages';
-import PdfCard from '@/components/Blogs/pdfs';
 import MappedPdf from '@/components/Blogs/MappedPdf';
 import QuickContactSection from '@/components/QuickContact/Quickcontact';
 import Testinomials from '@/components/Testinomials/Testinomials';
-
-interface MarketDataItem {
-  name: string;
-  price: number;
-}
-
-type MarketScrollerType = 'price' | 'custom';
-
-interface MarketScrollerProps {
-  data: MarketDataItem[];
-  animationSpeed: number; // In seconds
-  type: MarketScrollerType;
-}
-const getPosts = async (): Promise<TPost[] | null> => {
-  try {
-    const res = await fetch(`${process.env.NEXTAUTH_URL}/api/posts`, {
-      cache: "no-store",
-    });
-
-    if (res.ok) {
-      const posts = await res.json();
-      return posts;
-    }
-  } catch (error) {
-    console.log(error);
-  }
-
-  return null;
-};
-
 
 const Homepage = () => {
 
 
   // State for chatbot visibility
 
-
-
-  const bannerImages = [
-    { src: '/assets/gst-banner.jpg', url: '/services/gst' },
-    { src: '/assets/itr-banner.jpg', url: '/services/itr' },
-    { src: '/assets/rera-banner.jpg', url: '/services/rera' },
-  ];
-
   // Define your new banner image path here
   const headerBanner = '/assets/topp-banner.jpg'; // Path to your main header banner
 
   // Path to the new image you uploaded (assuming it's in your public/assets folder)
-  const livingWellImage = '/assets/image_3b9c7e.png';
 
 
   return (

@@ -2,8 +2,7 @@
 
 
 import Link from "next/link";
-import { useEffect, useState } from "react";
-import { useRouter } from "next/navigation";
+import {  useState } from "react";
 import { CldUploadButton, CloudinaryUploadWidgetResults  } from "next-cloudinary";
 import Image from "next/image";
 import toast from "react-hot-toast";
@@ -13,11 +12,8 @@ export default function CreatePostForm() {
   const [linkInput, setLinkInput] = useState("");
   const [title, setTitle] = useState("");
   const [content, setContent] = useState("");
-  const [selectedCategory, setSelectedCategory] = useState("");
   const [imageUrl, setImageUrl] = useState("");
   const [publicId, setPublicId] = useState("");
-
-  const router = useRouter();
 
   const handleImageUpload = (result: CloudinaryUploadWidgetResults) => {
     console.log("result: ", result);

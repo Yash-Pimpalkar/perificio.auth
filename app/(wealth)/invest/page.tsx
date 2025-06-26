@@ -58,7 +58,7 @@ const page = () => {
                         </h1>
                         {/* Paragraph text with gray-700 and font-inter */}
                         <p className="text-lg sm:text-xl text-gray-700 font-inter max-w-3xl mx-auto mb-8">
-                            Unlock your financial potential with Perficio's expert guidance and advanced investment tools.
+                            Unlock your financial potential with Perficio&apos;s expert guidance and advanced investment tools.
                         </p>
                         {/* Button with blue-600 background and font-poppins */}
                         <Link

@@ -6,28 +6,6 @@ import Link from 'next/link'; // Import Link for navigation
 // import Head from 'next/head'; // Uncomment if this is a top-level page in `pages/`
 
 const AboutUsPage = () => {
-  const coreValues = [
-    {
-      icon: '🛡️', // Shield for Integrity
-      title: 'Unwavering Integrity',
-      description: 'Upholding the highest ethical standards and transparency in all our dealings to build enduring trust.',
-    },
-    {
-      icon: '🎯', // Target for Precision
-      title: 'Commitment to Precision',
-      description: 'Delivering accurate and meticulously crafted financial solutions, ensuring compliance and clarity.',
-    },
-    {
-      icon: '🤝', // Handshake for Client-Centricity
-      title: 'Client-Centric Approach',
-      description: 'Prioritizing our clients\' needs, providing personalized advice and fostering strong, collaborative relationships.',
-    },
-    {
-      icon: '💡', // Lightbulb for Innovation
-      title: 'Continuous Innovation',
-      description: 'Embracing modern practices and advanced technologies to offer efficient and forward-thinking solutions.',
-    },
-  ];
 
   const whyChooseUs = [
     {
@@ -42,7 +20,6 @@ const AboutUsPage = () => {
     },
     {
       icon: '📜', // Regulatory Compliance
-      title: 'Regulatory Compliance',
       title: 'Regulatory Compliance',
       description: 'As a SEBI-registered RIA, IRDAI-licensed, and ICAI member, we ensure full regulatory adherence.',
     },
@@ -83,7 +60,7 @@ const AboutUsPage = () => {
             <p className="text-lg sm:text-xl text-gray-700 font-inter max-w-3xl mx-auto">
               Your Trusted Partner for Tax, Health & Wealth Solutions.
               <br />
-              <span className="font-semibold italic">"Perficio – To Accomplish with Excellence"</span>
+              <span className="font-semibold italic">&quot; Perficio – To Accomplish with Excellence&quot;</span>
             </p>
             {/* Added a button here consistent with previous page's hero button */}
             <Link
@@ -105,10 +82,20 @@ const AboutUsPage = () => {
             Our Journey of Excellence
           </h2>
           <p className="text-gray-700 text-md sm:text-lg leading-relaxed max-w-4xl mx-auto font-inter">
-            Perficio Advisory Services Private Limited, incorporated in 2023 and headquartered in Mumbai, is a forward-thinking advisory firm. Our foundation is built on the principle of accomplishing excellence in every aspect of Health, Wealth, and Taxation Planning. The name "Perficio," derived from Latin, signifies “to accomplish,” “to complete,” or “to bring to perfection,” reflecting our dedication to delivering thorough and transformative outcomes.
+            Perficio Advisory Services Private Limited, incorporated in 2023 and headquartered 
+            in Mumbai, is a forward-thinking advisory firm. Our foundation is built on the 
+            principle of accomplishing excellence in every aspect of Health, Wealth,
+             and Taxation Planning. The name &quot;Perficio,&quot; derived from Latin, signifies &quot;
+              to accomplish,&quot;  &quot;to complete,&quot; or &quot;to bring
+               to perfection,&quot; reflecting our dedication to delivering 
+               thorough and transformative outcomes.
           </p>
           <p className="text-gray-700 text-md sm:text-lg leading-relaxed max-w-4xl mx-auto mt-4 font-inter">
-            We believe that true success is found at the intersection of financial discipline, physical well-being, and regulatory compliance. At Perficio, we provide integrated advisory solutions that are customized, compliant, and aligned with the evolving needs of individuals, professionals, and businesses. We don’t just advise — we accomplish, perfect, and deliver.
+            We believe that true success is found at the intersection of financial 
+            discipline, physical well-being, and regulatory compliance. At Perficio
+            , we provide integrated advisory solutions that are customized, compliant,
+             and aligned with the evolving needs of individuals, professionals, and businesses.
+              We don &quot;t just advise — we accomplish, perfect, and deliver.
           </p>
         </section>
 
@@ -189,10 +176,10 @@ const AboutUsPage = () => {
         {/* Mission/Vision Statement - This section remains dark for strong contrast and visual break */}
         <section className="bg-gray-800 text-white p-8 sm:p-10 rounded-xl shadow-lg text-center">
           <p className="text-lg sm:text-xl md:text-2xl font-semibold italic max-w-3xl mx-auto leading-relaxed">
-            "We would like to be known as people who add meaningful value to the financial lives of our clients. To be respected as a company which is known for its high moral standards."
+            &quot;We would like to be known as people who add meaningful value to the financial lives of our clients. To be respected as a company which is known for its high moral standards."
           </p>
           <p className="text-md sm:text-lg md:text-xl font-medium text-red-400 mt-4">
-            That’s why we come to work every day.
+            That&quot;s why we come to work every day.
           </p>
         </section>
 

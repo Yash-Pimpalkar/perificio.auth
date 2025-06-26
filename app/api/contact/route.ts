@@ -33,6 +33,7 @@ export async function POST(req: Request) {
 
     // Basic rate limiting by IP (you can expand this with Redis or DB later)
     const ip = req.headers.get("x-forwarded-for") || req.headers.get("host") || "unknown";
+    console.log("IP Address:", ip);
     const now = new Date();
     const fiveMinutesAgo = new Date(now.getTime() - 5 * 60 * 1000);
 

@@ -1,15 +1,9 @@
 'use client';
 
-import { Contact } from '@/types';
+
+import { Contact } from '@prisma/client';
 import React, { useEffect, useState } from 'react';
 import { AiOutlineDelete } from 'react-icons/ai';
-
-
-
-
-interface ContactPageProps {
-  initialContacts: Contact[];
-}
 
 const ITEMS_PER_PAGE = 5;
 

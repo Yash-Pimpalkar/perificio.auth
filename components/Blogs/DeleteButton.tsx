@@ -11,6 +11,7 @@ export default function DeleteButton({ id }: { id: string }) {
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ publicId }),
     });
+    console.log("Image deletion response:", res);
   };
 
   const handleDelete = async () => {
