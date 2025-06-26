@@ -1,8 +1,8 @@
 
-import { redirect } from "next/navigation";
-import EditPostForm from "@/components/Blogs/EditPostForm";
+// import { redirect } from "next/navigation";
+// import EditPostForm from "@/components/Blogs/EditPostForm";
 import { TPost } from "@/types";
-import { auth } from "@/auth";
+// import { auth } from "@/auth";
 
 const getPost = async (id: string): Promise<TPost | null> => {
   try {
@@ -22,18 +22,20 @@ const getPost = async (id: string): Promise<TPost | null> => {
 };
 
 
-interface PageProps {
-  params: { id: string };
-}
+// type PageProps = {
+//   params: {
+//     id: string;
+//   };
+// };
 
-export default async function EditPost({ params }: PageProps) {
-  const session = await auth();
+// export default async function EditPost({ params }: PageProps) {
+//   const session = await auth();
 
-  if (!session || session.user?.role !== "ADMIN") {
-    redirect("/sign-in");
-  }
+//   if (!session || session?.user?.role !== "ADMIN") {
+//     redirect("/sign-in");
+//   }
 
-  const post: TPost | null = await getPost(params.id);
+//   const post: TPost | null = await getPost(params.id);
 
-  return <>{post ? <EditPostForm post={post} /> : <div>Invalid Post</div>}</>;
-}
+//   return <>{post ? <EditPostForm post={post} /> : <div>❌ Invalid Post</div>}</>;
+// }
