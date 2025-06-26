@@ -21,7 +21,10 @@ const getPost = async (id: string): Promise<TPost | null> => {
   return null;
 };
 
-export default async function EditPost({ params }: { params: { id: string } }) {
+interface PageProps {
+  params: { id: string };
+}
+export default async function EditPost({ params }: PageProps ) {
   const session = await auth();
 
   if (!session || session?.user?.role !== "ADMIN") {
