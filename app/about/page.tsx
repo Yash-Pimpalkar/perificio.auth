@@ -176,7 +176,8 @@ const AboutUsPage = () => {
         {/* Mission/Vision Statement - This section remains dark for strong contrast and visual break */}
         <section className="bg-gray-800 text-white p-8 sm:p-10 rounded-xl shadow-lg text-center">
           <p className="text-lg sm:text-xl md:text-2xl font-semibold italic max-w-3xl mx-auto leading-relaxed">
-            &quot;We would like to be known as people who add meaningful value to the financial lives of our clients. To be respected as a company which is known for its high moral standards."
+            &quot;We would like to be known as people who add meaningful value to the financial lives of our clients.
+             To be respected as a company which is known for its high moral standards.&quot;
           </p>
           <p className="text-md sm:text-lg md:text-xl font-medium text-red-400 mt-4">
             That&quot;s why we come to work every day.

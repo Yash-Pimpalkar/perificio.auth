@@ -1,7 +1,6 @@
 import React from 'react'
 import ViewBlogs from '@/components/Blogs/ViewBlogs';
 import AnimatedSection from '@/components/AnimatedComponent/AnimatedSection';
-import { TPost } from '@/types';
 import MovingImages from '@/components/HeroContainer/MovingImages';
 import MappedPdf from '@/components/Blogs/MappedPdf';
 import QuickContactSection from '@/components/QuickContact/Quickcontact';
