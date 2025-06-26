@@ -46,13 +46,16 @@ const Homepage = () => {
 
 
   const bannerImages = [
-    { src: '/assets/gst-banner.png', url: '/services/gst' },
-    { src: '/assets/itr-banner.png', url: '/services/itr' },
-    { src: '/assets/rera-banner.png', url: '/services/rera' },
+    { src: '/assets/gst-banner.jpg', url: '/services/gst' },
+    { src: '/assets/itr-banner.jpg', url: '/services/itr' },
+    { src: '/assets/rera-banner.jpg', url: '/services/rera' },
   ];
 
   // Define your new banner image path here
   const headerBanner = '/assets/topp-banner.jpg'; // Path to your main header banner
+
+  // Path to the new image you uploaded (assuming it's in your public/assets folder)
+  const livingWellImage = '/assets/image_3b9c7e.png';
 
 
   return (
@@ -67,19 +70,37 @@ const Homepage = () => {
         />
       </section>
 
-      {/* The section for the three sub-banners has been removed */}
+      {/* New Section with "Living well today..." */}
+<section className="h-100 w-full bg-gradient-to-br from-[#FFE0B2] to-[#FFCC80] py-10 flex items-center justify-center relative overflow-hidden font-inter">
+  {/* Content container */}
+  <div className="relative z-10 text-center p-4">
+    <p className="text-2xl md:text-3xl lg:text-4xl font-extrabold text-blue-800 leading-tight">
+      {/* First part of the text in blue */}
+      HELPING YOU GROW,{' '}
+      {/* The word "protect," in red and underlined, also serves as a line break point */}
+      <span className="underline decoration-red-500 decoration-2 text-red-600">
+        PROTECT,
+      </span>{' '}
+      <br className="sm:hidden" /> {/* Line break for smaller screens */}
+      {/* The rest of the text in blue */}
+      <br />AND ENJOY YOUR WEALTH.
+    </p>
+  </div>
+</section>
+
+
 
       {/* Added relative for chatbot positioning */}
-      {/* Dynamic Services Advertising Banner with Rolling Cards  */}
+      {/* Dynamic Services Advertising Banner with Rolling Cards   */}
 
       <section className="">
         <MovingImages />
       </section>
       <AnimatedSection>
         {/* Testimonials Section */}
-     <section>
+      <section>
        <Testinomials />
-     </section>
+      </section>
       </AnimatedSection>
 
       {/* Blog/Knowledge Base Section */}
@@ -88,7 +109,7 @@ const Homepage = () => {
         <ViewBlogs />
       </section>
 
-       
+        
 
       <section className="py-12 md:py-20 px md:px-6 sm:px-4 bg-orange-50">
         <MappedPdf />
