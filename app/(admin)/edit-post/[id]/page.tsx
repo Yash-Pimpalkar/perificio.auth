@@ -21,18 +21,19 @@ const getPost = async (id: string): Promise<TPost | null> => {
   return null;
 };
 
+
 interface PageProps {
   params: { id: string };
 }
-export default async function EditPost({ params }: PageProps ) {
+
+export default async function EditPost({ params }: PageProps) {
   const session = await auth();
 
-  if (!session || session?.user?.role !== "ADMIN") {
+  if (!session || session.user?.role !== "ADMIN") {
     redirect("/sign-in");
   }
 
-  const id = params.id;
-  const post = await getPost(id);
+  const post: TPost | null = await getPost(params.id);
 
   return <>{post ? <EditPostForm post={post} /> : <div>Invalid Post</div>}</>;
 }
