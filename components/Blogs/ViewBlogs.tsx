@@ -24,7 +24,7 @@ export default async function ViewBlogs() {
   const posts = await getPosts();
 
   return (
-    <div className="max-w-6xl mx-auto px-4 ">
+    <div className="max-w-6xl mx-auto ">
       {/* Heading */}
       <h2 className="text-3xl font-bold text-center text-[#1D4ED8] mb-10 font-montserrat">
         All Blogs

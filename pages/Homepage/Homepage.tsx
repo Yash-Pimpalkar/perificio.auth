@@ -90,7 +90,7 @@ const Homepage = () => {
 
        
 
-      <section className="py-12 md:py-20 bg-orange-50">
+      <section className="py-12 md:py-20 px md:px-6 sm:px-4 bg-orange-50">
         <MappedPdf />
       </section>
 
