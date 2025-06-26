@@ -1,51 +1,68 @@
 import { auth } from "@/auth";
 import { prisma } from "@/db";
-import { NextResponse } from "next/server";
+import { NextRequest, NextResponse } from "next/server";
 
-interface Params {
-  params: { id: string };
+// Helper to extract ID from the dynamic route
+function extractIdFromUrl(request: NextRequest): string | null {
+  const segments = request.nextUrl.pathname.split("/");
+  return segments[segments.length - 1] || null;
 }
 
-// DELETE user by ID
-export async function DELETE(req: Request, { params }: Params) {
-    const session = await auth();
+// DELETE /api/users/[id]
+export async function DELETE(request: NextRequest) {
+  const session = await auth();
 
-    if (!session) {
-      return NextResponse.json({ error: "Not authenticated" }, { status: 401 });
-    }
+  if (!session) {
+    return NextResponse.json({ error: "Not authenticated" }, { status: 401 });
+  }
+
+  const id = extractIdFromUrl(request);
+
+  if (!id) {
+    return NextResponse.json({ error: "User ID missing" }, { status: 400 });
+  }
+
   try {
     const user = await prisma.user.delete({
-      where: { id: params.id },
+      where: { id },
     });
 
-    return NextResponse.json({ message: "User deleted", user });
+    return NextResponse.json({ message: "User deleted", user }, { status: 200 });
   } catch (error) {
     console.error("Error deleting user:", error);
     return NextResponse.json({ error: "User deletion failed" }, { status: 500 });
   }
 }
-export async function PATCH(req: Request, { params }: Params) {
-    const session = await auth();
-  
-    if (!session || session.user?.role !== "ADMIN") {
-      return NextResponse.json({ error: "Not authorized" }, { status: 401 });
-    }
-  
-    try {
-      const { role } = await req.json(); // expected: { role: "ADMIN" | "USER" }
-  
-      if (!["ADMIN", "USER"].includes(role)) {
-        return NextResponse.json({ error: "Invalid role value" }, { status: 400 });
-      }
-  
-      const updated = await prisma.user.update({
-        where: { id: params.id }, // ✅ MongoDB ID
-        data: { role },
-      });
-  
-      return NextResponse.json({ message: "User role updated", updated });
-    } catch (error) {
-      console.log(error)
-      return NextResponse.json({ error: "Update failed" }, { status: 500 });
-    }
+
+// PATCH /api/users/[id]
+export async function PATCH(request: NextRequest) {
+  const session = await auth();
+
+  if (!session || session.user?.role !== "ADMIN") {
+    return NextResponse.json({ error: "Not authorized" }, { status: 401 });
   }
+
+  const id = extractIdFromUrl(request);
+
+  if (!id) {
+    return NextResponse.json({ error: "User ID missing" }, { status: 400 });
+  }
+
+  try {
+    const { role } = await request.json();
+
+    if (!["ADMIN", "USER"].includes(role)) {
+      return NextResponse.json({ error: "Invalid role value" }, { status: 400 });
+    }
+
+    const updated = await prisma.user.update({
+      where: { id },
+      data: { role },
+    });
+
+    return NextResponse.json({ message: "User role updated", updated }, { status: 200 });
+  } catch (error) {
+    console.error("Update failed:", error);
+    return NextResponse.json({ error: "Update failed" }, { status: 500 });
+  }
+}
