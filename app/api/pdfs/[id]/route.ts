@@ -1,30 +1,31 @@
 import { auth } from "@/auth";
 import { prisma } from "@/db";
-import { NextResponse } from "next/server";
+import { NextRequest, NextResponse } from "next/server";
 
-export async function GET(
-  req: Request,
-  { params }: { params: { id: string } }
-) {
+// GET /api/pdfs/[id]
+export async function GET(request: NextRequest) {
   try {
-    const id = params.id;
+    const id = request.nextUrl.pathname.split("/").pop();
+
+    if (!id) {
+      return NextResponse.json({ message: "ID not provided" }, { status: 400 });
+    }
+
     const pdf = await prisma.pdf.findUnique({ where: { id } });
 
     if (!pdf) {
       return NextResponse.json({ message: "PDF not found" }, { status: 404 });
     }
 
-    return NextResponse.json(pdf);
+    return NextResponse.json(pdf, { status: 200 });
   } catch (error) {
     console.error("Fetch error:", error);
     return NextResponse.json({ message: "Error fetching PDF" }, { status: 500 });
   }
 }
 
-export async function DELETE(
-  req: Request,
-  { params }: { params: { id: string } }
-) {
+// DELETE /api/pdfs/[id]
+export async function DELETE(request: NextRequest) {
   const session = await auth();
 
   if (!session?.user?.email) {
@@ -32,20 +33,26 @@ export async function DELETE(
   }
 
   try {
+    const id = request.nextUrl.pathname.split("/").pop();
+
+    if (!id) {
+      return NextResponse.json({ error: "ID not provided" }, { status: 400 });
+    }
+
     const existingPdf = await prisma.pdf.findUnique({
-      where: { id: params.id },
+      where: { id },
     });
 
     if (!existingPdf) {
       return NextResponse.json({ error: "PDF not found" }, { status: 404 });
     }
 
-    // Optional: Only allow uploader to delete their PDF
+    // Optional: only allow the uploader to delete the PDF
     // if (existingPdf.uploaderEmail !== session.user.email) {
     //   return NextResponse.json({ error: "Forbidden" }, { status: 403 });
     // }
 
-    await prisma.pdf.delete({ where: { id: params.id } });
+    await prisma.pdf.delete({ where: { id } });
 
     return NextResponse.json({ success: true });
   } catch (error) {
