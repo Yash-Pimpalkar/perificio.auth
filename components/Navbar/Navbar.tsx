@@ -2,7 +2,6 @@
 
 import { useSession, signOut } from "next-auth/react";
 import Link from "next/link";
-import { useState } from "react";
 import { CgProfile } from "react-icons/cg";
 import {
   Disclosure,
@@ -13,7 +12,7 @@ import {
   MenuItem,
   MenuItems,
 } from "@headlessui/react";
-import { Bars3Icon, XMarkIcon, ChevronDownIcon } from "@heroicons/react/24/outline";
+import { Bars3Icon,ChevronDownIcon } from "@heroicons/react/24/outline";
 import Image from "next/image";
 
 // Types

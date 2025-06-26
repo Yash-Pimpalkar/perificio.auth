@@ -134,7 +134,13 @@ const Footer = () => {
       <div className=" bottom-0  sticky border-t border-white/20 mt-16 pt-8 text-xs text-white/60 z-0 text-center">
         {/* Expanded description about Perficio */}
         <p className="text-white/80 text-sm leading-relaxed mb-6 max-w-5xl mx-auto">
-            Perficio Advisory Services, established in Mumbai in 2023 , is a forward-thinking firm dedicated to accomplishing excellence in Health, Wealth, and Taxation Planning. We offer integrated, tailored advisory solutions , believing true success lies at the intersection of financial discipline, physical well-being, and regulatory compliance. Our commitment is to add meaningful value to our clients' financial lives with high moral standards.
+            Perficio Advisory Services, established in Mumbai in 2023 
+            , is a forward-thinking firm dedicated to accomplishing excellence
+             in Health, Wealth, and Taxation Planning. We offer integrated, 
+             tailored advisory solutions , believing true success lies at the
+              intersection of financial discipline, physical well-being, 
+              and regulatory compliance. Our commitment is to add meaningful
+               value to our clients&apos; financial lives with high moral standards.
         </p>
         
         {/* Original Disclaimer */}

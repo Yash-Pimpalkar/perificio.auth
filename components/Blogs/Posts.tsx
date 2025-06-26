@@ -18,10 +18,8 @@ interface PostProps {
 
 export default async function Post({
   id,
-  author,
   date,
   thumbnail,
-  authorEmail,
   title,
   content,
   links,
