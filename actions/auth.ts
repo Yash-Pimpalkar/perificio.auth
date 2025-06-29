@@ -6,17 +6,27 @@ import { AuthError } from "next-auth";
 import { redirect } from "next/navigation";
 
 export const login = async (provider: string) => {
-  await signIn(provider, {
-    redirectTo: "/",
-  });
-  revalidatePath("/");
+  try {
+    await signIn(provider, {
+      redirectTo: "/",
+    });
+    revalidatePath("/");
+  } catch (error) {
+    console.error("Login error:", error);
+    throw error;
+  }
 };
 
 export const logout = async () => {
-  await signOut({
-    redirectTo: "/",
-  });
-  revalidatePath("/");
+  try {
+    await signOut({
+      redirectTo: "/",
+    });
+    revalidatePath("/");
+  } catch (error) {
+    console.error("Logout error:", error);
+    throw error;
+  }
 };
 
 // app/actions/auth.ts
