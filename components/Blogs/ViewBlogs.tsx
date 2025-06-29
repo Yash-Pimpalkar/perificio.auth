@@ -1,4 +1,3 @@
-
 import { TPost } from "@/types";
 import CategoriesList from "./CategoriesList";
 import Post from "./Posts";
@@ -6,7 +5,7 @@ import Post from "./Posts";
 const getPosts = async (): Promise<TPost[] | null> => {
   try {
     const res = await fetch(`${process.env.NEXTAUTH_URL}/api/posts`, {
-      cache: "no-store",
+      cache: "force-cache",
     });
 
     if (res.ok) {

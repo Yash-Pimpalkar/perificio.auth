@@ -8,7 +8,7 @@ export default function PdfGalleryClient() {
 
   const getPdfs = async (): Promise<TPdf[] | null> => {
     try {
-      const res = await fetch("/api/pdfs", { cache: "no-store" });
+      const res = await fetch("/api/pdfs", { cache: "force-cache" });
       if (res.ok) return res.json();
     } catch (error) {
       console.error("Failed to fetch PDFs:", error);
