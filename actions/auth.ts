@@ -48,9 +48,7 @@ export const loginWithCreds = async (formData: FormData): Promise<void> => {
       email,
       password,
       role: "USER",
-      redirectTo: process.env.NEXTAUTH_URL
-        ? `${process.env.NEXTAUTH_URL}/`
-        : "/",
+      redirectTo: "/",
     });
   } catch (error: unknown) {
     if (error instanceof AuthError) {
