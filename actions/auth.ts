@@ -7,14 +7,14 @@ import { redirect } from "next/navigation";
 
 export const login = async (provider: string) => {
   await signIn(provider, {
-    redirectTo: process.env.NEXTAUTH_URL ? `${process.env.NEXTAUTH_URL}/` : "/",
+    redirectTo: "/",
   });
   revalidatePath("/");
 };
 
 export const logout = async () => {
   await signOut({
-    redirectTo: process.env.NEXTAUTH_URL ? `${process.env.NEXTAUTH_URL}/` : "/",
+    redirectTo: "/",
   });
   revalidatePath("/");
 };
