@@ -5,23 +5,21 @@ import { prisma } from "@/db"
 import { AuthError } from "next-auth";
 import { redirect } from "next/navigation";
 
-export const  login = async (provider:string )=>{
-    await signIn(provider, {
-       redirectTo:"/",
-    })
-    revalidatePath("/")
-}
+export const login = async (provider: string) => {
+  await signIn(provider, {
+    redirectTo: process.env.NEXTAUTH_URL ? `${process.env.NEXTAUTH_URL}/` : "/",
+  });
+  revalidatePath("/");
+};
 
-export const  logout = async ()=>{
-    await signOut({
-       redirectTo:"/",
-    })
-    revalidatePath("/")
-}
-
+export const logout = async () => {
+  await signOut({
+    redirectTo: process.env.NEXTAUTH_URL ? `${process.env.NEXTAUTH_URL}/` : "/",
+  });
+  revalidatePath("/");
+};
 
 // app/actions/auth.ts
-
 
 const getUserByEmail = async (email: string) => {
   try {
@@ -50,17 +48,19 @@ export const loginWithCreds = async (formData: FormData): Promise<void> => {
       email,
       password,
       role: "USER",
-      redirectTo: "/",
+      redirectTo: process.env.NEXTAUTH_URL
+        ? `${process.env.NEXTAUTH_URL}/`
+        : "/",
     });
-  } catch (error: any) {
+  } catch (error: unknown) {
     if (error instanceof AuthError) {
       console.error("Auth Error:", error.type);
       redirect("/sign-in?error=Invalid+credentials");
       throw new Error("Invalid credentials");
     }
-    console.log(error)
+    console.log(error);
     throw error;
   }
- 
+
   revalidatePath("/");
 };
