@@ -11,6 +11,7 @@ const LoginForm = () => {
   const error = searchParams?.get("error");
   const [showPassword, setShowPassword] = useState(false);
   const { pending } = useFormStatus();
+
   return (
     <div className="w-full flex items-center justify-center bg-white px-4 py-4">
       <form

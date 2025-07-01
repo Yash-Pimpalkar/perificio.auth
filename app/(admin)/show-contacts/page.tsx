@@ -1,7 +1,5 @@
 // app/contact/page.tsx or wherever your route lives
-import ContactPage from '@/pages/Contact/ContactPage';
 import { Contact } from '@prisma/client';
-
 import React from 'react'
 
 const page = async() => {
@@ -15,9 +13,25 @@ const page = async() => {
 
   const data: Contact[] = await res.json();
 
-  return <ContactPage initialContacts={data} />;
-
-
+  return (
+    <div className="container mx-auto p-8">
+      <h1 className="text-3xl font-bold mb-6">Contact Messages</h1>
+      <div className="grid gap-4">
+        {data.map((contact) => (
+          <div key={contact.id} className="border p-4 rounded-lg">
+            <h3 className="font-semibold">{contact.name}</h3>
+            <p className="text-gray-600">{contact.email}</p>
+            <p className="text-gray-600">{contact.phone}</p>
+            <p className="font-medium">{contact.subject}</p>
+            <p className="mt-2">{contact.message}</p>
+            <p className="text-sm text-gray-500 mt-2">
+              {new Date(contact.createdAt).toLocaleDateString()}
+            </p>
+          </div>
+        ))}
+      </div>
+    </div>
+  );
 }
 
 export default page

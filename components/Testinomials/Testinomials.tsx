@@ -1,4 +1,4 @@
-'use client';
+"use client";
 
 import React, { useEffect, useRef } from "react";
 import gsap from "gsap";
@@ -8,20 +8,20 @@ const testimonials = [
     quote:
       "Their team helped me structure my term and health cover optimally—saved tax and gave peace of mind.",
     author: "Arjun S.",
-    role: "Entrepreneur",
+    role: "Entrepreneur"
   },
   {
     quote:
       "Comprehensive wealth management with a focus on tax efficiency. Exactly what I needed!",
     author: "Priya M.",
-    role: "Senior Executive",
+    role: "Senior Executive"
   },
   {
     quote:
       "The best part is their unbiased approach. They truly put their clients' interests first.",
     author: "Rahul K.",
-    role: "Business Owner",
-  },
+    role: "Business Owner"
+  }
 ];
 
 const Testinomials = () => {
@@ -43,8 +43,8 @@ const Testinomials = () => {
       ease: "linear",
       repeat: -1,
       modifiers: {
-        x: gsap.utils.unitize((x) => parseFloat(x) % totalWidth),
-      },
+        x: gsap.utils.unitize((x) => parseFloat(x) % totalWidth)
+      }
     });
 
     animRef.current = anim;
@@ -71,10 +71,7 @@ const Testinomials = () => {
         </h2>
 
         <div className="overflow-hidden" ref={wrapperRef}>
-          <div
-            className="flex gap-6 w-max cursor-pointer"
-            ref={contentRef}
-          >
+          <div className="flex gap-6 w-max cursor-pointer" ref={contentRef}>
             {[...testimonials, ...testimonials].map((testimonial, index) => (
               <div
                 key={index}
@@ -105,7 +102,7 @@ const Testinomials = () => {
                       .toUpperCase()}
                   </div>
                   <div>
-                    <p className="font-semibold text-gray-900 text-sm sm:text-base">
+                    <p className="font-semibold text-[#B91C1C] text-sm sm:text-base">
                       {testimonial.author}
                     </p>
                     <p className="text-xs sm:text-sm text-gray-600">

@@ -5,23 +5,31 @@ import { prisma } from "@/db"
 import { AuthError } from "next-auth";
 import { redirect } from "next/navigation";
 
-export const  login = async (provider:string )=>{
+export const login = async (provider: string) => {
+  try {
     await signIn(provider, {
-       redirectTo:"/",
-    })
-    revalidatePath("/")
-}
+      redirectTo: "/",
+    });
+    revalidatePath("/");
+  } catch (error) {
+    console.error("Login error:", error);
+    throw error;
+  }
+};
 
-export const  logout = async ()=>{
+export const logout = async () => {
+  try {
     await signOut({
-       redirectTo:"/",
-    })
-    revalidatePath("/")
-}
-
+      redirectTo: "/",
+    });
+    revalidatePath("/");
+  } catch (error) {
+    console.error("Logout error:", error);
+    throw error;
+  }
+};
 
 // app/actions/auth.ts
-
 
 const getUserByEmail = async (email: string) => {
   try {
@@ -52,15 +60,15 @@ export const loginWithCreds = async (formData: FormData): Promise<void> => {
       role: "USER",
       redirectTo: "/",
     });
-  } catch (error: any) {
+  } catch (error: unknown) {
     if (error instanceof AuthError) {
       console.error("Auth Error:", error.type);
       redirect("/sign-in?error=Invalid+credentials");
       throw new Error("Invalid credentials");
     }
-    console.log(error)
+    console.log(error);
     throw error;
   }
- 
+
   revalidatePath("/");
 };

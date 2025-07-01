@@ -1,28 +1,59 @@
 import React from "react";
-import { FaFacebookF, FaInstagram, FaLinkedinIn, FaEnvelope, FaMapMarkerAlt, FaPhoneAlt } from "react-icons/fa";
-import { RiMoneyDollarCircleFill, RiBuilding2Fill, RiLinkM, RiNewspaperFill } from "react-icons/ri"; 
+import Image from "next/image";
+import {
+  FaFacebookF,
+  FaInstagram,
+  FaLinkedinIn,
+  FaEnvelope,
+  FaMapMarkerAlt,
+  FaPhoneAlt
+} from "react-icons/fa";
+import {
+  RiMoneyDollarCircleFill,
+  RiBuilding2Fill,
+  RiLinkM,
+  RiNewspaperFill
+} from "react-icons/ri";
 const Footer = () => {
   return (
     <footer className="relative bg-[#032a5b] text-white px-6 md:px-20 pt-16 pb-20 text-sm font-inter overflow-hidden">
       {/* Optional: Subtle top border with a gradient for a premium feel */}
       {/* Main Grid */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-y-12 gap-x-10 z-10 relative">
-
         {/* Column 1: Logo, Contact & Social */}
-        <div className="space-y-4">
-          <img src="/logo.png" alt="Perificio Logo" className="w-36 mb-2" /> 
+        <div className="space-y-4 ">
+          <Image
+            src="/logo.png"
+            alt="Perificio Logo"
+            width={144}
+            height={40}
+            className="w-36 mb-2 rounded-xl"
+            priority
+          />
           {/* The detailed description was moved to the bottom section as per your last request */}
 
-          <div className="flex items-center gap-3 text-white/90 mt-6"> {/* Adjusted margin-top */}
-            <FaPhoneAlt className="text-blue-300 text-lg" /> 
-            <a href="tel:+919699800600" className="hover:text-white transition-colors duration-200">+91-9699 800 600</a>
+          <div className="flex items-center gap-3 text-white/90 mt-6">
+            {" "}
+            {/* Adjusted margin-top */}
+            <FaPhoneAlt className="text-blue-300 text-lg" />
+            <a
+              href="tel:+919699800600"
+              className="hover:text-white transition-colors duration-200"
+            >
+              +91-9699 800 600
+            </a>
           </div>
           <div className="flex items-center gap-3 text-white/90">
             <FaEnvelope className="text-blue-300 text-lg" />
-            <a href="mailto:online@perificio.com" className="hover:text-white transition-colors duration-200">online@perificio.com</a>
+            <a
+              href="mailto:online@perificio.com"
+              className="hover:text-white transition-colors duration-200"
+            >
+              online@perificio.com
+            </a>
           </div>
 
-          <div className="flex gap-3 mt-6"> 
+          <div className="flex gap-3 mt-6">
             {/* Facebook */}
             <a
               href="https://www.facebook.com/share/19KDXFYx5x/?mibextid=wwXIfr" // UPDATED FACEBOOK LINK
@@ -62,29 +93,129 @@ const Footer = () => {
             <RiMoneyDollarCircleFill className="text-2xl" /> Our Services
           </h3>
           <ul className="space-y-3 text-white/80 text-base">
-            <li><a href="direct-tax" className="hover:text-white transition-colors duration-200">Direct Tax Consulting</a></li>
-            <li><a href="indirect-tax" className="hover:text-white transition-colors duration-200">Indirect Tax Solutions</a></li>
-            <li><a href="mca" className="hover:text-white transition-colors duration-200">MCA Services</a></li> 
-            <li><a href="rera" className="hover:text-white transition-colors duration-200">RERA Advisory</a></li>
-            <li><a href="fema" className="hover:text-white transition-colors duration-200">FEMA Regulations</a></li>
-            <li><a href="insurance" className="hover:text-white transition-colors duration-200">Insurance</a></li> 
-            <li><a href="invest" className="hover:text-white transition-colors duration-200">Investment Planning</a></li>
-            <li><a href="real-estate" className="hover:text-white transition-colors duration-200">Real Estate Guidance</a></li>
-            <li><a href="nri" className="hover:text-white transition-colors duration-200">NRI Financial Services</a></li>
+            <li>
+              <a
+                href="direct-tax"
+                className="hover:text-white transition-colors duration-200"
+              >
+                Direct Tax Consulting
+              </a>
+            </li>
+            <li>
+              <a
+                href="indirect-tax"
+                className="hover:text-white transition-colors duration-200"
+              >
+                Indirect Tax Solutions
+              </a>
+            </li>
+            <li>
+              <a
+                href="mca"
+                className="hover:text-white transition-colors duration-200"
+              >
+                MCA Services
+              </a>
+            </li>
+            <li>
+              <a
+                href="rera"
+                className="hover:text-white transition-colors duration-200"
+              >
+                RERA Advisory
+              </a>
+            </li>
+            <li>
+              <a
+                href="fema"
+                className="hover:text-white transition-colors duration-200"
+              >
+                FEMA Regulations
+              </a>
+            </li>
+            <li>
+              <a
+                href="insurance"
+                className="hover:text-white transition-colors duration-200"
+              >
+                Insurance
+              </a>
+            </li>
+            <li>
+              <a
+                href="invest"
+                className="hover:text-white transition-colors duration-200"
+              >
+                Investment Planning
+              </a>
+            </li>
+            <li>
+              <a
+                href="real-estate"
+                className="hover:text-white transition-colors duration-200"
+              >
+                Real Estate Guidance
+              </a>
+            </li>
+            <li>
+              <a
+                href="nri"
+                className="hover:text-white transition-colors duration-200"
+              >
+                NRI Financial Services
+              </a>
+            </li>
           </ul>
         </div>
 
         {/* Column 3: Important Links */}
         <div>
           <h3 className="text-xl font-bold mb-5 flex items-center gap-3 text-blue-300">
-            <RiLinkM className="text-2xl" /> Important Links
+            <span className="flex items-start justify-start gap-2 ">
+              <RiLinkM className="text-2xl" /> Important Links
+            </span>
           </h3>
           <ul className="space-y-3 text-white/80 text-base">
-            <li><a href="all-blogs" className="hover:text-white transition-colors duration-200">Blog & Insights</a></li>
-            <li><a href="#" className="hover:text-white transition-colors duration-200">Careers</a></li>
-            <li><a href="#" className="hover:text-white transition-colors duration-200">FAQs</a></li>
-            <li><a href="#" className="hover:text-white transition-colors duration-200">Privacy Policy</a></li>
-            <li><a href="#" className="hover:text-white transition-colors duration-200">Terms of Service</a></li>
+            <li>
+              <a
+                href="all-blogs"
+                className="hover:text-white transition-colors duration-200"
+              >
+                Blog & Insights
+              </a>
+            </li>
+            <li>
+              <a
+                href="#"
+                className="hover:text-white transition-colors duration-200"
+              >
+                Careers
+              </a>
+            </li>
+            <li>
+              <a
+                href="#"
+                className="hover:text-white transition-colors duration-200"
+              >
+                FAQs
+              </a>
+            </li>
+            <li>
+              <a
+                href="#"
+                className="hover:text-white transition-colors duration-200"
+              >
+                Privacy Policy
+              </a>
+            </li>
+            <li>
+              <a
+                href="#"
+                className="hover:text-white transition-colors duration-200"
+              >
+                Terms of Service
+              </a>
+            </li>
           </ul>
         </div>
 
@@ -94,8 +225,22 @@ const Footer = () => {
             <RiBuilding2Fill className="text-2xl" /> About Us
           </h3>
           <ul className="space-y-3 text-white/80 text-base mb-6">
-            <li><a href="about" className="hover:text-white transition-colors duration-200">About Perificio</a></li>
-            <li><a href="contact" className="hover:text-white transition-colors duration-200">Contact Us</a></li>
+            <li>
+              <a
+                href="about"
+                className="hover:text-white transition-colors duration-200"
+              >
+                About Perificio
+              </a>
+            </li>
+            <li>
+              <a
+                href="contact"
+                className="hover:text-white transition-colors duration-200"
+              >
+                Contact Us
+              </a>
+            </li>
           </ul>
 
           <h4 className="text-lg font-semibold mb-3 flex items-center gap-2 text-white/90">
@@ -113,7 +258,7 @@ const Footer = () => {
             />
             <button
               type="submit"
-              className="bg-blue-500 hover:bg-blue-600 text-white font-semibold py-3 px-5 rounded-md transition-colors duration-300 text-sm shadow-md"
+              className="bg-blue-500 hover:bg-blue-600 text-white font-semibold py-3 px-1 rounded-md transition-colors duration-300 text-sm shadow-md"
             >
               Subscribe
             </button>
@@ -131,29 +276,29 @@ const Footer = () => {
       </div>
 
       {/* Disclaimer & Copyright - MODIFIED */}
-      <div className=" bottom-0  sticky border-t border-white/20 mt-16 pt-8 text-xs text-white/60 z-0 text-center">
-        {/* Expanded description about Perficio */}
-        <p className="text-white/80 text-sm leading-relaxed mb-6 max-w-5xl mx-auto">
-            Perficio Advisory Services, established in Mumbai in 2023 
-            , is a forward-thinking firm dedicated to accomplishing excellence
-             in Health, Wealth, and Taxation Planning. We offer integrated, 
-             tailored advisory solutions , believing true success lies at the
-              intersection of financial discipline, physical well-being, 
-              and regulatory compliance. Our commitment is to add meaningful
-               value to our clients&apos; financial lives with high moral standards.
-        </p>
-        
-        {/* Original Disclaimer */}
-        <p className="mb-4 leading-relaxed max-w-4xl mx-auto">
+      {/* <div className=" bottom-0  sticky border-t border-white/20 mt-16 pt-8 text-xs text-white/60 z-0 text-center"> */}
+      {/* Expanded description about Perficio */}
+      {/* <p className="text-white/80 text-sm leading-relaxed mb-6 max-w-5xl mx-auto">
+          Perficio Advisory Services, established in Mumbai in 2023 , is a
+          forward-thinking firm dedicated to accomplishing excellence in Health,
+          Wealth, and Taxation Planning. We offer integrated, tailored advisory
+          solutions , believing true success lies at the intersection of
+          financial discipline, physical well-being, and regulatory compliance.
+          Our commitment is to add meaningful value to our clients&apos;
+          financial lives with high moral standards.
+        </p> */}
+
+      {/* Original Disclaimer */}
+      {/* <p className="mb-4 leading-relaxed max-w-4xl mx-auto">
           Perificio Wealth Private Limited makes no warranties or
           representations on services provided. Investments are subject to
           market risk. Consult a certified financial advisor before acting on
           any information.
-        </p>
-        <p className="text-white/40">
+        </p> */}
+      {/* <p className="text-white/40">
           &copy; {new Date().getFullYear()} Perificio. All rights reserved.
         </p>
-      </div>
+      </div> */}
     </footer>
   );
 };

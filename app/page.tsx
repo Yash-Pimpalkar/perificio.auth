@@ -1,48 +1,72 @@
 import AnimatedSection from "@/components/AnimatedComponent/AnimatedSection";
 import ViewBlogs from "@/components/Blogs/ViewBlogs";
 import MovingImages from "@/components/HeroContainer/MovingImages";
-import QuickContactSection from "@/components/QuickContact/Quickcontact";
+// import QuickContactSection from "@/components/QuickContact/Quickcontact";
 import Testinomials from "@/components/Testinomials/Testinomials";
-import MappedPdf from '@/components/Blogs/MappedPdf';
+import MappedPdf from "@/components/Blogs/MappedPdf";
+import { Rubik } from "next/font/google";
+import Image from "next/image";
+// import { useGSAP } from "@gsap/react";
+// import gsap from "gsap";
+const rubik = Rubik({
+  weight: "600",
+  subsets: ["latin"],
+  style: ["normal", "italic"],
+  variable: "--font-rubik"
+});
 
-export default function Home() {
-
-   const headerBanner = '/assets/topp-banner.jpg'; // Path to your main header banner
+const Home = () => {
+  const headerBanner = "/assets/top-banner.png"; // Path to your main header banner
 
   // Path to the new image you uploaded (assuming it's in your public/assets folder)
+  // const tl = gsap.timeline();
+  // useGSAP(() => {
+  //   tl.to(
+  //     "#header-banner",
 
+  //     {
+  //       opacity: 1,
 
+  //       duration: 2,
+  //       ease: "power1.inOut"
+  //     }
+  //   );
+  // }, []);
   return (
     <div className="min-h-screen bg-white text-gray-900 font-inter relative">
-
       {/* Header Banner */}
-      <section className="w-full">
-        <img
+      <section
+        id="header-banner"
+        className="w-full h-[50vh] md:h-[60vh] lg:h-[70vh] relative overflow-hidden"
+      >
+        <Image
           src={headerBanner}
-          alt="Main Header Banner" // Changed alt text for clarity
-          className="w-full h-auto object-cover" // object-cover ensures it fills the space
+          alt="Banner"
+          className="object-contain md:object-cover object-center"
+          fill
+          sizes="(max-width: 640px) 100vw, (max-width: 1024px) 100vw, 100vw"
+          priority
         />
       </section>
 
       {/* New Section with "Living well today..." */}
-<section className="h-100 w-full bg-gradient-to-br from-[#FFE0B2] to-[#FFCC80] py-10 flex items-center justify-center relative overflow-hidden font-inter">
-  {/* Content container */}
-  <div className="relative z-10 text-center p-4">
-    <p className="text-2xl md:text-3xl lg:text-4xl font-extrabold text-blue-800 leading-tight">
-      {/* First part of the text in blue */}
-      HELPING YOU GROW,{' '}
-      {/* The word "protect," in red and underlined, also serves as a line break point */}
-      <span className="underline decoration-red-500 decoration-2 text-red-600">
-        PROTECT,
-      </span>{' '}
-      <br className="sm:hidden" /> {/* Line break for smaller screens */}
-      {/* The rest of the text in blue */}
-      <br />AND ENJOY YOUR WEALTH.
-    </p>
-  </div>
-</section>
-
-
+      <section className="  w-full bg-white py-2 md:py-4 flex items-center justify-center relative overflow-hidden font-mono">
+        {/* Content container */}
+        <div className="relative z-10 text-center p-4 mx-4">
+          <p
+            className={`${rubik.className} italic  text-md md:text-2xl   font-extrabold text-blue-900  md:tracking-wide`}
+          >
+            <span className="text-red-500">&quot;</span>
+            {/* First part of the text in blue */}
+            We would like to be known as people who add meaningful value to the
+            financial lives of our clients. To be respected as a company which
+            is known for its high moral standards.
+            {/* The word "protect," in red and underlined, also serves as a line break point */}
+            {/* The rest of the text in blue */}
+            <span className="text-red-600">&quot;</span>
+          </p>
+        </div>
+      </section>
 
       {/* Added relative for chatbot positioning */}
       {/* Dynamic Services Advertising Banner with Rolling Cards   */}
@@ -52,9 +76,9 @@ export default function Home() {
       </section>
       <AnimatedSection>
         {/* Testimonials Section */}
-      <section>
-       <Testinomials />
-      </section>
+        <section>
+          <Testinomials />
+        </section>
       </AnimatedSection>
 
       {/* Blog/Knowledge Base Section */}
@@ -63,21 +87,19 @@ export default function Home() {
         <ViewBlogs />
       </section>
 
-        
-
       <section className="py-12 md:py-20 px md:px-6 sm:px-4 bg-orange-50">
         <MappedPdf />
       </section>
 
       {/* Contact Section */}
-      <section id="contact">
-        {/* Alice Blue background */}
-        <QuickContactSection />
-      </section>
+      {/* <section id="contact"> */}
+      {/* Alice Blue background */}
+      {/* <QuickContactSection /> */}
+      {/* </section> */}
 
       {/* Floating Help Button */}
-
     </div>
-
   );
-}
+};
+
+export default Home;
