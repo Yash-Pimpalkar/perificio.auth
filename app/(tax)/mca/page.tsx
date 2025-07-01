@@ -1,6 +1,6 @@
 "use client";
 import React from "react";
-import Link from "next/link";
+
 
 const oversightAreas = [
   {
@@ -36,39 +36,7 @@ const oversightAreas = [
       "SBO, Beneficial Ownership Disclosures",
     ],
   },
-  {
-    icon: "🌍",
-    title: "Inbound Investment & Advisory",
-    items: [
-      "Entry Strategy & Entity Structuring (FEMA, FDI)",
-      "Setup of Liaison, Branch & Project Offices",
-      "FDI Reporting (FC-GPR, FC-TRS via FIRMS Portal)",
-      "FEMA Compliance & RBI filings",
-      "Due Diligence for Cross-Border Investments",
-    ],
-  },
-  {
-    icon: "🚀",
-    title: "Outbound Investment & NRI Services",
-    items: [
-      "Overseas Direct Investment (ODI) Advisory",
-      "JV & Wholly Owned Subsidiaries Structuring",
-      "Remittance Planning under LRS",
-      "NRI Tax Advisory – Income, Capital Gains, DTAA",
-      "Repatriation of Funds & Asset Restructuring",
-    ],
-  },
-  {
-    icon: "🧾",
-    title: "International Taxation & Compliance",
-    items: [
-      "Tax Residency & PE Risk Analysis",
-      "Transfer Pricing Documentation & Compliance",
-      "Withholding Tax (TDS) on Cross-border Transactions",
-      "Foreign Tax Credit (FTC) advisory",
-      "Form 15CA/CB, FATCA & CRS Compliance",
-    ],
-  },
+
 ];
 
 const page = () => {
@@ -126,7 +94,7 @@ const page = () => {
         {/* Areas of Oversight Section - With Orange Gradient Background and Blue Headers */}
         <section
           id="areas-of-oversight"
-          className="py-8 rounded-xl shadow-lg border border-orange-100"
+          className="py-8 px-8 rounded-xl shadow-lg border border-orange-100"
           style={{
             background: "linear-gradient(to right, #FFF3E0 0%, #FFECB3 100%)",
           }}

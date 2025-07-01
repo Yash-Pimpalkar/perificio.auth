@@ -5,49 +5,41 @@ import React from 'react';
 // import Head from 'next/head'; // Uncomment if this is a top-level page in `pages/`
 
 const page = () => {
-  // Define the key points about FEMA for customers
-  const femaHighlights = [
-    {
-      title: 'Simplified Foreign Exchange',
-      description: 'FEMA facilitates external trade and payments, making cross-border transactions smoother and more accessible for businesses and individuals.',
-      icon: '🌐', // Globe/Network icon
-    },
-    {
-      title: 'Current Account Transactions',
-      description: 'Governs daily international transactions like payments for trade, services, interest, and remittances, generally permitted without restrictions.',
-      icon: '💸', // Money wings icon
-    },
-    {
-      title: 'Capital Account Transactions',
-      description: 'Regulates cross-border investments such as Foreign Direct Investment (FDI), Overseas Direct Investment (ODI), and External Commercial Borrowings (ECBs).',
-      icon: '📈', // Growth chart icon
-    },
-    {
-      title: 'Resident vs. Non-Resident',
-      description: 'Clearly defines categories of individuals and entities based on residency, impacting the applicability of various foreign exchange rules.',
-      icon: '🏠', // House/Residency icon
-    },
-    {
-      title: 'Authorized Persons',
-      description: 'All foreign exchange transactions must be conducted through RBI-authorized entities like banks and money changers, ensuring proper oversight.',
-      icon: '🤝', // Handshake icon
-    },
-    {
-      title: 'Liberalized Remittance Scheme (LRS)',
-      description: 'Allows resident individuals to remit funds abroad up to specified limits for various purposes like travel, education, and medical treatment.',
-      icon: '✈️', // Airplane/Travel icon
-    },
-    {
-      title: 'Compliance & Reporting',
-      description: 'Mandates specific reporting requirements for foreign transactions to ensure transparency and prevent illegal activities like money laundering.',
-      icon: '✅', // Checkmark/Compliance icon
-    },
-    {
-      title: 'Advisory & Penalties',
-      description: 'While generally civil in nature, non-compliance can lead to penalties and investigations, emphasizing the need for expert legal guidance.',
-      icon: '⚖️', // Scales of justice icon
-    },
-  ];
+const oversightAreas = [
+  {
+    icon: "🌍",
+    title: "Inbound Investment & Advisory",
+    items: [
+      "Entry Strategy & Entity Structuring (FEMA, FDI)",
+      "Setup of Liaison, Branch & Project Offices",
+      "FDI Reporting (FC-GPR, FC-TRS via FIRMS Portal)",
+      "FEMA Compliance & RBI filings",
+      "Due Diligence for Cross-Border Investments",
+    ],
+  },
+  {
+    icon: "🚀",
+    title: "Outbound Investment & NRI Services",
+    items: [
+      "Overseas Direct Investment (ODI) Advisory",
+      "JV & Wholly Owned Subsidiaries Structuring",
+      "Remittance Planning under LRS",
+      "NRI Tax Advisory – Income, Capital Gains, DTAA",
+      "Repatriation of Funds & Asset Restructuring",
+    ],
+  },
+  {
+    icon: "🧾",
+    title: "International Taxation & Compliance",
+    items: [
+      "Tax Residency & PE Risk Analysis",
+      "Transfer Pricing Documentation & Compliance",
+      "Withholding Tax (TDS) on Cross-border Transactions",
+      "Foreign Tax Credit (FTC) advisory",
+      "Form 15CA/CB, FATCA & CRS Compliance",
+    ],
+  },
+];
 
   return (
     // Main container with a suitable light orange background color
@@ -76,10 +68,10 @@ const page = () => {
                  className="py-8 rounded-xl shadow-lg border border-orange-100" // Added orange border
                  style={{ background: 'linear-gradient(to right, #FFF3E0 0%, #FFECB3 100%)' }}> {/* Section with a different orange gradient */}
           <h2 className="text-3xl sm:text-4xl font-bold text-blue-800 text-center mb-10 font-poppins"> {/* Deep blue header */}
-            Understanding FEMA for Your Global Transactions
+            Understanding International Tax for Your Global Transactions
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 px-6 sm:px-8">
-            {femaHighlights.map((feature, index) => (
+          {oversightAreas.map((feature, index) => (
               <div
                 key={index}
                 className="bg-orange-50 p-6 sm:p-7 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 flex flex-col items-center text-center border border-orange-200" // Light orange card background and border
@@ -91,7 +83,7 @@ const page = () => {
                   {feature.title}
                 </h3>
                 <p className="text-gray-700 leading-relaxed font-inter text-sm sm:text-base"> {/* Adjusted text color */}
-                  {feature.description}
+                  {feature.items}
                 </p>
               </div>
             ))}
