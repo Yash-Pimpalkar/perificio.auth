@@ -62,22 +62,14 @@ const page = () => {
       <main className="w-full max-w-7xl mx-auto py-8 sm:py-12 lg:py-16 px-4 sm:px-6 lg:px-8 space-y-12 sm:space-y-16 lg:space-y-20">
 
         {/* Hero Section for FEMA - Now with Orange Gradient Background */}
-        <section className="relative w-full py-20 px-6 rounded-xl overflow-hidden shadow-xl"
-          style={{
-            background: 'linear-gradient(135deg, #FFF8E1 0%, #FFDDA0 100%)', // Soft orange gradient
-          }}>
+
           <div className="text-center relative z-10">
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-blue-900 mb-4 font-poppins leading-tight"> {/* Deep blue header */}
-              FEMA: Navigating <span className="text-blue-700">Foreign Exchange</span> with Ease
+              International Tax
             </h1>
-            <p className="text-lg sm:text-xl text-gray-700 font-inter max-w-3xl mx-auto"> {/* Adjusted text color */}
-              Facilitating global transactions, promoting external trade, and ensuring regulatory compliance.
-            </p>
-            <a href="#key-aspects" className="mt-8 inline-block bg-blue-600 hover:bg-blue-700 text-white font-semibold font-poppins px-8 py-3 rounded-lg shadow-lg transition transform hover:scale-105"> {/* Changed to blue button */}
-              Discover Key Aspects
-            </a>
+
           </div>
-        </section>
+ 
 
         {/* Key Aspects Section - Now with Orange Gradient Background and Orange Cards */}
         <section id="key-aspects"
@@ -107,31 +99,11 @@ const page = () => {
         </section>
 
         {/* Call to Action / Consultation Section - Now with Orange Gradient Background */}
-        <section className="p-8 sm:p-10 rounded-xl shadow-lg text-center"
-          style={{ background: 'linear-gradient(135deg, #FFE0B2 0%, #FFCC80 100%)' }}> {/* Another orange gradient */}
-          <h2 className="text-2xl sm:text-3xl font-bold text-blue-800 mb-4 font-poppins"> {/* Deep blue header */}
-            Require Expert FEMA Advisory?
-          </h2>
-          <p className="text-gray-700 text-md sm:text-lg max-w-2xl mx-auto mb-8 font-inter"> {/* Adjusted text color */}
-            Navigate the complexities of foreign exchange regulations with confidence. Our experts are here to assist.
-          </p>
-          <a href="/contact" className="inline-block bg-red-600 hover:bg-red-700 text-white font-semibold font-poppins px-8 py-4 rounded-lg shadow-md transition transform hover:scale-105">
-            Get FEMA Legal Assistance
-          </a>
-        </section>
+     
       </main>
 
       {/* Global Font Imports (or define in styles/globals.css for better performance) */}
-      <style jsx global>{`
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@400;600;700;800&display=swap');
 
-        .font-inter {
-            font-family: 'Inter', sans-serif;
-        }
-        .font-poppins {
-            font-family: 'Poppins', sans-serif;
-        }
-      `}</style>
     </div>
   );
 };

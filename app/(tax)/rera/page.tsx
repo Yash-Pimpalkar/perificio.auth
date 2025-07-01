@@ -62,22 +62,13 @@ const page = () => {
       <main className="w-full max-w-7xl mx-auto py-8 sm:py-12 lg:py-16 px-4 sm:px-6 lg:px-8 space-y-12 sm:space-y-16 lg:space-y-20">
 
         {/* Hero Section for RERA - Now with Orange Gradient Background */}
-        <section className="relative w-full py-20 px-6 rounded-xl overflow-hidden shadow-xl"
-          style={{
-            background: 'linear-gradient(135deg, #FFF8E1 0%, #FFDDA0 100%)', // Soft orange gradient
-          }}>
+
           <div className="text-center relative z-10">
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-blue-900 mb-4 font-poppins leading-tight"> {/* Deep blue header */}
               RERA: Your Assurance in <span className="text-blue-700">Real Estate</span>
             </h1>
-            <p className="text-lg sm:text-xl text-gray-700 font-inter max-w-3xl mx-auto"> {/* Adjusted text color */}
-              Empowering homebuyers and ensuring transparency in every property transaction.
-            </p>
-            <a href="#key-features" className="mt-8 inline-block bg-blue-600 hover:bg-blue-700 text-white font-semibold font-poppins px-8 py-3 rounded-lg shadow-lg transition transform hover:scale-105">
-              Explore Key Features
-            </a>
           </div>
-        </section>
+ 
 
         {/* Key Features Section - Now with Orange Gradient Background and Orange Cards */}
         <section id="key-features"
@@ -107,18 +98,7 @@ const page = () => {
         </section>
 
         {/* Call to Action / Consultation Section - Now with Orange Gradient Background */}
-        <section className="p-8 sm:p-10 rounded-xl shadow-lg text-center"
-          style={{ background: 'linear-gradient(135deg, #FFE0B2 0%, #FFCC80 100%)' }}> {/* Another orange gradient */}
-          <h2 className="text-2xl sm:text-3xl font-bold text-blue-800 mb-4 font-poppins"> {/* Deep blue header */}
-            Need Expert Guidance on RERA?
-          </h2>
-          <p className="text-gray-700 text-md sm:text-lg max-w-2xl mx-auto mb-8 font-inter"> {/* Adjusted text color */}
-            Our legal experts provide comprehensive advice on RERA compliance, buyer rights, and dispute resolution.
-          </p>
-          <a href="/contact" className="inline-block bg-red-600 hover:bg-red-700 text-white font-semibold font-poppins px-8 py-4 rounded-lg shadow-md transition transform hover:scale-105">
-            Consult Our RERA Experts
-          </a>
-        </section>
+     
       </main>
 
       {/* Global Font Imports (or define in styles/globals.css for better performance) */}
