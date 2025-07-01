@@ -47,19 +47,12 @@ const AboutUsPage = () => {
       <main className="w-full max-w-7xl mx-auto py-8 sm:py-12 lg:py-16 px-4 sm:px-6 lg:px-8 space-y-12 sm:space-y-16 lg:space-y-20">
 
         {/* Hero Section - Matched to previous page's hero gradient and blue header */}
-        <section
-          className="relative w-full py-20 px-6 rounded-xl overflow-hidden shadow-xl" // shadow-xl instead of shadow-2xl for consistency
-          style={{
-            background: 'linear-gradient(135deg, #FFF8E1 0%, #FFDDA0 100%)', // Soft orange gradient
-          }}
-        >
+
           <div className="text-center relative z-10">
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-blue-900 mb-4 font-poppins leading-tight">
               About <span className="text-red-600">Perficio</span>
-            </h1>
-           
+            </h1>      
           </div>
-        </section>
 
         {/* Introduction / Our Story - Matched to previous page's section gradient */}
         <section
