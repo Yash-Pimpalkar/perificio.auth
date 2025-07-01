@@ -48,21 +48,12 @@ const page = () => {
              background: 'linear-gradient(135deg, #FFF8E1 0%, #FFDDA0 100%)', // Soft orange gradient
            }}
          >
-           <div className="text-center relative z-10">
-             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-blue-900 mb-4 font-poppins leading-tight">
+         
+             <h1 className="text-center text-4xl sm:text-5xl lg:text-6xl font-extrabold text-blue-900 mb-4 font-poppins leading-tight">
                Direct Taxation Services
              </h1>
-             <p className="text-lg sm:text-xl text-gray-700 font-inter max-w-3xl mx-auto mb-8">
-               Navigating the complex landscape of direct taxes requires expert knowledge and meticulous planning.
-               At Tax Consulting, we offer precise and personalized solutions for individuals and businesses alike.
-             </p>
-             <Link
-               href="#services"
-               className="inline-block bg-blue-600 hover:bg-blue-700 text-white font-semibold font-poppins px-8 py-4 rounded-lg shadow-md transition transform hover:scale-105"
-             >
-               Explore Our Direct Tax Services
-             </Link>
-           </div>
+           
+         
          </section>
 
          {/* Highlighted Core Services List - Section with light orange gradient, cards with solid light orange */}
@@ -93,33 +84,11 @@ const page = () => {
          </section>
 
          {/* Call to Action Section - Orange gradient background, blue header */}
-         <section
-           className="p-8 sm:p-10 rounded-xl shadow-lg text-center"
-           style={{ background: 'linear-gradient(135deg, #FFE0B2 0%, #FFCC80 100%)' }}>
-           <h2 className="text-2xl sm:text-3xl font-bold text-blue-800 mb-4 font-poppins">
-             Explore Our Comprehensive Direct Tax Solutions
-           </h2>
-           <p className="text-gray-700 text-md sm:text-lg max-w-2xl mx-auto mb-8 font-inter">
-             Beyond the basics, our direct tax services delve into intricate details to ensure compliance and optimize your financial position.
-             Partner with us for unparalleled expertise in direct taxation.
-           </p>
-           <Link href="/contact" className="inline-block bg-red-600 hover:bg-red-700 text-white font-semibold font-poppins px-8 py-4 rounded-lg shadow-md transition transform hover:scale-105">
-             Learn More About Direct Tax
-           </Link>
-         </section>
+     
        </main>
 
        {/* Global Font Imports */}
-       <style jsx global>{`
-         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@400;600;700;800&display=swap');
-
-         .font-inter {
-             font-family: 'Inter', sans-serif;
-         }
-         .font-poppins {
-             font-family: 'Poppins', sans-serif;
-         }
-       `}</style>
+   
      </div>
    );
 }
