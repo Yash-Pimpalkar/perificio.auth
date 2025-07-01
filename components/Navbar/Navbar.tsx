@@ -2,7 +2,7 @@
 
 import { useSession, signOut } from "next-auth/react";
 import Link from "next/link";
-import { CgProfile } from "react-icons/cg";
+import { FaUser } from "react-icons/fa";
 import {
   Disclosure,
   DisclosureButton,
@@ -10,9 +10,9 @@ import {
   Menu,
   MenuButton,
   MenuItem,
-  MenuItems,
+  MenuItems
 } from "@headlessui/react";
-import { Bars3Icon,ChevronDownIcon } from "@heroicons/react/24/outline";
+import { Bars3Icon, ChevronDownIcon } from "@heroicons/react/24/outline";
 import Image from "next/image";
 
 // Types
@@ -40,36 +40,36 @@ const menuConfig: Record<Role, MenuItemWithSubmenu[]> = {
         { name: "Indirect Tax", href: "/indirect-tax" },
         { name: "MCA", href: "/mca" },
         { name: "RERA", href: "/rera" },
-        { name: "FEMA", href: "/fema" },
-      ],
+        { name: "FEMA", href: "/fema" }
+      ]
     },
     {
       name: "Wealth",
       submenu: [
         { name: "Invest", href: "/invest" },
         { name: "Real Estate", href: "/real-estate" },
-        { name: "NRI", href: "/nri" },
-      ],
+        { name: "NRI", href: "/nri" }
+      ]
     },
     { name: "Insurance", href: "/insurance" },
     { name: "About Us", href: "/about" },
-    { name: "Contact Us", href: "/contact" },
+    { name: "Contact Us", href: "/contact" }
   ],
   ADMIN: [
     { name: "Home", href: "/" },
     { name: "Dashboard", href: "/dashboard" },
     {
       name: "Posts",
-      submenu: [{ name: "Create New Post", href: "/create-post" }],
+      submenu: [{ name: "Create New Post", href: "/create-post" }]
     },
     {
       name: "Files",
       submenu: [
         { name: "Upload Pdf", href: "/upload-pdf" },
-        { name: "View All Pdf", href: "/all-pdfs" },
-      ],
+        { name: "View All Pdf", href: "/all-pdfs" }
+      ]
     },
-    { name: "Contact", href: "/show-contacts" },
+    { name: "Contact", href: "/show-contacts" }
   ],
   SUPERADMIN: [
     { name: "Home", href: "/" },
@@ -77,8 +77,8 @@ const menuConfig: Record<Role, MenuItemWithSubmenu[]> = {
     { name: "Tax Controls", href: "/superadmin/taxation" },
     { name: "Wealth System", href: "/superadmin/wealth" },
     { name: "Settings", href: "/superadmin/settings" },
-    { name: "Logs", href: "/superadmin/logs" },
-  ],
+    { name: "Logs", href: "/superadmin/logs" }
+  ]
 };
 
 export default function Navbar() {
@@ -111,15 +111,22 @@ export default function Navbar() {
               </Link>
             </div>
             {/* Desktop menu items */}
-            <div className="hidden sm:ml-6 sm:block">
+            <div className="hidden sm:ml-6 sm:block text-[#3a4664]">
               <div className="flex space-x-4">
-                {menu.map((item) => (
+                {menu.map((item) =>
                   item.submenu ? (
-                    <Menu key={item.name} as="div" className="relative inline-block text-left">
+                    <Menu
+                      key={item.name}
+                      as="div"
+                      className="relative inline-block text-left"
+                    >
                       <div>
-                        <MenuButton className="inline-flex items-center text-black hover:bg-gray-200 hover:text-black px-3 py-2 rounded-md text-sm font-medium">
+                        <MenuButton className="inline-flex items-center  hover:bg-gray-200 hover:text-black px-3 py-2 rounded-md text-sm font-medium">
                           {item.name}
-                          <ChevronDownIcon className="ml-1 h-4 w-4" aria-hidden="true" />
+                          <ChevronDownIcon
+                            className="ml-1 h-4 w-4"
+                            aria-hidden="true"
+                          />
                         </MenuButton>
                       </div>
                       <MenuItems className="absolute left-0 z-20 mt-2 w-48 origin-top-left rounded-md bg-white shadow-lg ring-1 ring-black/5 focus:outline-none">
@@ -128,7 +135,9 @@ export default function Navbar() {
                             {({ active }) => (
                               <Link
                                 href={sub.href || "#"}
-                                className={`block px-4 py-2 text-sm text-black ${active ? 'bg-gray-100' : ''}`}
+                                className={`block px-4 py-2 text-sm ${
+                                  active ? "bg-gray-100" : ""
+                                }`}
                               >
                                 {sub.name}
                               </Link>
@@ -141,12 +150,12 @@ export default function Navbar() {
                     <Link
                       key={item.name}
                       href={item.href || "#"}
-                      className="text-black hover:bg-gray-200 hover:text-black px-3 py-2 rounded-md text-sm font-medium"
+                      className=" hover:bg-gray-200 hover:text-black px-3 py-2 rounded-md text-sm font-medium"
                     >
                       {item.name}
                     </Link>
                   )
-                ))}
+                )}
               </div>
             </div>
           </div>
@@ -167,7 +176,7 @@ export default function Navbar() {
                       className="rounded-full"
                     />
                   ) : (
-                    <CgProfile className="w-8 h-8 text-gray-700" />
+                    <FaUser className="w-7 h-7 text-blue-900 hover:text-blue-400" />
                   )}
                 </MenuButton>
               </div>
@@ -176,18 +185,30 @@ export default function Navbar() {
                   <>
                     <div className="px-4 py-2 text-sm text-gray-700 border-b">
                       <p className="font-medium">{session?.user?.name}</p>
-                      <p className="text-xs text-gray-500">{session?.user?.email}</p>
+                      <p className="text-xs text-gray-500">
+                        {session?.user?.email}
+                      </p>
                     </div>
                     <MenuItem>
                       {({ active }) => (
-                        <Link href="#" className={`block px-4 py-2 text-sm text-black ${active ? 'bg-gray-100' : ''}`}>
+                        <Link
+                          href="#"
+                          className={`block px-4 py-2 text-sm text-black ${
+                            active ? "bg-gray-100" : ""
+                          }`}
+                        >
                           Your Profile
                         </Link>
                       )}
                     </MenuItem>
                     <MenuItem>
                       {({ active }) => (
-                        <Link href="#" className={`block px-4 py-2 text-sm text-black ${active ? 'bg-gray-100' : ''}`}>
+                        <Link
+                          href="#"
+                          className={`block px-4 py-2 text-sm text-black ${
+                            active ? "bg-gray-100" : ""
+                          }`}
+                        >
                           Settings
                         </Link>
                       )}
@@ -196,7 +217,9 @@ export default function Navbar() {
                       {({ active }) => (
                         <button
                           onClick={() => signOut({ callbackUrl: "/" })}
-                          className={`w-full text-left px-4 py-2 text-sm text-black ${active ? 'bg-gray-100' : ''}`}
+                          className={`w-full text-left px-4 py-2 text-sm text-black ${
+                            active ? "bg-gray-100" : ""
+                          }`}
                         >
                           Sign out
                         </button>
@@ -208,7 +231,9 @@ export default function Navbar() {
                     {({ active }) => (
                       <Link
                         href="/sign-in"
-                        className={`block px-4 py-2 text-sm text-black ${active ? 'bg-gray-100' : ''}`}
+                        className={`block px-4 py-2 text-sm text-black ${
+                          active ? "bg-gray-100" : ""
+                        }`}
                       >
                         Sign In
                       </Link>
@@ -224,7 +249,7 @@ export default function Navbar() {
       {/* Mobile menu panel */}
       <DisclosurePanel className="sm:hidden">
         <div className="space-y-1 px-2 pt-2 pb-3">
-          {menu.map((item) => (
+          {menu.map((item) =>
             item.submenu ? (
               <Disclosure key={item.name} as="div" className="space-y-1">
                 <DisclosureButton className="flex items-center justify-between w-full rounded-md px-3 py-2 text-base font-medium text-black hover:bg-gray-200 hover:text-black">
@@ -254,7 +279,7 @@ export default function Navbar() {
                 {item.name}
               </DisclosureButton>
             )
-          ))}
+          )}
         </div>
       </DisclosurePanel>
     </Disclosure>
