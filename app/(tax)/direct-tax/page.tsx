@@ -42,19 +42,12 @@ const page = () => {
        <main className="w-full max-w-7xl mx-auto py-8 sm:py-12 lg:py-16 px-4 sm:px-6 lg:px-8 space-y-12 sm:space-y-16 lg:space-y-20">
 
          {/* Hero Section - Prominent orange gradient with blue header */}
-         <section
-           className="relative w-full py-20 px-6 rounded-xl overflow-hidden shadow-xl"
-           style={{
-             background: 'linear-gradient(135deg, #FFF8E1 0%, #FFDDA0 100%)', // Soft orange gradient
-           }}
-         >
-         
+
              <h1 className="text-center text-4xl sm:text-5xl lg:text-6xl font-extrabold text-blue-900 mb-4 font-poppins leading-tight">
                Direct Taxation Services
              </h1>
            
          
-         </section>
 
          {/* Highlighted Core Services List - Section with light orange gradient, cards with solid light orange */}
          <section id="services"
