@@ -52,16 +52,7 @@ const page = () => {
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-blue-900 mb-4 font-poppins leading-tight">
               Indirect Taxation Services
             </h1>
-            <p className="text-lg sm:text-xl text-gray-700 font-inter max-w-3xl mx-auto mb-8">
-              Navigating the dynamic landscape of Indirect Taxes, particularly GST, requires specialized knowledge and continuous updates.
-              At Tax Consulting, we provide comprehensive and proactive solutions to ensure seamless compliance and optimize your indirect tax obligations.
-            </p>
-            <Link
-              href="#services"
-              className="inline-block bg-blue-600 hover:bg-blue-700 text-white font-semibold font-poppins px-8 py-4 rounded-lg shadow-md transition transform hover:scale-105"
-            >
-              Explore Our Indirect Tax Services
-            </Link>
+          
           </div>
         </section>
 
