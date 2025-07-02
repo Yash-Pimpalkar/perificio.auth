@@ -10,9 +10,9 @@ import {
 } from "react-icons/fa";
 import {
   RiMoneyDollarCircleFill,
-  RiBuilding2Fill,
-  RiLinkM,
-  RiNewspaperFill
+  // RiBuilding2Fill,
+  RiLinkM
+  // RiNewspaperFill
 } from "react-icons/ri";
 const Footer = () => {
   return (
@@ -176,6 +176,7 @@ const Footer = () => {
                 Blog & Insights
               </a>
             </li>
+
             <li>
               <a
                 href="#"
@@ -197,7 +198,7 @@ const Footer = () => {
                 href="contact"
                 className="hover:text-white transition-colors duration-200"
               >
-                Contact Us
+                Contact US
               </a>
             </li>
             <li>
@@ -222,51 +223,8 @@ const Footer = () => {
         {/* Column 4: About Us, Newsletter & Location */}
         <div>
           <h3 className="text-xl font-bold mb-5 flex items-center gap-3 text-blue-300">
-            <RiBuilding2Fill className="text-2xl" /> About Us
-          </h3>
-          <ul className="space-y-3 text-white/80 text-base mb-6">
-            <li>
-              <a
-                href="about"
-                className="hover:text-white transition-colors duration-200"
-              >
-                About Perificio
-              </a>
-            </li>
-            <li>
-              <a
-                href="contact"
-                className="hover:text-white transition-colors duration-200"
-              >
-                Contact Us
-              </a>
-            </li>
-          </ul>
-
-          <h4 className="text-lg font-semibold mb-3 flex items-center gap-2 text-white/90">
-            <RiNewspaperFill className="text-xl" /> Stay Updated
-          </h4>
-          <p className="text-white/70 mb-4 text-sm">
-            Join our newsletter for expert insights and financial updates.
-          </p>
-          <form className="flex flex-col sm:flex-row gap-2">
-            <input
-              type="email"
-              placeholder="Your email address"
-              className="flex-grow p-3 rounded-md bg-white/10 text-white placeholder-white/50 border border-white/20 focus:border-blue-400 focus:outline-none transition-colors duration-200 text-sm"
-              aria-label="Enter your email for newsletter"
-            />
-            <button
-              type="submit"
-              className="bg-blue-500 hover:bg-blue-600 text-white font-semibold py-3 px-1 rounded-md transition-colors duration-300 text-sm shadow-md"
-            >
-              Subscribe
-            </button>
-          </form>
-
-          <h4 className="text-lg font-semibold mt-8 mb-3 flex items-center gap-2 text-white/90">
             <FaMapMarkerAlt className="text-xl" /> Our Location
-          </h4>
+          </h3>
           <address className="text-white/70 not-italic text-sm">
             123 Financial Tower, <br />
             Business District, <br />

@@ -202,24 +202,9 @@ export default function Page() {
         </section>
 
         {/* Introduction to Services Section */}
-        <section className="w-full px-4 sm:px-6 md:px-8 lg:px-12 xl:px-20 2xl:px-32 py-12 bg-orange-100 text-center border-t border-orange-200">
-          <p className="text-xl text-gray-700 max-w-3xl mx-auto font-inter">
-            At Perificio, we provide **personalized and tax-optimized insurance solutions**, ensuring peace of mind for you and your loved ones. Our recommendations are always in your best interest.
-          </p>
-        </section>
 
         {/* New - Decide Right Insurance Mix CTA */}
-        <section className="w-full bg-red-600 text-white py-12 px-4 sm:px-6 md:px-8 lg:px-12 xl:px-20 2xl:px-32 text-center shadow-lg">
-          <h2 className="text-2xl md:text-3xl font-bold mb-4 font-poppins">
-            Need help deciding on the right insurance mix?
-          </h2>
-          <a
-            href="#contact-form-section"
-            className="inline-block bg-white text-red-600 hover:bg-gray-100 font-bold px-8 py-3 rounded-full shadow-md transition transform hover:scale-105 duration-300 ease-in-out text-lg font-poppins"
-          >
-            Schedule an initial advisory call with our team today <FaArrowRight className="inline-block ml-2" />
-          </a>
-        </section>
+
 
         {/* Our Support/Services Section */}
         <section className="w-full px-4 sm:px-6 md:px-8 lg:px-12 xl:px-20 2xl:px-32 py-16 bg-orange-50 border-t border-orange-100">
@@ -260,38 +245,10 @@ export default function Page() {
         </section>
 
         {/* Why Clients Trust Us Section */}
-        <section className="w-full px-4 sm:px-6 md:px-8 lg:px-12 xl:px-20 2xl:px-32 py-16 bg-orange-100 border-t border-orange-200">
-          <h2 className="text-3xl md:text-4xl font-bold mb-10 text-center text-blue-900 font-poppins">
-            Why Clients Trust Us
-          </h2>
-          <div className="max-w-3xl mx-auto grid gap-6 md:grid-cols-1">
-            {trustReasons.map((reason, index) => (
-              <div
-                key={index}
-                className="flex items-center gap-4 bg-white rounded-lg shadow-md p-6 border border-orange-300 hover:shadow-lg transition duration-300 ease-in-out"
-              >
-                {reason.icon}
-                <span className="text-gray-800 font-medium text-lg font-inter">{reason.text}</span>
-              </div>
-            ))}
-          </div>
-        </section>
+     
 
         {/* Testimonials Section */}
-        <section className="w-full px-4 sm:px-6 md:px-8 lg:px-12 xl:px-20 2xl:px-32 py-16 bg-orange-50 border-t border-orange-100">
-          <h2 className="text-3xl md:text-4xl font-bold mb-10 text-center text-blue-900 font-poppins">
-            What Our Clients Say
-          </h2>
-          <div className="grid gap-8 md:grid-cols-1 lg:grid-cols-3">
-            {testimonials.map((testimonial, index) => (
-              <div key={index} className="bg-orange-100 rounded-xl shadow-md p-6 flex flex-col items-center text-center border border-orange-200 hover:shadow-lg transition duration-300 ease-in-out">
-                <FaQuoteLeft className="text-red-600 text-4xl mb-4" />
-                <p className="italic text-gray-700 mb-4 flex-grow font-inter">&apos;{testimonial.quote}&apos;</p>
-                <p className="font-semibold text-blue-700 font-poppins">- {testimonial.author}</p>
-              </div>
-            ))}
-          </div>
-        </section>
+       
 
         {/* FAQs Section */}
         <section className="w-full px-4 sm:px-6 md:px-8 lg:px-12 xl:px-20 2xl:px-32 py-16 bg-orange-100 border-t border-orange-200">

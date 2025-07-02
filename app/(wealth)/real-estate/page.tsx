@@ -45,30 +45,14 @@ const page = () => {
             <main className="w-full max-w-7xl mx-auto py-8 sm:py-12 lg:py-16 px-4 sm:px-6 lg:px-8 space-y-12 sm:space-y-16 lg:space-y-20">
 
                 {/* Hero Section for Real Estate Page - Using the prominent orange gradient */}
-                <section
-                    className="relative w-full py-20 px-6 rounded-xl overflow-hidden shadow-xl" // Consistent padding and shadow
-                    style={{
-                        background: 'linear-gradient(135deg, #FFF8E1 0%, #FFDDA0 100%)', // Soft orange gradient
-                    }}
-                >
-                    <div className="text-center relative z-10">
+             
                         {/* Heading with blue-900 and font-poppins */}
-                        <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-blue-900 mb-4 font-poppins leading-tight">
+                        <h1 className="text-4xl text-center sm:text-5xl lg:text-6xl font-extrabold text-blue-900 mb-4 font-poppins leading-tight">
                             Your Trusted Partner in <span className="text-red-600">Real Estate.</span> {/* Retaining red accent */}
                         </h1>
                         {/* Paragraph text with gray-700 and font-inter */}
-                        <p className="text-lg sm:text-xl text-gray-700 font-inter max-w-3xl mx-auto mb-8">
-                            Navigate the property market with confidence. From investments to management, we guide you every step of the way.
-                        </p>
-                        {/* Button with blue-600 background and font-poppins (matching primary CTA) */}
-                        <Link
-                            href="#features"
-                            className="inline-block bg-blue-600 hover:bg-blue-700 text-white font-semibold font-poppins px-8 py-4 rounded-lg shadow-md transition transform hover:scale-105"
-                        >
-                            Discover Our Services
-                        </Link>
-                    </div>
-                </section>
+                      
+        
 
                 {/* Features Section for Real Estate Services - Using the lighter orange gradient */}
                 <section
@@ -108,39 +92,11 @@ const page = () => {
                 </section>
 
                 {/* Call to Action/Contact Section - Using the tertiary orange gradient */}
-                <section
-                    className="p-8 sm:p-10 rounded-xl shadow-lg text-center"
-                    style={{ background: 'linear-gradient(135deg, #FFE0B2 0%, #FFCC80 100%)' }} // Tertiary orange gradient
-                >
-                    {/* Heading with blue-800 and font-poppins */}
-                    <h2 className="text-2xl sm:text-3xl font-bold text-blue-800 mb-4 font-poppins">
-                        Ready to Make Your Next Property Move?
-                    </h2>
-                    {/* Paragraph with gray-700 and font-inter */}
-                    <p className="text-gray-700 text-md sm:text-lg max-w-2xl mx-auto mb-8 font-inter">
-                        Schedule a consultation with our real estate experts to find the perfect property solution.
-                    </p>
-                    {/* Button with red-600 background and font-poppins (matching secondary CTA) */}
-                    <Link
-                        href="/contact"
-                        className="inline-block bg-red-600 hover:bg-red-700 text-white font-semibold font-poppins px-8 py-4 rounded-lg shadow-md transition transform hover:scale-105"
-                    >
-                        Get Expert Real Estate Advice
-                    </Link>
-                </section>
+           
             </main>
 
             {/* Global Font Imports - It's highly recommended to place this in your _app.js or layout.js for global application */}
-            <style jsx global>{`
-                @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@400;600;700;800&display=swap');
-
-                .font-inter {
-                    font-family: 'Inter', sans-serif;
-                }
-                .font-poppins {
-                    font-family: 'Poppins', sans-serif;
-                }
-            `}</style>
+         
         </div>
     );
 };

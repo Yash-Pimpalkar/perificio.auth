@@ -47,30 +47,12 @@ const AboutUsPage = () => {
       <main className="w-full max-w-7xl mx-auto py-8 sm:py-12 lg:py-16 px-4 sm:px-6 lg:px-8 space-y-12 sm:space-y-16 lg:space-y-20">
 
         {/* Hero Section - Matched to previous page's hero gradient and blue header */}
-        <section
-          className="relative w-full py-20 px-6 rounded-xl overflow-hidden shadow-xl" // shadow-xl instead of shadow-2xl for consistency
-          style={{
-            background: 'linear-gradient(135deg, #FFF8E1 0%, #FFDDA0 100%)', // Soft orange gradient
-          }}
-        >
+
           <div className="text-center relative z-10">
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-blue-900 mb-4 font-poppins leading-tight">
               About <span className="text-red-600">Perficio</span>
-            </h1>
-            <p className="text-lg sm:text-xl text-gray-700 font-inter max-w-3xl mx-auto">
-              Your Trusted Partner for Tax, Health & Wealth Solutions.
-              <br />
-              <span className="font-semibold italic">&quot; Perficio – To Accomplish with Excellence&quot;</span>
-            </p>
-            {/* Added a button here consistent with previous page's hero button */}
-            <Link
-              href="#our-journey" // Link to the next section
-              className="inline-block bg-blue-600 hover:bg-blue-700 text-white font-semibold font-poppins px-8 py-4 rounded-lg shadow-md transition transform hover:scale-105 mt-8"
-            >
-              Discover Our Story
-            </Link>
+            </h1>      
           </div>
-        </section>
 
         {/* Introduction / Our Story - Matched to previous page's section gradient */}
         <section
@@ -174,31 +156,10 @@ const AboutUsPage = () => {
         </section>
 
         {/* Mission/Vision Statement - This section remains dark for strong contrast and visual break */}
-        <section className="bg-gray-800 text-white p-8 sm:p-10 rounded-xl shadow-lg text-center">
-          <p className="text-lg sm:text-xl md:text-2xl font-semibold italic max-w-3xl mx-auto leading-relaxed">
-            &quot;We would like to be known as people who add meaningful value to the financial lives of our clients.
-             To be respected as a company which is known for its high moral standards.&quot;
-          </p>
-          <p className="text-md sm:text-lg md:text-xl font-medium text-red-400 mt-4">
-            That&quot;s why we come to work every day.
-          </p>
-        </section>
+
 
         {/* Call to Action - Matched to previous page's call to action gradient and button styling */}
-        <section
-          className="p-8 sm:p-10 rounded-xl shadow-lg text-center" // shadow-lg for consistency
-          style={{ background: 'linear-gradient(135deg, #FFE0B2 0%, #FFCC80 100%)' }} // Matched gradient
-        >
-          <h2 className="text-2xl sm:text-3xl font-bold text-blue-800 mb-4 font-poppins"> {/* text-blue-800 for consistency */}
-            Ready to Accomplish Your Financial Goals with Excellence?
-          </h2>
-          <p className="text-gray-700 text-md sm:text-lg max-w-2xl mx-auto mb-8 font-inter"> {/* text-gray-700 for consistency */}
-            Connect with Perficio today for integrated advisory solutions tailored to your unique health, wealth, and taxation needs.
-          </p>
-          <Link href="/contact" className="inline-block bg-red-600 hover:bg-red-700 text-white font-semibold font-poppins px-8 py-4 rounded-lg shadow-md transition transform hover:scale-105"> {/* Matched button color */}
-            Schedule a Consultation
-          </Link>
-        </section>
+     
       </main>
 
       {/* Global Font Imports (or define in styles/globals.css for better performance) */}

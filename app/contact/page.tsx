@@ -109,15 +109,8 @@ const ContactUsPage: React.FC = () => {
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-blue-900 mb-4 font-poppins leading-tight">
               Contact <span className="text-red-700">Perficio</span>
             </h1>
-            <p className="text-lg sm:text-xl text-gray-700 font-inter max-w-3xl mx-auto mb-8">
-              We&apos;re here to assist you with all your financial and legal needs. Reach out today!
-            </p>
-            <Link
-              href="#contact-form"
-              className="inline-block bg-blue-600 hover:bg-blue-700 text-white font-semibold font-poppins px-8 py-4 rounded-lg shadow-md transition transform hover:scale-105"
-            >
-              Send Us a Message
-            </Link>
+       
+        
           </div>
         </section>
 

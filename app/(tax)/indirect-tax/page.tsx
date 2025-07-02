@@ -52,16 +52,7 @@ const page = () => {
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-blue-900 mb-4 font-poppins leading-tight">
               Indirect Taxation Services
             </h1>
-            <p className="text-lg sm:text-xl text-gray-700 font-inter max-w-3xl mx-auto mb-8">
-              Navigating the dynamic landscape of Indirect Taxes, particularly GST, requires specialized knowledge and continuous updates.
-              At Tax Consulting, we provide comprehensive and proactive solutions to ensure seamless compliance and optimize your indirect tax obligations.
-            </p>
-            <Link
-              href="#services"
-              className="inline-block bg-blue-600 hover:bg-blue-700 text-white font-semibold font-poppins px-8 py-4 rounded-lg shadow-md transition transform hover:scale-105"
-            >
-              Explore Our Indirect Tax Services
-            </Link>
+          
           </div>
         </section>
 
@@ -94,19 +85,7 @@ const page = () => {
         </section>
 
         {/* Professional Call to Action Section - Orange Gradient Background, Blue Header */}
-        <section
-          className="p-8 sm:p-10 rounded-xl shadow-lg text-center"
-          style={{ background: 'linear-gradient(135deg, #FFE0B2 0%, #FFCC80 100%)' }}>
-          <h2 className="text-2xl sm:text-3xl font-bold text-blue-800 mb-4 font-poppins">
-            Simplify Your GST Compliance!
-          </h2>
-          <p className="text-gray-700 text-md sm:text-lg max-w-2xl mx-auto mb-8 font-inter">
-            Connect with our expert consultants today for tailored indirect taxation solutions that streamline your business operations.
-          </p>
-          <Link href="/contact" className="inline-block bg-red-600 hover:bg-red-700 text-white font-semibold font-poppins px-8 py-4 rounded-lg shadow-md transition transform hover:scale-105">
-            Get a Free Consultation
-          </Link>
-        </section>
+      
       </main>
 
       {/* Global Font Imports */}

@@ -40,7 +40,7 @@ const menuConfig: Record<Role, MenuItemWithSubmenu[]> = {
         { name: "Indirect Tax", href: "/indirect-tax" },
         { name: "MCA", href: "/mca" },
         { name: "RERA", href: "/rera" },
-        { name: "FEMA", href: "/fema" }
+        { name: "International Tax", href: "/international-tax" }
       ]
     },
     {
@@ -48,7 +48,6 @@ const menuConfig: Record<Role, MenuItemWithSubmenu[]> = {
       submenu: [
         { name: "Invest", href: "/invest" },
         { name: "Real Estate", href: "/real-estate" },
-        { name: "NRI", href: "/nri" }
       ]
     },
     { name: "Insurance", href: "/insurance" },
