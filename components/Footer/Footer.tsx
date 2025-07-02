@@ -130,7 +130,7 @@ const Footer = () => {
                 href="fema"
                 className="hover:text-white transition-colors duration-200"
               >
-                FEMA Regulations
+                International Taxation
               </a>
             </li>
             <li>
@@ -155,14 +155,6 @@ const Footer = () => {
                 className="hover:text-white transition-colors duration-200"
               >
                 Real Estate Guidance
-              </a>
-            </li>
-            <li>
-              <a
-                href="nri"
-                className="hover:text-white transition-colors duration-200"
-              >
-                NRI Financial Services
               </a>
             </li>
           </ul>
@@ -198,6 +190,14 @@ const Footer = () => {
                 className="hover:text-white transition-colors duration-200"
               >
                 FAQs
+              </a>
+            </li>
+            <li>
+              <a
+                href="contact"
+                className="hover:text-white transition-colors duration-200"
+              >
+                Contact Us
               </a>
             </li>
             <li>
