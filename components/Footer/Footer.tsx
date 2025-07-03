@@ -176,47 +176,15 @@ const Footer = () => {
                 Blog & Insights
               </a>
             </li>
-
-            <li>
+ <li>
               <a
-                href="#"
+                href="about"
                 className="hover:text-white transition-colors duration-200"
               >
-                Careers
+                About Us
               </a>
             </li>
-            <li>
-              <a
-                href="#"
-                className="hover:text-white transition-colors duration-200"
-              >
-                FAQs
-              </a>
-            </li>
-            <li>
-              <a
-                href="contact"
-                className="hover:text-white transition-colors duration-200"
-              >
-                Contact US
-              </a>
-            </li>
-            <li>
-              <a
-                href="#"
-                className="hover:text-white transition-colors duration-200"
-              >
-                Privacy Policy
-              </a>
-            </li>
-            <li>
-              <a
-                href="#"
-                className="hover:text-white transition-colors duration-200"
-              >
-                Terms of Service
-              </a>
-            </li>
+          
           </ul>
         </div>
 

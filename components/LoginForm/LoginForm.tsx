@@ -1,12 +1,10 @@
 "use client";
 
 import React, { useState } from "react";
-import { login, loginWithCreds } from "@/actions/auth";
+import { loginWithCreds } from "@/actions/auth";
 import { useFormStatus } from "react-dom";
 import { useSearchParams } from "next/navigation";
 import { HiEye, HiEyeOff } from "react-icons/hi";
-import { Button } from "../ui/button";
-import { FcGoogle } from "react-icons/fc";
 
 const LoginForm = () => {
   const searchParams = useSearchParams();
@@ -15,14 +13,14 @@ const LoginForm = () => {
   const { pending } = useFormStatus();
 
   return (
-    <div className="w-full flex items-center justify-center  px-4 ">
+    <div className="w-full flex items-center justify-center bg-white px-4 py-4">
       <form
         action={loginWithCreds}
-        className="w-full max-w-md bg-white shadow-lg  rounded-lg p-4"
+        className="w-full max-w-md bg-white shadow-md rounded-lg p-8"
       >
-        <h1 className="text-2xl text-blue-950 font-light font-serif mb-6 text-center capitalize">
-          Sign In
-        </h1>
+        <h2 className="text-2xl font-bold mb-6 text-center text-blue-600">
+          Login
+        </h2>
         {error && (
           <p className="text-center text-sm text-red-600 mb-4">{error}</p>
         )}
@@ -45,7 +43,7 @@ const LoginForm = () => {
           />
         </div>
 
-        <div>
+        <div >
           <label
             htmlFor="password"
             className="block text-sm font-medium text-gray-700 mb-1"
@@ -72,19 +70,16 @@ const LoginForm = () => {
         </div>
 
         {/* Submit Button */}
-        <div className="mt-6 flex flex-1/2 flex-row items-center justify-evenly">
-          <Button
-            variant="default"
+        <div className="mt-6">
+          <button
             disabled={pending}
             type="submit"
-            className={`${pending ? "bg-red-700" : "bg-blue-900"} rounded-md `}
+            className={`${
+              pending ? "bg-gray-600" : "bg-blue-600"
+            } rounded-md w-full px-12 py-3 text-sm font-medium text-white`}
           >
             {pending ? "Loading..." : "Sign in"}
-          </Button>
-          <Button variant="outline" onClick={() => login("google")}>
-            <FcGoogle className="text-white text-2xl" />
-            Google
-          </Button>
+          </button>
         </div>
       </form>
     </div>

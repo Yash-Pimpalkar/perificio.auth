@@ -17,11 +17,23 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
-export const metadata: Metadata = {
-  title: "Perificio",
-  description: "Professional Financial Assistant",
-};
-
+export async function generateMetadata(): Promise<Metadata> {
+  return {
+    title: "Perificio",
+    description: "Professional Financial Assistant",
+    icons: {
+      icon: "/favicon.ico", // optional
+    },
+    openGraph: {
+      title: "Perificio",
+      description: "Professional Financial Assistant for Tax & Wealth",
+      type: "website",
+      locale: "en_US",
+      url: "https://perificio.com", // change to your domain
+      siteName: "Perificio",
+    },
+  };
+}
 export default async function RootLayout({
   children,
 }: Readonly<{
