@@ -1,8 +1,7 @@
 // pages/about-us.js OR components/AboutUsPage.js (depending on your routing structure)
 'use client'; // This directive is crucial for client-side functionality
 
-import React from 'react';
-import Link from 'next/link'; // Import Link for navigation
+import React from 'react'; // Import Link for navigation
 // import Head from 'next/head'; // Uncomment if this is a top-level page in `pages/`
 
 const AboutUsPage = () => {
