@@ -34,7 +34,6 @@ export default function EditPostForm({ post }: { post: TPost }) {
       setContent(post.content);
       setImageUrl(post.imageUrl || "");
       setPublicId(post.publicId || "");
-      setSelectedCategory(post.catName || "");
       setLinks(post.links || []);
     };
 
@@ -44,7 +43,6 @@ export default function EditPostForm({ post }: { post: TPost }) {
     post.content,
     post.imageUrl,
     post.publicId,
-    post.catName,
     post.links,
   ]);
 
@@ -121,7 +119,7 @@ export default function EditPostForm({ post }: { post: TPost }) {
 
       if (res.ok) {
         toast.success("Post edited successfully");
-        router.push("/dashboard");
+        router.push("/");
         router.refresh();
       }
     } catch (error) {
@@ -253,19 +251,7 @@ export default function EditPostForm({ post }: { post: TPost }) {
           </button>
         )}
 
-        <select
-          onChange={(e) => setSelectedCategory(e.target.value)}
-          className="p-3 rounded-md border appearance-none"
-          value={selectedCategory}
-        >
-          <option value="">Select A Category</option>
-          {categories &&
-            categories.map((category) => (
-              <option key={category.id} value={category.catName}>
-                {category.catName}
-              </option>
-            ))}
-        </select>
+   
 
         <button    className="bg-green-600 text-white py-3 rounded-md text-base font-semibold hover:bg-green-700 transition-all duration-200" type="submit">
           Update Post

@@ -1,11 +1,14 @@
 "use client";
 
-
 import Link from "next/link";
-import {  useState } from "react";
-import { CldUploadButton, CloudinaryUploadWidgetResults  } from "next-cloudinary";
+import { useState } from "react";
+import {
+  CldUploadButton,
+  CloudinaryUploadWidgetResults,
+} from "next-cloudinary";
 import Image from "next/image";
 import toast from "react-hot-toast";
+import { useRouter } from "next/navigation";
 
 export default function CreatePostForm() {
   const [links, setLinks] = useState<string[]>([]);
@@ -14,7 +17,7 @@ export default function CreatePostForm() {
   const [content, setContent] = useState("");
   const [imageUrl, setImageUrl] = useState("");
   const [publicId, setPublicId] = useState("");
-
+  const router = useRouter();
   const handleImageUpload = (result: CloudinaryUploadWidgetResults) => {
     console.log("result: ", result);
     const info = result.info as object;
@@ -59,10 +62,10 @@ export default function CreatePostForm() {
       console.log(error);
     }
   };
-
+  const [loading, setLoading] = useState(false);
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-
+    if (loading) return;
     if (!title || !content) {
       const errorMessage = "Title and content are required";
       toast.error(errorMessage);
@@ -70,7 +73,7 @@ export default function CreatePostForm() {
     }
 
     try {
-      
+      setLoading(true);
       const res = await fetch("api/posts/", {
         method: "POST",
         headers: {
@@ -85,21 +88,22 @@ export default function CreatePostForm() {
         }),
       });
       console.log("res: ", res);
-
-      if (res.ok) {
-        toast.success("Post created successfully");
-      
-      } else {
-        toast.error("Something went wrong.");
-      }
+      toast.success("Post created successfully");
+      router.push("/");
+      router.refresh();
     } catch (error) {
+      toast.error("Something went wrong.", error || "");
       console.log(error);
+    } finally {
+      setLoading(false);
     }
   };
 
   return (
     <div className="max-w-4xl mx-auto px-4 py-8 sm:px-6 lg:px-8">
-      <h2 className="text-2xl sm:text-3xl font-bold mb-6 text-center">Create Post</h2>
+      <h2 className="text-2xl sm:text-3xl font-bold mb-6 text-center">
+        Create Post
+      </h2>
       <form onSubmit={handleSubmit} className="flex flex-col gap-4">
         <input
           onChange={(e) => setTitle(e.target.value)}
@@ -111,7 +115,7 @@ export default function CreatePostForm() {
         <textarea
           onChange={(e) => setContent(e.target.value)}
           placeholder="Content"
-           className="p-3 border rounded-md text-sm sm:text-base"
+          className="p-3 border rounded-md text-sm sm:text-base"
         ></textarea>
 
         {links &&
@@ -133,7 +137,10 @@ export default function CreatePostForm() {
                   />
                 </svg>
               </span>
-              <Link className=" link text-blue-600 underline break-all" href={link}>
+              <Link
+                className=" link text-blue-600 underline break-all"
+                href={link}
+              >
                 {link}
               </Link>
               <span className="cursor-pointer" onClick={() => deleteLink(i)}>
@@ -221,10 +228,38 @@ export default function CreatePostForm() {
           </button>
         )}
 
-
-
-        <button  className="bg-green-600 text-white py-3 rounded-md text-base font-semibold hover:bg-green-700 transition-all duration-200" type="submit">
-          Create Post
+        <button
+          className="bg-green-600 text-white py-3 rounded-md text-base font-semibold hover:bg-green-700 transition-all duration-200"
+          type="submit"
+          disabled={loading}
+        >
+          {loading ? (
+            <div className="flex items-center justify-center gap-2">
+              <svg
+                className="animate-spin h-5 w-5 text-white"
+                viewBox="0 0 24 24"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <circle
+                  className="opacity-25"
+                  cx="12"
+                  cy="12"
+                  r="10"
+                  stroke="currentColor"
+                  strokeWidth="4"
+                />
+                <path
+                  className="opacity-75"
+                  fill="currentColor"
+                  d="M4 12a8 8 0 018-8v8z"
+                />
+              </svg>
+              Submitting...
+            </div>
+          ) : (
+            "Create Post"
+          )}
         </button>
       </form>
     </div>

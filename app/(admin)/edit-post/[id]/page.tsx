@@ -1,52 +1,15 @@
+// app/blogs/[id]/edit/page.tsx
 
-// import { redirect } from "next/navigation";
-// import EditPostForm from "@/components/Blogs/EditPostForm";
-// import { TPost } from "@/types";
-// import { auth } from "@/auth";
+import { auth } from "@/auth";
+import { redirect } from "next/navigation";
+import EditPostClient from "@/components/Blogs/EditPostClient";
 
-// const getPost = async (id: string): Promise<TPost | null> => {
-//   try {
-//     const res = await fetch(`${process.env.NEXTAUTH_URL}/api/posts/${id}`, {
-//       cache: "no-store",
-//     });
+export default async function EditPostPage() {
+  const session = await auth();
 
-//     if (res.ok) {
-//       const post = await res.json();
-//       return post;
-//     }
-//   } catch (error) {
-//     console.log(error);
-//   }
+  if (!session || session?.user?.role !== "ADMIN") {
+    redirect("/sign-in");
+  }
 
-//   return null;
-// };
-
-
-// type PageProps = {
-//   params: {
-//     id: string;
-//   };
-// };
-
-// export default async function EditPost({ params }: PageProps) {
-//   const session = await auth();
-
-//   if (!session || session?.user?.role !== "ADMIN") {
-//     redirect("/sign-in");
-//   }
-
-//   const post: TPost | null = await getPost(params.id);
-
-//   return <>{post ? <EditPostForm post={post} /> : <div>❌ Invalid Post</div>}</>;
-// }
-
-
-import React from 'react'
-
-const page = () => {
-  return (
-    <div>page</div>
-  )
+  return <EditPostClient />;
 }
-
-export default page

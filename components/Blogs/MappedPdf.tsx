@@ -3,7 +3,7 @@
 import { TPdf } from "@/types";
 import { useEffect, useState } from "react";
 
-export default function PdfGalleryClient() {
+export default function MappedPdf() {
   const [pdfs, setPdfs] = useState<TPdf[] | null>(null);
 
   const getPdfs = async (): Promise<TPdf[] | null> => {

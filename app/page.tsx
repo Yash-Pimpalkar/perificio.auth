@@ -1,11 +1,9 @@
 import AnimatedSection from "@/components/AnimatedComponent/AnimatedSection";
-import ViewBlogs from "@/components/Blogs/ViewBlogs";
 import MovingImages from "@/components/HeroContainer/MovingImages";
-// import QuickContactSection from "@/components/QuickContact/Quickcontact";
 import Testinomials from "@/components/Testinomials/Testinomials";
-import MappedPdf from "@/components/Blogs/MappedPdf";
 import { Rubik } from "next/font/google";
 import Image from "next/image";
+import DisplayContent from "@/components/Blogs/DisplayContent";
 // import { useGSAP } from "@gsap/react";
 // import gsap from "gsap";
 const rubik = Rubik({
@@ -83,12 +81,10 @@ const Home = () => {
 
       {/* Blog/Knowledge Base Section */}
 
-      <section>
-        <ViewBlogs />
-      </section>
+
 
       <section className="py-12 md:py-20 px md:px-6 sm:px-4 bg-orange-50">
-        <MappedPdf />
+        <DisplayContent />
       </section>
 
       {/* Contact Section */}
