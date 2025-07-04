@@ -183,8 +183,10 @@ const Footer = () => {
               >
                 About Us
               </a>
+              </li>
+              <li>
               <a
-                href="about"
+                href="contact"
                 className="hover:text-white transition-colors duration-200"
               >
                 Contact Us

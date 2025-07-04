@@ -212,7 +212,7 @@ export default function Page() {
                   {service.icon}
                   <h3 className="text-xl font-semibold text-blue-800 ml-3 text-center">{service.title}</h3>
                 </div>
-                <ul className="text-gray-700 list-disc list-inside text-base space-y-2 text-justify">
+                <ul className="text-gray-700 list-disc list-outside pl-2 text-base space-y-2 text-justify">
                   {service.points.map((point, pIndex) => (
                     <li key={pIndex}>{point}</li>
                   ))}

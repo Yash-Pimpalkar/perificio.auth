@@ -100,7 +100,7 @@ const page = () => {
             {oversightAreas.map((area, index) => (
               <article
                 key={index}
-                className="bg-white border border-orange-200 p-6 sm:p-8 rounded-2xl shadow-md hover:shadow-xl transition-transform hover:-translate-y-1"
+                className=" border border-orange-200 p-6 sm:p-8 rounded-2xl shadow-md hover:shadow-xl transition-transform hover:-translate-y-1"
               >
                 <div className="flex flex-col items-center text-center mb-4">
                   <div className="text-5xl sm:text-6xl text-blue-600 mb-3">
