@@ -23,7 +23,7 @@ const Footer = () => {
         {/* Column 1: Logo, Contact & Social */}
         <div className="space-y-4 ">
           <Image
-            src="/logo.png"
+            src="/assets/LogoTransparent.png"
             alt="Perificio Logo"
             width={144}
             height={40}

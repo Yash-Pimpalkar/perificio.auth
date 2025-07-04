@@ -175,7 +175,7 @@ export default function Page() {
       <main className="bg-orange-50 text-gray-900 font-inter">
         {/* Hero Section */}
         <section className="w-full min-h-[90vh] flex flex-col md:flex-row items-center justify-between px-4 sm:px-6 md:px-8 lg:px-12 xl:px-20 2xl:px-32 py-16 bg-gradient-to-b from-orange-50 to-orange-100 relative overflow-hidden">
-          <div className="absolute top-0 left-0 w-full h-full bg-cover bg-center opacity-10" style={{ backgroundImage: "url('/assets/abstract-shapes.svg')" }}></div>
+   
 
           <div className="flex-1 flex flex-col justify-center items-start text-left max-w-xl z-10">
             <h1 className="text-4xl sm:text-5xl md:text-6xl font-extrabold mb-4 leading-tight text-blue-900 font-poppins">
@@ -185,16 +185,10 @@ export default function Page() {
               Informed financial planning isn&apos;t complete without protection. We assist you in choosing tax-efficient, goal-aligned
               insurance products that safeguard your income, family, and future assets—without overpaying or overcommitting.
             </p>
-            <a
-              href="#contact-form-section"
-              className="inline-block bg-blue-700 hover:bg-blue-800 text-white font-bold px-10 py-4 rounded-full shadow-lg transition transform hover:scale-105 duration-300 ease-in-out font-poppins"
-            >
-              Schedule a Discovery Call <span className="ml-2 text-xl">📞</span>
-            </a>
           </div>
           <div className="flex-1 flex justify-center items-center mt-10 md:mt-0 md:ml-8 w-full max-w-lg z-10">
             <img
-              src="/assets/Hero2.jpg"
+              src="/assets/insurance.jpg"
               alt="Family protected by insurance, financial security"
               className="rounded-2xl shadow-xl w-full h-auto object-cover transform hover:scale-105 transition duration-300 ease-in-out border-4 border-orange-200"
             />
