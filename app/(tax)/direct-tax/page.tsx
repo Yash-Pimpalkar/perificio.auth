@@ -50,9 +50,8 @@ const page = () => {
          
 
          {/* Highlighted Core Services List - Section with light orange gradient, cards with solid light orange */}
-         <section id="services"
-                  className="py-8 rounded-xl shadow-lg border border-orange-100"
-                  style={{ background: 'linear-gradient(to right, #FFF3E0 0%, #FFECB3 100%)' }}> {/* Section with a different orange gradient */}
+
+        
            <h2 className="text-3xl sm:text-4xl font-bold text-blue-800 text-center mb-10 font-poppins">
              Our Expertise Includes:
            </h2>
@@ -74,7 +73,7 @@ const page = () => {
                </div>
              ))}
            </div>
-         </section>
+
 
          {/* Call to Action Section - Orange gradient background, blue header */}
      

@@ -55,11 +55,7 @@ const page = () => {
         
 
                 {/* Features Section for Real Estate Services - Using the lighter orange gradient */}
-                <section
-                    id="features"
-                    className="py-8 rounded-xl shadow-lg border border-orange-100" // Consistent border
-                    style={{ background: 'linear-gradient(to right, #FFF3E0 0%, #FFECB3 100%)' }} // Lighter orange gradient
-                >
+             
                     <div className="container mx-auto px-4">
                         {/* Heading with blue-800 and font-poppins */}
                         <h2 className="text-3xl sm:text-4xl font-bold text-blue-800 text-center mb-10 font-poppins">
@@ -89,7 +85,7 @@ const page = () => {
                             ))}
                         </div>
                     </div>
-                </section>
+               
 
                 {/* Call to Action/Contact Section - Using the tertiary orange gradient */}
            

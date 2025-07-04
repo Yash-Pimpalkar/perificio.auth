@@ -51,7 +51,7 @@ const page = () => {
             <h1 className="text-4xl text-center sm:text-5xl lg:text-6xl font-extrabold text-blue-900 mb-4 font-poppins leading-tight">
               The{" "}
               <span className="text-blue-600">
-                Ministry of Corporate Affairs
+                MCA Services
               </span>
             </h1>
          
@@ -92,13 +92,7 @@ const page = () => {
          </section> */}
 
         {/* Areas of Oversight Section - With Orange Gradient Background and Blue Headers */}
-        <section
-          id="areas-of-oversight"
-          className="py-8 px-8 rounded-xl shadow-lg border border-orange-100"
-          style={{
-            background: "linear-gradient(to right, #FFF3E0 0%, #FFECB3 100%)",
-          }}
-        >
+
           <h2 className="text-3xl sm:text-4xl font-bold text-blue-800 text-center mb-10 font-poppins">
             Areas of Oversight
           </h2>
@@ -124,7 +118,7 @@ const page = () => {
               </article>
             ))}
           </div>
-        </section>
+  
 
         {/* Contact CTA Section - Orange Gradient Background and Blue Header */}
    

@@ -71,9 +71,7 @@ const page = () => {
  
 
         {/* Key Features Section - Now with Orange Gradient Background and Orange Cards */}
-        <section id="key-features"
-                 className="py-8 rounded-xl shadow-lg border border-orange-100"
-                 style={{ background: 'linear-gradient(to right, #FFF3E0 0%, #FFECB3 100%)' }}> {/* Section with a different orange gradient */}
+      {/* Section with a different orange gradient */}
           <h2 className="text-3xl sm:text-4xl font-bold text-blue-800 text-center mb-10 font-poppins"> {/* Deep blue header */}
             Why RERA Matters For You
           </h2>
@@ -95,23 +93,13 @@ const page = () => {
               </div>
             ))}
           </div>
-        </section>
 
         {/* Call to Action / Consultation Section - Now with Orange Gradient Background */}
      
       </main>
 
       {/* Global Font Imports (or define in styles/globals.css for better performance) */}
-      <style jsx global>{`
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@400;600;700;800&display=swap');
 
-        .font-inter {
-            font-family: 'Inter', sans-serif;
-        }
-        .font-poppins {
-            font-family: 'Poppins', sans-serif;
-        }
-      `}</style>
     </div>
   );
 };

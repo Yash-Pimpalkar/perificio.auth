@@ -60,11 +60,7 @@ const page = () => {
            
 
                 {/* Features Section - Using the lighter orange gradient for sections */}
-                <section
-                    id="features"
-                    className="py-8 rounded-xl shadow-lg border border-orange-100" // Consistent border
-                    style={{ background: 'linear-gradient(to right, #FFF3E0 0%, #FFECB3 100%)' }} // Lighter orange gradient
-                >
+           
                     <h2 className="text-3xl sm:text-4xl font-bold text-blue-800 text-center mb-10 font-poppins"> {/* Blue-800 heading with font-poppins */}
                         Why Choose Perficio for Your <span className="text-red-600">Investments?</span>
                     </h2>
@@ -91,7 +87,7 @@ const page = () => {
                             </div>
                         ))}
                     </div>
-                </section>
+           
 
                 {/* Call to Action/Contact Section - Using the tertiary orange gradient */}
             

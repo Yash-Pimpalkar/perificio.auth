@@ -57,9 +57,7 @@ const page = () => {
         </section>
 
         {/* Key Expertise Section - Orange Gradient Background, Cards with Solid Light Orange */}
-        <section id="services"
-                 className="py-8 rounded-xl shadow-lg border border-orange-100"
-                 style={{ background: 'linear-gradient(to right, #FFF3E0 0%, #FFECB3 100%)' }}>
+
           <h2 className="text-3xl sm:text-4xl font-bold text-blue-800 text-center mb-10 font-poppins">
             Our Expertise Includes:
           </h2>
@@ -82,23 +80,14 @@ const page = () => {
               </div>
             ))}
           </div>
-        </section>
+     
 
         {/* Professional Call to Action Section - Orange Gradient Background, Blue Header */}
       
       </main>
 
       {/* Global Font Imports */}
-      <style jsx global>{`
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@400;600;700;800&display=swap');
 
-        .font-inter {
-            font-family: 'Inter', sans-serif;
-        }
-        .font-poppins {
-            font-family: 'Poppins', sans-serif;
-        }
-      `}</style>
     </div>
   );
 }
