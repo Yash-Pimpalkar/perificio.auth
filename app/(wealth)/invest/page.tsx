@@ -40,28 +40,28 @@ const page = () => {
 
     return (
         // Main container with the light orange background from the previous page
-        <div className="min-h-screen bg-orange-50 font-inter text-gray-900 overflow-hidden">
+        <div className="min-h-screen bg-orange-50  text-gray-900 overflow-hidden">
             {/* Main content wrapper for consistent spacing and max-width */}
             <main className="w-full max-w-7xl mx-auto py-8 sm:py-12 lg:py-16 px-4 sm:px-6 lg:px-8 space-y-12 sm:space-y-16 lg:space-y-20">
 
                 {/* Hero Section for Invest Page - Using the prominent orange gradient from the first page */}
     
                 
-                        {/* Heading with blue-900 and font-poppins */}
-                        <h1 className="text-4xl text-center sm:text-5xl lg:text-6xl font-extrabold text-blue-900  font-poppins leading-tight mb-8
+                        {/* Heading with blue-900 and  */}
+                        <h1 className="text-4xl text-center sm:text-5xl lg:text-6xl font-extrabold text-blue-900   leading-tight mb-8
                         ">
                             Smart Investing Made <span className="text-red-600">Simple.</span>
                         </h1>
-                        {/* Paragraph text with gray-700 and font-inter */}
+                        {/* Paragraph text with gray-700 and  */}
             
-                        {/* Button with blue-600 background and font-poppins */}
+                        {/* Button with blue-600 background and  */}
                       
                
            
 
                 {/* Features Section - Using the lighter orange gradient for sections */}
            
-                    <h2 className="text-3xl sm:text-4xl font-bold text-blue-800 text-center mb-10 font-poppins"> {/* Blue-800 heading with font-poppins */}
+                    <h2 className="text-3xl sm:text-4xl font-bold text-blue-800 text-center mb-10 "> {/* Blue-800 heading with  */}
                         Why Choose Perficio for Your <span className="text-red-600">Investments?</span>
                     </h2>
 
@@ -76,12 +76,12 @@ const page = () => {
                                 <div className="text-5xl sm:text-6xl mb-4 text-blue-600">
                                     {feature.icon}
                                 </div>
-                                {/* Feature title with blue-700 and font-poppins */}
-                                <h3 className="text-xl sm:text-2xl font-semibold text-blue-700 mb-3 font-poppins">
+                                {/* Feature title with blue-700 and  */}
+                                <h3 className="text-xl sm:text-2xl font-semibold text-blue-700 mb-3 ">
                                     {feature.title}
                                 </h3>
-                                {/* Description with gray-700 and font-inter */}
-                                <p className="text-gray-700 leading-relaxed font-inter text-sm sm:text-base">
+                                {/* Description with gray-700 and  */}
+                                <p className="text-gray-700 leading-relaxed  text-sm sm:text-base text-justify">
                                     {feature.description}
                                 </p>
                             </div>

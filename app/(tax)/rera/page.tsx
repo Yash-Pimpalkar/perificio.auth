@@ -51,7 +51,7 @@ const page = () => {
 
   return (
     // Main container with a suitable light orange background color
-    <div className="min-h-screen bg-orange-50 font-inter text-gray-900 overflow-hidden">
+    <div className="min-h-screen bg-orange-50  text-gray-900 overflow-hidden">
       {/* Head section for page metadata - only if this is a top-level page */}
       {/* <Head>
         <title>RERA Compliance & Regulation - Corporate Legal Services</title>
@@ -64,7 +64,7 @@ const page = () => {
         {/* Hero Section for RERA - Now with Orange Gradient Background */}
 
           <div className="text-center relative z-10">
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-blue-900 mb-4 font-poppins leading-tight"> {/* Deep blue header */}
+            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-blue-900 mb-4  leading-tight"> {/* Deep blue header */}
               RERA: Your Assurance in <span className="text-blue-700">Real Estate</span>
             </h1>
           </div>
@@ -72,7 +72,7 @@ const page = () => {
 
         {/* Key Features Section - Now with Orange Gradient Background and Orange Cards */}
       {/* Section with a different orange gradient */}
-          <h2 className="text-3xl sm:text-4xl font-bold text-blue-800 text-center mb-10 font-poppins"> {/* Deep blue header */}
+          <h2 className="text-3xl sm:text-4xl font-bold text-blue-800 text-center mb-10 "> {/* Deep blue header */}
             Why RERA Matters For You
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 px-6 sm:px-8">
@@ -84,10 +84,10 @@ const page = () => {
                 <div className="text-5xl sm:text-6xl mb-4 text-blue-600"> {/* Blue icon */}
                   {feature.icon}
                 </div>
-                <h3 className="text-xl sm:text-2xl font-semibold text-blue-700 mb-3 font-poppins"> {/* Blue header */}
+                <h3 className="text-xl sm:text-2xl font-semibold text-blue-700 mb-3 "> {/* Blue header */}
                   {feature.title}
                 </h3>
-                <p className="text-gray-700 leading-relaxed font-inter text-sm sm:text-base"> {/* Adjusted text color */}
+                <p className="text-gray-700 leading-relaxed  text-sm sm:text-base text-justify"> {/* Adjusted text color */}
                   {feature.description}
                 </p>
               </div>

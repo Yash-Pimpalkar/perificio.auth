@@ -58,7 +58,7 @@ export default function Post({
           {formattedDate} - <span className="font-semibold">{category || "General"}</span>
         </p>
 
-        <div className="text-gray-700 text-sm leading-relaxed line-clamp-4">
+        <div className="text-gray-700 text-sm leading-relaxed line-clamp-4 text-justify">
           {content}
         </div>
 

@@ -181,7 +181,7 @@ export default function Page() {
             <h1 className="text-4xl sm:text-5xl md:text-6xl font-extrabold mb-4 leading-tight text-blue-900 font-poppins">
               <span className="text-red-600">Protect</span> What You Have <span className="text-blue-700">Built</span>
             </h1>
-            <p className="text-lg md:text-xl text-gray-700 mb-8 max-w-2xl font-inter">
+            <p className="text-lg md:text-xl text-gray-700 mb-8 max-w-2xl text-justify">
               Informed financial planning isn&apos;t complete without protection. We assist you in choosing tax-efficient, goal-aligned
               insurance products that safeguard your income, family, and future assets—without overpaying or overcommitting.
             </p>
@@ -205,14 +205,14 @@ export default function Page() {
           <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center text-blue-900 font-poppins">
             Our Support Includes
           </h2>
-          <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
+          <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-4 text-justify">
             {servicesData.map((service, index) => (
               <div key={index} className="bg-orange-100 rounded-xl shadow-md p-6 flex flex-col items-start text-left border border-orange-200 hover:shadow-lg transition duration-300 ease-in-out">
                 <div className="flex items-center mb-4">
                   {service.icon}
-                  <h3 className="text-xl font-semibold text-blue-800 ml-3 font-poppins">{service.title}</h3>
+                  <h3 className="text-xl font-semibold text-blue-800 ml-3 text-center">{service.title}</h3>
                 </div>
-                <ul className="text-gray-700 list-disc list-inside text-base space-y-2 font-inter">
+                <ul className="text-gray-700 list-disc list-inside text-base space-y-2 text-justify">
                   {service.points.map((point, pIndex) => (
                     <li key={pIndex}>{point}</li>
                   ))}
@@ -231,8 +231,8 @@ export default function Page() {
             {howItWorksSteps.map((step, index) => (
               <div key={index} className="bg-white rounded-xl shadow-md p-6 flex flex-col items-center text-center border border-orange-300 hover:shadow-lg transition duration-300 ease-in-out">
                 {step.icon}
-                <h3 className="text-xl font-semibold text-blue-800 mb-2 font-poppins">{step.step}</h3>
-                <p className="text-gray-700 text-base font-inter">{step.description}</p>
+                <h3 className="text-xl font-semibold text-blue-800 mb-2">{step.step}</h3>
+                <p className="text-gray-700 text-base text-justify">{step.description}</p>
               </div>
             ))}
           </div>
@@ -260,7 +260,7 @@ export default function Page() {
                   <FaQuestionCircle className={`transform transition-transform duration-300 ${openFAQ === index ? 'rotate-180 text-red-600' : 'rotate-0 text-blue-600'}`} />
                 </button>
                 {openFAQ === index && (
-                  <div className="px-5 pb-5 text-gray-700 text-base border-t border-orange-200 font-inter">
+                  <div className="px-5 pb-5 text-gray-700 text-base border-t border-orange-200  text-justify">
                     <p>{faq.answer}</p>
                   </div>
                 )}

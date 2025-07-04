@@ -58,7 +58,7 @@ export default async function PdfCard({
         <p className="text-xs sm:text-sm text-gray-600 mb-2">
           {formattedDate}
         </p>
-        <p className="text-gray-700 text-sm leading-relaxed line-clamp-4">
+        <p className="text-gray-700 text-sm leading-relaxed line-clamp-4 text-justify">
           {description || "No description provided."}
         </p>
       </div>

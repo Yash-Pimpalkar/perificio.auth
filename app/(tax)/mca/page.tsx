@@ -43,12 +43,12 @@ const page = () => {
   // Make sure this line is exactly as written, with the curly brace {
   return (
     // Main container with a suitable light orange background color
-    <div className="min-h-screen bg-orange-50 font-inter text-gray-900 overflow-hidden">
+    <div className="min-h-screen bg-orange-50  text-gray-900 overflow-hidden">
       <main className="w-full max-w-7xl mx-auto py-8 sm:py-12 lg:py-16 px-4 sm:px-6 lg:px-8 space-y-12 sm:space-y-16 lg:space-y-20">
         {/* Hero Section - The MCA Hero with Orange Gradient Background and Blue Header */}
 
       
-            <h1 className="text-4xl text-center sm:text-5xl lg:text-6xl font-extrabold text-blue-900 mb-4 font-poppins leading-tight">
+            <h1 className="text-4xl text-center sm:text-5xl lg:text-6xl font-extrabold text-blue-900 mb-4  leading-tight">
               The{" "}
               <span className="text-blue-600">
                 MCA Services
@@ -65,10 +65,10 @@ const page = () => {
                <div className="text-5xl sm:text-6xl mb-4 text-blue-600">
                  🎯
                </div>
-               <h2 className="text-xl sm:text-2xl font-semibold text-blue-800 mb-3 font-poppins">
+               <h2 className="text-xl sm:text-2xl font-semibold text-blue-800 mb-3 ">
                  Our Mission
                </h2>
-               <p className="text-gray-700 leading-relaxed font-inter text-sm sm:text-base">
+               <p className="text-gray-700 leading-relaxed  text-sm sm:text-base">
                  The Ministry of Corporate Affairs is dedicated to upholding corporate governance, fostering economic stability, and ensuring the protection of stakeholder interests through robust regulatory frameworks and diligent oversight. We strive for excellence in governance and transparency.
                </p>
              </div>
@@ -77,7 +77,7 @@ const page = () => {
                <div className="text-5xl sm:text-6xl mb-4 text-blue-600">
                  ✅
                </div>
-               <h2 className="text-xl sm:text-2xl font-semibold text-blue-800 mb-3 font-poppins">
+               <h2 className="text-xl sm:text-2xl font-semibold text-blue-800 mb-3 ">
                  Key Responsibilities
                </h2>
                <ul className="list-none p-0 text-gray-700 space-y-2 text-sm sm:text-base text-left w-full">
@@ -93,7 +93,7 @@ const page = () => {
 
         {/* Areas of Oversight Section - With Orange Gradient Background and Blue Headers */}
 
-          <h2 className="text-3xl sm:text-4xl font-bold text-blue-800 text-center mb-10 font-poppins">
+          <h2 className="text-3xl sm:text-4xl font-bold text-blue-800 text-center mb-10 ">
             Areas of Oversight
           </h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -106,13 +106,13 @@ const page = () => {
                   <div className="text-5xl sm:text-6xl text-blue-600 mb-3">
                     {area.icon}
                   </div>
-                  <h3 className="text-xl sm:text-2xl font-semibold text-blue-800 font-poppins">
+                  <h3 className="text-xl sm:text-2xl font-semibold text-blue-800 ">
                     {area.title}
                   </h3>
                 </div>
-                <ul className="text-left text-gray-700 font-inter text-sm sm:text-base list-disc list-inside space-y-1">
+                <ul className="text-left text-gray-700  text-sm sm:text-base list-disc list-outside pl-5 space-y-1">
                   {area.items.map((item, i) => (
-                    <li key={i}>{item}</li>
+                    <li key={i} className="text-justify">{item}</li>
                   ))}
                 </ul>
               </article>

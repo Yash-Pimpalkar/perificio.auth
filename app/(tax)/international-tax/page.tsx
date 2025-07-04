@@ -43,7 +43,7 @@ const page = () => {
 
   return (
     // Main container with a suitable light orange background color
-    <div className="min-h-screen bg-orange-50 font-inter text-gray-900 overflow-hidden">
+    <div className="min-h-screen bg-orange-50  text-gray-900 overflow-hidden">
       {/* Head section for page metadata - uncomment if this is a top-level page */}
       {/* <Head>
         <title>FEMA Compliance & Foreign Exchange - Corporate Legal Services</title>
@@ -55,7 +55,7 @@ const page = () => {
         {/* Hero Section for FEMA - Now with Orange Gradient Background */}
 
         <div className="text-center relative z-10">
-          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-blue-900 mb-4 font-poppins leading-tight">
+          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-blue-900 mb-4  leading-tight">
             {" "}
             {/* Deep blue header */}
             International Tax
@@ -64,7 +64,7 @@ const page = () => {
 
         {/* Key Aspects Section - Now with Orange Gradient Background and Orange Cards */}
         {/* Section with a different orange gradient */}
-        <h2 className="text-3xl sm:text-4xl font-bold text-blue-800 text-center mb-10 font-poppins">
+        <h2 className="text-3xl sm:text-4xl font-bold text-blue-800 text-center mb-10 ">
           {" "}
           {/* Deep blue header */}
           Understanding International Tax for Your Global Transactions
@@ -80,12 +80,12 @@ const page = () => {
                 {/* Blue icon */}
                 {feature.icon}
               </div>
-              <h3 className="text-xl sm:text-2xl font-semibold text-blue-700 mb-3 font-poppins">
+              <h3 className="text-xl sm:text-2xl font-semibold text-blue-700 mb-3 ">
                 {" "}
                 {/* Blue header */}
                 {feature.title}
               </h3>
-              <p className="text-gray-700 leading-relaxed font-inter text-sm sm:text-base">
+              <p className="text-gray-700 leading-relaxed  text-sm sm:text-base text-justify">
                 {" "}
                 {/* Adjusted text color */}
                 {feature.items}

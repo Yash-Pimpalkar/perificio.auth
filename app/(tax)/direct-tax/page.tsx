@@ -38,12 +38,12 @@ const page = () => {
 
    return (
      // Main container with a suitable light orange background color
-     <div className="min-h-screen bg-orange-50 font-inter text-gray-900 overflow-hidden">
+     <div className="min-h-screen bg-orange-50  text-gray-900 overflow-hidden">
        <main className="w-full max-w-7xl mx-auto py-8 sm:py-12 lg:py-16 px-4 sm:px-6 lg:px-8 space-y-12 sm:space-y-16 lg:space-y-20">
 
          {/* Hero Section - Prominent orange gradient with blue header */}
 
-             <h1 className="text-center text-4xl sm:text-5xl lg:text-6xl font-extrabold text-blue-900 mb-4 font-poppins leading-tight">
+             <h1 className="text-center text-4xl sm:text-5xl lg:text-6xl font-extrabold text-blue-900 mb-4  leading-tight">
                Direct Taxation Services
              </h1>
            
@@ -52,10 +52,10 @@ const page = () => {
          {/* Highlighted Core Services List - Section with light orange gradient, cards with solid light orange */}
 
         
-           <h2 className="text-3xl sm:text-4xl font-bold text-blue-800 text-center mb-10 font-poppins">
+           <h2 className="text-3xl sm:text-4xl font-bold text-blue-800 text-center mb-10 ">
              Our Expertise Includes:
            </h2>
-           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 px-6 sm:px-8">
+           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 px-6 sm:px-8 text-justify">
              {directTaxServices.map((service, index) => (
                <div
                  key={index}
@@ -64,10 +64,10 @@ const page = () => {
                  <div className="text-5xl sm:text-6xl mb-4 text-blue-600">
                    {service.icon}
                  </div>
-                 <h3 className="text-xl sm:text-2xl font-semibold text-blue-700 mb-3 font-poppins">
+                 <h3 className="text-xl sm:text-2xl font-semibold text-blue-700 mb-3">
                    {service.title}
                  </h3>
-                 <p className="text-gray-700 leading-relaxed font-inter text-sm sm:text-base">
+                 <p className="text-gray-700 leading-relaxed  text-sm sm:text-base text-justify">
                    {service.description}
                  </p>
                </div>
