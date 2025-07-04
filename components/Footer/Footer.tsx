@@ -6,12 +6,12 @@ import {
   FaLinkedinIn,
   FaEnvelope,
   FaMapMarkerAlt,
-  FaPhoneAlt
+  FaPhoneAlt,
 } from "react-icons/fa";
 import {
   RiMoneyDollarCircleFill,
   // RiBuilding2Fill,
-  RiLinkM
+  RiLinkM,
   // RiNewspaperFill
 } from "react-icons/ri";
 const Footer = () => {
@@ -25,8 +25,8 @@ const Footer = () => {
           <Image
             src="/assets/LogoTransparent.png"
             alt="Perificio Logo"
-            width={144}
-            height={40}
+            width={200}
+            height={100}
             className="w-36 mb-2 rounded-xl"
             priority
           />
@@ -176,15 +176,20 @@ const Footer = () => {
                 Blog & Insights
               </a>
             </li>
- <li>
+            <li>
               <a
                 href="about"
                 className="hover:text-white transition-colors duration-200"
               >
                 About Us
               </a>
+              <a
+                href="about"
+                className="hover:text-white transition-colors duration-200"
+              >
+                Contact Us
+              </a>
             </li>
-          
           </ul>
         </div>
 

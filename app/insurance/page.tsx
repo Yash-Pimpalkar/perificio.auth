@@ -188,7 +188,7 @@ export default function Page() {
           </div>
           <div className="flex-1 flex justify-center items-center mt-10 md:mt-0 md:ml-8 w-full max-w-lg z-10">
             <img
-              src="/assets/insurance.jpg"
+              src="/assets/insurance1.png"
               alt="Family protected by insurance, financial security"
               className="rounded-2xl shadow-xl w-full h-auto object-cover transform hover:scale-105 transition duration-300 ease-in-out border-4 border-orange-200"
             />
