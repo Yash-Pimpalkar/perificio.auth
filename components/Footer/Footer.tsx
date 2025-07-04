@@ -16,7 +16,7 @@ import {
 } from "react-icons/ri";
 const Footer = () => {
   return (
-    <footer className="relative bg-[#032a5b] text-white px-6 md:px-20 pt-16 pb-20 text-sm font-inter overflow-hidden">
+    <footer className="relative bg-[#010475] text-white px-6 md:px-20 pt-16 pb-20 text-sm font-inter overflow-hidden">
       {/* Optional: Subtle top border with a gradient for a premium feel */}
       {/* Main Grid */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-y-12 gap-x-10 z-10 relative">
