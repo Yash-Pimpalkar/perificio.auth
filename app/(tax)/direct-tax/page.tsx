@@ -29,11 +29,6 @@ const page = () => {
        description: 'Strategic tax planning to minimize liabilities.',
        icon: '💡', // Lightbulb icon
      },
-     {
-       title: 'International Taxation & DTAA', // NEW SERVICE TAB
-       description: 'Expert guidance on cross-border tax implications and Double Taxation Avoidance Agreements.',
-       icon: '🌍', // Globe icon for international
-     },
    ];
 
    return (
