@@ -12,7 +12,7 @@ const rubik = Rubik({
 });
 
 const Home = () => {
-  const headerBanner = "/assets/top-banner.png"; // Path to your main header banner
+  const headerBanner = "/assets/welcome.jpg"; // Path to your main header banner
 
   return (
     <div className="min-h-screen bg-white text-gray-900 relative">
@@ -32,7 +32,7 @@ const Home = () => {
       </section>
 
       {/* New Section with "Living well today..." */}
-      <section className="  w-full bg-white py-2 md:py-4 flex items-center justify-center relative overflow-hidden font-mono">
+      <section className="  w-full bg-amber-100 py-2 md:py-4 flex items-center justify-center relative overflow-hidden font-mono">
         {/* Content container */}
         <div className="relative z-10 text-center p-4 mx-4">
           <p
@@ -53,12 +53,12 @@ const Home = () => {
       {/* Added relative for chatbot positioning */}
       {/* Dynamic Services Advertising Banner with Rolling Cards   */}
 
-      <section className="">
+      <section className="bg-[#ADD8E6]">
         <MovingImages />
       </section>
       <AnimatedSection>
         {/* Testimonials Section */}
-        <section>
+        <section >
           <Testinomials />
         </section>
       </AnimatedSection>

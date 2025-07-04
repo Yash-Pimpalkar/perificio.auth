@@ -21,6 +21,23 @@ const testimonials = [
       "The best part is their unbiased approach. They truly put their clients' interests first.",
     author: "Rahul K.",
     role: "Business Owner"
+  },  {
+    quote:
+      "Their team helped me structure my term and health cover optimally—saved tax and gave peace of mind.",
+    author: "Arjun S.",
+    role: "Entrepreneur"
+  },
+  {
+    quote:
+      "Comprehensive wealth management with a focus on tax efficiency. Exactly what I needed!",
+    author: "Priya M.",
+    role: "Senior Executive"
+  },
+  {
+    quote:
+      "The best part is their unbiased approach. They truly put their clients' interests first.",
+    author: "Rahul K.",
+    role: "Business Owner"
   }
 ];
 
@@ -64,7 +81,7 @@ const Testinomials = () => {
   }, []);
 
   return (
-    <div className="py-12 md:py-20 bg-white overflow-hidden">
+    <div className="py-12 md:py-20 bg-amber-100 overflow-hidden">
       <div className="container mx-auto px-4">
         <h2 className="text-3xl md:text-4xl font-bold text-center mb-12 text-[#1D4ED8] font-montserrat">
           What Our <span className="text-[#B91C1C]">Clients Say</span>
