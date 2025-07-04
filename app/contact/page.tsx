@@ -99,12 +99,7 @@ const ContactUsPage: React.FC = () => {
           </div>
         )}
 
-        <section
-          className="relative w-full py-20 px-6 rounded-xl overflow-hidden shadow-xl"
-          style={{
-            background: 'linear-gradient(135deg, #FFF8E1 0%, #FFDDA0 100%)',
-          }}
-        >
+ 
           <div className="text-center relative z-10">
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-blue-900 mb-4 font-poppins leading-tight">
               Contact <span className="text-red-700">Perficio</span>
@@ -112,7 +107,7 @@ const ContactUsPage: React.FC = () => {
        
         
           </div>
-        </section>
+      
 
         <section
           id="contact-form"

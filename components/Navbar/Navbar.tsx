@@ -50,6 +50,13 @@ const menuConfig: Record<Role, MenuItemWithSubmenu[]> = {
         { name: "Real Estate", href: "/real-estate" },
       ]
     },
+     {
+      name: "Blogs & Pdf",
+      submenu: [
+        { name: "All Blogs", href: "/all-blogs" },
+        { name: "All Pdfs", href: "/all-pdfs" },
+      ]
+    },
     { name: "Insurance", href: "/insurance" },
     { name: "About Us", href: "/about" },
     { name: "Contact Us", href: "/contact" }
