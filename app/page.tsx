@@ -4,34 +4,18 @@ import Testinomials from "@/components/Testinomials/Testinomials";
 import { Rubik } from "next/font/google";
 import Image from "next/image";
 import DisplayContent from "@/components/Blogs/DisplayContent";
-// import { useGSAP } from "@gsap/react";
-// import gsap from "gsap";
 const rubik = Rubik({
   weight: "600",
   subsets: ["latin"],
   style: ["normal", "italic"],
-  variable: "--font-rubik"
+  variable: "--font-rubik",
 });
 
 const Home = () => {
   const headerBanner = "/assets/top-banner.png"; // Path to your main header banner
 
-  // Path to the new image you uploaded (assuming it's in your public/assets folder)
-  // const tl = gsap.timeline();
-  // useGSAP(() => {
-  //   tl.to(
-  //     "#header-banner",
-
-  //     {
-  //       opacity: 1,
-
-  //       duration: 2,
-  //       ease: "power1.inOut"
-  //     }
-  //   );
-  // }, []);
   return (
-    <div className="min-h-screen bg-white text-gray-900 font-inter relative">
+    <div className="min-h-screen bg-white text-gray-900 relative">
       {/* Header Banner */}
       <section
         id="header-banner"
@@ -80,8 +64,6 @@ const Home = () => {
       </AnimatedSection>
 
       {/* Blog/Knowledge Base Section */}
-
-
 
       <section className="py-12 md:py-20 px-3 md:px-6 sm:px-4 bg-orange-50">
         <DisplayContent />
