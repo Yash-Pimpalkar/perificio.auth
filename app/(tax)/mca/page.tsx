@@ -1,7 +1,6 @@
 "use client";
 import React from "react";
 
-
 const oversightAreas = [
   {
     icon: "🏢",
@@ -36,7 +35,6 @@ const oversightAreas = [
       "SBO, Beneficial Ownership Disclosures",
     ],
   },
-
 ];
 
 const page = () => {
@@ -47,14 +45,9 @@ const page = () => {
       <main className="w-full max-w-7xl mx-auto py-8 sm:py-12 lg:py-16 px-4 sm:px-6 lg:px-8 space-y-12 sm:space-y-16 lg:space-y-20">
         {/* Hero Section - The MCA Hero with Orange Gradient Background and Blue Header */}
 
-      
-            <h1 className="text-4xl text-center sm:text-5xl lg:text-6xl font-extrabold text-blue-900 mb-4  leading-tight">
-              The{" "}
-              <span className="text-blue-600">
-                MCA Services
-              </span>
-            </h1>
-         
+        <h1 className="text-4xl text-center sm:text-5xl lg:text-6xl font-extrabold text-blue-900 mb-4  leading-tight">
+          The <span className="text-blue-600">Corporate Law Services</span>
+        </h1>
 
         {/* Our Mission & Key Responsibilities Section - With Orange Gradient Background and Blue Headers */}
         {/* <section className="py-8 rounded-xl shadow-lg border border-orange-100"
@@ -93,36 +86,35 @@ const page = () => {
 
         {/* Areas of Oversight Section - With Orange Gradient Background and Blue Headers */}
 
-          <h2 className="text-3xl sm:text-4xl font-bold text-blue-800 text-center mb-10 ">
-            Areas of Oversight
-          </h2>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-            {oversightAreas.map((area, index) => (
-              <article
-                key={index}
-                className=" border border-orange-200 p-6 sm:p-8 rounded-2xl shadow-md hover:shadow-xl transition-transform hover:-translate-y-1"
-              >
-                <div className="flex flex-col items-center text-center mb-4">
-                  <div className="text-5xl sm:text-6xl text-blue-600 mb-3">
-                    {area.icon}
-                  </div>
-                  <h3 className="text-xl sm:text-2xl font-semibold text-blue-800 ">
-                    {area.title}
-                  </h3>
+        <h2 className="text-3xl sm:text-4xl font-bold text-blue-800 text-center mb-10 ">
+          Areas of Oversight
+        </h2>
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+          {oversightAreas.map((area, index) => (
+            <article
+              key={index}
+              className=" border border-orange-200 p-6 sm:p-8 rounded-2xl shadow-md hover:shadow-xl transition-transform hover:-translate-y-1"
+            >
+              <div className="flex flex-col items-center text-center mb-4">
+                <div className="text-5xl sm:text-6xl text-blue-600 mb-3">
+                  {area.icon}
                 </div>
-                <ul className="text-left text-gray-700  text-sm sm:text-base list-disc list-outside pl-5 space-y-1">
-                  {area.items.map((item, i) => (
-                    <li key={i} className="text-justify">{item}</li>
-                  ))}
-                </ul>
-              </article>
-            ))}
-          </div>
-  
+                <h3 className="text-xl sm:text-2xl font-semibold text-blue-800 ">
+                  {area.title}
+                </h3>
+              </div>
+              <ul className="text-left text-gray-700  text-sm sm:text-base list-disc list-outside pl-5 space-y-1">
+                {area.items.map((item, i) => (
+                  <li key={i} className="text-justify">
+                    {item}
+                  </li>
+                ))}
+              </ul>
+            </article>
+          ))}
+        </div>
 
         {/* Contact CTA Section - Orange Gradient Background and Blue Header */}
-   
-       
       </main>
 
       {/* Global Font Imports */}

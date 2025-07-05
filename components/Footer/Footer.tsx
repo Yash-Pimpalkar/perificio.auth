@@ -16,7 +16,7 @@ import {
 } from "react-icons/ri";
 const Footer = () => {
   return (
-    <footer className="relative bg-[#010475] text-white px-6 md:px-20 pt-16 pb-20 text-sm font-inter overflow-hidden">
+    <footer className="relative bg-blue-950 text-white px-6 md:px-20 pt-16 pb-10 text-sm font-inter overflow-hidden">
       {/* Optional: Subtle top border with a gradient for a premium feel */}
       {/* Main Grid */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-y-12 gap-x-10 z-10 relative">
@@ -26,8 +26,9 @@ const Footer = () => {
             src="/assets/LogoTransparent.png"
             alt="Perificio Logo"
             width={200}
-            height={100}
-            className="w-36 mb-2 rounded-xl"
+            height={200}
+            objectFit="contain"
+            className="p-2"
             priority
           />
           {/* The detailed description was moved to the bottom section as per your last request */}
@@ -92,72 +93,56 @@ const Footer = () => {
           <h3 className="text-xl font-bold mb-5 flex items-center gap-3 text-blue-300">
             <RiMoneyDollarCircleFill className="text-2xl" /> Our Services
           </h3>
-          <ul className="space-y-3 text-white/80 text-base">
-            <li>
-              <a
-                href="direct-tax"
-                className="hover:text-white transition-colors duration-200"
-              >
-                Direct Tax Consulting
-              </a>
-            </li>
-            <li>
-              <a
-                href="indirect-tax"
-                className="hover:text-white transition-colors duration-200"
-              >
-                Indirect Tax Solutions
-              </a>
-            </li>
-            <li>
-              <a
-                href="mca"
-                className="hover:text-white transition-colors duration-200"
-              >
-                MCA Services
-              </a>
-            </li>
-            <li>
-              <a
-                href="rera"
-                className="hover:text-white transition-colors duration-200"
-              >
-                RERA Advisory
-              </a>
-            </li>
-            <li>
-              <a
-                href="fema"
-                className="hover:text-white transition-colors duration-200"
-              >
-                International Taxation
-              </a>
-            </li>
-            <li>
-              <a
-                href="insurance"
-                className="hover:text-white transition-colors duration-200"
-              >
-                Insurance
-              </a>
-            </li>
-            <li>
-              <a
-                href="invest"
-                className="hover:text-white transition-colors duration-200"
-              >
-                Investment Planning
-              </a>
-            </li>
-            <li>
-              <a
-                href="real-estate"
-                className="hover:text-white transition-colors duration-200"
-              >
-                Real Estate Guidance
-              </a>
-            </li>
-          </ul>
+          <div className="grid grid-cols-2 gap-x-4 gap-y-3 text-white/80 text-base">
+            <a
+              href="direct-tax"
+              className="hover:text-white transition-colors duration-200"
+            >
+              Direct Tax Consulting
+            </a>
+            <a
+              href="indirect-tax"
+              className="hover:text-white transition-colors duration-200"
+            >
+              Indirect Tax Solutions
+            </a>
+            <a
+              href="mca"
+              className="hover:text-white transition-colors duration-200"
+            >
+              MCA Services
+            </a>
+            <a
+              href="rera"
+              className="hover:text-white transition-colors duration-200"
+            >
+              RERA Advisory
+            </a>
+            <a
+              href="fema"
+              className="hover:text-white transition-colors duration-200"
+            >
+              International Taxation
+            </a>
+            <a
+              href="insurance"
+              className="hover:text-white transition-colors duration-200"
+            >
+              Insurance
+            </a>
+            <a
+              href="invest"
+              className="hover:text-white transition-colors duration-200"
+            >
+              Investment Planning
+            </a>
+            <a
+              href="real-estate"
+              className="hover:text-white transition-colors duration-200"
+            >
+              Real Estate Guidance
+            </a>
+          </div>
         </div>
 
         {/* Column 3: Important Links */}
@@ -183,8 +168,8 @@ const Footer = () => {
               >
                 About Us
               </a>
-              </li>
-              <li>
+            </li>
+            <li>
               <a
                 href="contact"
                 className="hover:text-white transition-colors duration-200"
@@ -230,8 +215,8 @@ const Footer = () => {
         </p> */}
       {/* <p className="text-white/40">
           &copy; {new Date().getFullYear()} Perificio. All rights reserved.
-        </p>
-      </div> */}
+        </p> */}
+      {/* </div> */}
     </footer>
   );
 };
