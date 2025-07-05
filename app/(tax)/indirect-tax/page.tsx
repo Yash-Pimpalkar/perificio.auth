@@ -5,40 +5,40 @@ import Link from "next/link";
 const page = () => {
   const indirectTaxServices = [
     {
-      title: "GST Registration & Filing",
+      title: "GST Registration, Filing & Refund Support",
       description:
-        "Hassle-free GST registration and timely filing of all GST returns.",
+        "We offer complete assistance for GST registration and ensure timely filing of all GST returns, including GSTR-1, 3B, 9, and 9C. Exporters can also rely on us for smooth processing of GST refund claims and LUT (Letter of Undertaking) applications.",
       icon: "📝", // Document/Pen icon
     },
     {
-      title: "GST Refund & LUT Processing",
+      title: "Reconciliation, RCM & ISD Advisory",
       description:
-        "Assistance with GST refund claims and Letter of Undertaking (LUT) for exporters.",
+        "Our experts help businesses reconcile their purchase data with GSTR-2A/2B and resolve mismatches efficiently. We also advise on Reverse Charge Mechanism (RCM) compliance and Input Service Distributor (ISD) setups for multi-location operations.",
       icon: "💰", // Money Bag icon
     },
     {
-      title: "Reconciliation & GSTR-2B Advisory",
+      title: "GST Audit, Litigation & Appeals",
       description:
-        "Expert guidance on GSTR-2A/2B reconciliation and discrepancy resolution.",
+        "We provide end-to-end support for GST audits and annual return filings. Our litigation services include drafting replies to notices, handling assessments, and representing clients in GST appeals before departmental authorities.",
       icon: "📊", // Chart/Analysis icon
     },
     {
-      title: "GST Audit & Annual Return",
+      title: "State-Level VAT Compliance",
       description:
-        "Comprehensive support for GST audits and seamless annual return filing.",
+        "We assist in VAT registration, return filing, assessments, and dispute handling for states where VAT is still applicable—such as on petroleum and liquor. Our services ensure compliance with legacy VAT laws and support in closure of pending cases.",
       icon: "🔍", // Magnifying Glass/Audit icon
     },
     {
-      title: "RCM & ISD Consulting",
+      title: "Professional Tax Compliance",
       description:
-        "Advisory on Reverse Charge Mechanism (RCM) and Input Service Distributor (ISD) provisions.",
+        "We offer complete support for Professional Tax registration, monthly return filing, challan payments, and compliance with state-specific rules—ensuring timely deductions and penalty-free operations.",
       icon: "🔄", // Refresh/Cycle icon
     },
     // NEW SERVICE ADDED HERE
     {
-      title: "Litigation & Appeals Support",
+      title: "International VAT Consultancy",
       description:
-        "Representation and advisory for GST disputes, assessments, and appeals before authorities.",
+        "We provide advisory services on VAT/GST compliance for cross-border transactions in the UAE, UK, EU, and Australia. Our consultancy includes guidance on registration, reverse charge, and input tax eligibility.",
       icon: "⚖️", // Balance/Justice icon
     },
   ];

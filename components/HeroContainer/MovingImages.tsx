@@ -6,14 +6,14 @@ import Image from "next/image";
 import {
   Carousel,
   CarouselContent,
-  CarouselItem
+  CarouselItem,
 } from "@/components/ui/carousel";
 import Autoplay from "embla-carousel-autoplay";
 
 const bannerImages = [
-  { src: "/assets/gst-banner.jpg", url: "/services/gst" },
-  { src: "/assets/itr-banner.jpg", url: "/services/itr" },
-  { src: "/assets/rera-banner.jpg", url: "/services/rera" }
+  { src: "/assets/1.png", url: "/services/gst" },
+  { src: "/assets/2.png", url: "/services/itr" },
+  { src: "/assets/3.png", url: "/services/rera" },
 ];
 
 const MovingImages: React.FC = () => {
@@ -27,8 +27,8 @@ const MovingImages: React.FC = () => {
         className="w-full max-w-6xl mx-auto px-4"
         plugins={[
           Autoplay({
-            delay: 2000
-          })
+            delay: 2000,
+          }),
         ]}
       >
         <CarouselContent className=" ">
