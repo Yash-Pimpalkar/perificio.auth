@@ -53,7 +53,7 @@ const Home = () => {
       {/* Added relative for chatbot positioning */}
       {/* Dynamic Services Advertising Banner with Rolling Cards   */}
 
-      <section className="bg-[#ADD8E6]">
+      <section className="bg-amber-100">
         <MovingImages />
       </section>
       <AnimatedSection>

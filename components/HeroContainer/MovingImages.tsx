@@ -22,7 +22,7 @@ const MovingImages: React.FC = () => {
   // );
 
   return (
-    <section className="w-full py-10 md:py-16 flex flex-col items-center justify-center bg-blue-950/90 text-[#1D4ED8] text-center rounded-l-[20%]">
+    <section className="w-full py-10 md:py-16 flex flex-col items-center justify-center bg-[#fefce8] text-[#1D4ED8] text-center rounded-l-[20%]">
       <Carousel
         className="w-full max-w-6xl mx-auto px-4"
         plugins={[
