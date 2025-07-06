@@ -1,6 +1,6 @@
 "use client";
 
-import React from "react";
+import React, { useRef } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import {
@@ -11,15 +11,15 @@ import {
 import Autoplay from "embla-carousel-autoplay";
 
 const bannerImages = [
-  { src: "/assets/1.png", url: "/services/gst" },
-  { src: "/assets/2.png", url: "/services/itr" },
-  { src: "/assets/3.png", url: "/services/rera" },
+  { src: "/assets/1.png", url: "/contact" },
+  { src: "/assets/2.png", url: "/contact" },
+  { src: "/assets/3.png", url: "/contact" },
 ];
 
 const MovingImages: React.FC = () => {
-  // const plugin = useRef(
-  //   Autoplay({ delay: 3000, stopOnInteraction: false, stopOnMouseEnter: true })
-  // );
+  const plugin = useRef(
+    Autoplay({ delay: 3000, stopOnInteraction: false, stopOnMouseEnter: true })
+  );
 
   return (
     <section className="w-full py-10 md:py-16 flex flex-col items-center justify-center bg-[#fefce8] text-[#1D4ED8] text-center rounded-l-[20%]">
@@ -35,7 +35,8 @@ const MovingImages: React.FC = () => {
           {bannerImages.map((banner, index) => (
             <CarouselItem
               key={index}
-              className=" basis-full md:basis-1/2 lg:basis-1/2"
+              className="basis-full md:basis-1/2 lg:basis-1/2 cursor-pointer"
+            
             >
               <Link
                 href={banner.url}
