@@ -130,9 +130,8 @@ const ContactUsPage: React.FC = () => {
                 <div>
                   <h3 className="text-xl font-semibold text-blue-700 font-poppins">Visit Us</h3>
                   <p className="text-gray-700 font-inter">
-                    Satyam Shopping Centre, <br />
-                    M.G. Road, Ghatkopar East, <br />
-                    Mumbai, Maharashtra 400077, India.
+                  Office no 23/24 | A Wing | Mezzanine Floor | Satyam Shopping Centre | M.G.Road | Ghatkopar (East) | Mumbai-400 077
+                  <br/> T:022 49764411
                   </p>
                 </div>
               </div>
@@ -142,8 +141,8 @@ const ContactUsPage: React.FC = () => {
                 <div>
                   <h3 className="text-xl font-semibold text-blue-700 font-poppins">Call Us</h3>
                   <p className="text-gray-700 font-inter">
-                    <a href="tel:+91[Your Phone Number]" className="hover:underline">
-                      +91 [Your Phone Number]
+                    <a href="tel:+91 022 49764411" className="hover:underline">
+                      +91 022 49764411
                     </a><br />
                     Available Mon-Fri, 9 AM - 6 PM
                   </p>

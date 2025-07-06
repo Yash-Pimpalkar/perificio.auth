@@ -36,7 +36,6 @@ const MovingImages: React.FC = () => {
             <CarouselItem
               key={index}
               className="basis-full md:basis-1/2 lg:basis-1/2 cursor-pointer"
-            
             >
               <Link
                 href={banner.url}
@@ -56,13 +55,6 @@ const MovingImages: React.FC = () => {
           ))}
         </CarouselContent>
       </Carousel>
-
-      {/* <a
-        href="#contact"
-        className="minline-block bg-blue-600 hover:bg-blue-700 text-white font-semibold font-poppins px-8 py-4 rounded-lg shadow-md transition transform hover:scale-105 mt-8"
-      >
-        Explore All Services & Get Started
-      </a> */}
     </section>
   );
 };
