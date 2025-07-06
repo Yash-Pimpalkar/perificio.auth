@@ -15,7 +15,7 @@ const Home = () => {
   const headerBanner = "/assets/welcome.jpg"; // Path to your main header banner
 
   return (
-    <div className="min-h-screen bg-white text-gray-900 relative">
+    <div className="min-h-screen bg-amber-100 text-gray-900 relative">
       {/* Header Banner */}
       <section
         id="header-banner"
