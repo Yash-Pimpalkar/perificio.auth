@@ -28,7 +28,7 @@ const page = () => {
       icon: "📈", // Changed to a chart icon
       title: "Succession & Estate Planning",
       description:
-        "We offer tailored succession and estate planning services to help individuals, families, and real estate businesses safeguard and transfer their wealth seamlessly. Our solutions include drafting of wills, creation of family trusts, and guidance on nominations, joint ownership, and inheritance laws—ensuring legal clarity, continuity, and tax-efficient distribution of assets.",
+        "We help individuals and families plan smooth, tax-efficient transfer of assets through wills, family trusts, and guidance on nominations, joint ownership, and inheritance laws—ensuring legal clarity and continuity.",
     },
     {
       icon: "🎯", // Target/Bullseye icon
