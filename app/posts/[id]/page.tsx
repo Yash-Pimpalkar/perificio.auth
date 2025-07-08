@@ -55,7 +55,7 @@ const ViewPostClient = () => {
             src={post.imageUrl}
             alt={post.title}
             fill
-            className="object-cover object-center"
+            className="object-contain object-center"
             priority
           />
         </div>
