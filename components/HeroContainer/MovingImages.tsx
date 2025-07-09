@@ -12,7 +12,7 @@ import Autoplay from "embla-carousel-autoplay";
 
 const bannerImages = [
   { src: "/assets/1.png", url: "/contact" },
-  { src: "/assets/Banner2.jpeg", url: "/contact" },
+  { src: "/assets/Banner2.jpg", url: "/contact" },
   { src: "/assets/3.png", url: "/contact" },
 ];
 
