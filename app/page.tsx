@@ -4,6 +4,7 @@ import Testinomials from "@/components/Testinomials/Testinomials";
 import { Rubik } from "next/font/google";
 import Image from "next/image";
 import DisplayContent from "@/components/Blogs/DisplayContent";
+import ChatBot from "@/components/Chatbot/Chatbot";
 const rubik = Rubik({
   weight: "600",
   subsets: ["latin"],
@@ -68,6 +69,7 @@ const Home = () => {
       <section className="py-12 md:py-20 px-3 md:px-6 sm:px-4 bg-orange-50">
         <DisplayContent />
       </section>
+        <ChatBot />
     </div>
   );
 };
