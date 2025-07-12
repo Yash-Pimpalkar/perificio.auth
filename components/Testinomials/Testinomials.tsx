@@ -92,7 +92,7 @@ const InfiniteTestimonials = () => {
     <section className="py-16 bg-amber-100 overflow-hidden">
       <div className="max-w-6xl mx-auto px-4">
         <h2 className="text-3xl font-bold text-center mb-12">
-          What Our Clients Say
+          <span className="text-red-500"> What Our</span> <span className="text-blue-500">Clients Say</span> 
         </h2>
 
         <div
@@ -112,7 +112,7 @@ const InfiniteTestimonials = () => {
               >
                 <p className="text-gray-700 text-sm mb-4 text-justify">“{t.quote}”</p>
                 <div className="mt-4">
-                  <p className="font-semibold">{t.author}</p>
+                  <p className="font-semibold text-gray-800">{t.author}</p>
                   <p className="text-xs text-gray-500">{t.role}</p>
                 </div>
               </div>
