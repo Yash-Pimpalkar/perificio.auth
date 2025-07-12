@@ -6,7 +6,7 @@ export type TCategory = {
 export type TPost = {
   id: string;
   title: string;
-  content: string;
+  content?: string;
   imageUrl?: string;
   publicId?: string;
   catName?: string;

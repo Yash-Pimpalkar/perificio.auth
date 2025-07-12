@@ -93,7 +93,7 @@ model Authenticator {
 model Post {
   id          String    @id @default(auto()) @map("_id") @db.ObjectId
   title       String
-  content     String
+  content     String?
   imageUrl    String?
   publicId    String?
   catName     String?

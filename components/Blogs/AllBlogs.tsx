@@ -28,9 +28,9 @@ export default function AllBlogs({ allPosts }: AllBlogsProps) {
                 authorEmail={post.authorEmail}
                 date={post.createdAt}
                 thumbnail={post.imageUrl}
-                category={post.catName}
+                // category={post.catName}
                 title={post.title}
-                content={post.content}
+                // content={post.content || ""}
                 links={post.links || []}
               />
             ))}

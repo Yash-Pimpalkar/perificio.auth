@@ -11,27 +11,18 @@ interface PostProps {
   thumbnail?: string;
   authorEmail?: string;
   title: string;
-  content: string;
   links?: string[];
-  category?: string;
   isEditable?: boolean; // moved from auth() check
 }
 
 export default function Post({
   id,
-  date,
   thumbnail,
   title,
-  content,
   links,
-  category,
   isEditable = false, // default to false
 }: PostProps) {
-  const formattedDate = new Date(date).toLocaleDateString("en-US", {
-    month: "short",
-    day: "numeric",
-    year: "numeric",
-  });
+
 
   return (
   <div className="bg-orange-100 rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1 hover:scale-[1.02] w-full max-w-sm flex flex-col overflow-hidden">
@@ -52,18 +43,18 @@ export default function Post({
   <div className="flex-1 p-4 sm:p-5 flex flex-col justify-between">
     {/* Title & Meta */}
     <div>
-      <h3 className="text-lg sm:text-xl font-bold text-[#1D4ED8] mb-1 line-clamp-2">
+      <h3 className="text-lg sm:text-xl font-bold text-[#1D4ED8] line-clamp-2">
         {title}
       </h3>
-      <p className="text-xs sm:text-sm text-gray-600 mb-2">
+      {/* <p className="text-xs sm:text-sm text-gray-600 mb-2">
         {formattedDate} - <span className="font-semibold">{category || "General"}</span>
-      </p>
+      </p> */}
     </div>
 
     {/* Description */}
-    <div className="text-gray-700 text-sm leading-relaxed text-justify line-clamp-5 mb-3">
+    {/* <div className="text-gray-700 text-sm leading-relaxed text-justify line-clamp-5 mb-3">
       {content}
-    </div>
+    </div> */}
 
     {/* Links (if any) */}
     {links?.length || 0 > 0 && (
