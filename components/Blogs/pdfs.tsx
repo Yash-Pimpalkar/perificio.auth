@@ -56,7 +56,7 @@ export default function PdfCard({
           <HiOutlineDocumentText className="text-red-500 text-2xl flex-shrink-0" />
           <div className="flex-1 min-w-0">
             <p className="truncate font-medium text-sm">{title}</p>
-            <p className="text-xs text-gray-300">{formattedDate}</p>
+            {/* <p className="text-xs text-gray-300">{formattedDate}</p> */}
           </div>
         </div>
       </a>
