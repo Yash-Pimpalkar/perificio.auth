@@ -8,7 +8,7 @@ export default function MappedPdf() {
 
   const getPdfs = async (): Promise<TPdf[] | null> => {
     try {
-      const res = await fetch("/api/pdfs", { cache: "force-cache" });
+      const res = await fetch("/api/pdfs");
       if (res.ok) return res.json();
     } catch (error) {
       console.error("Failed to fetch PDFs:", error);
