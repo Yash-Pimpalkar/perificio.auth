@@ -18,7 +18,7 @@ export default function DisplayContent() {
   // Fetch Blogs
   const getPosts = async (): Promise<TPost[] | null> => {
     try {
-      const res = await fetch("/api/posts", { cache: "no-store" });
+      const res = await fetch("/api/posts");
       if (res.ok) return res.json();
     } catch (error) {
       console.error(error);
@@ -29,7 +29,7 @@ export default function DisplayContent() {
   // Fetch PDFs
   const getPdfs = async (): Promise<TPdf[] | null> => {
     try {
-      const res = await fetch("/api/pdfs", { cache: "force-cache" });
+      const res = await fetch("/api/pdfs");
       if (res.ok) return res.json();
     } catch (error) {
       console.error("Failed to fetch PDFs:", error);
