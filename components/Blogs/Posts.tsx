@@ -34,7 +34,7 @@ export default function Post({
   });
 
   return (
-  <div className="bg-white rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1 hover:scale-[1.02] w-full max-w-sm flex flex-col overflow-hidden">
+  <div className="bg-orange-100 rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1 hover:scale-[1.02] w-full max-w-sm flex flex-col overflow-hidden">
   {/* Thumbnail (Adjustable height) */}
   <div className="relative w-full h-[420px]">
     <Image

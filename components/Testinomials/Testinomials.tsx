@@ -1,142 +1,127 @@
 "use client";
 
-import React, { useEffect, useRef } from "react";
-import gsap from "gsap";
+import { useEffect, useRef } from "react";
+import { motion, useAnimation } from "framer-motion";
 
 const testimonials = [
   {
     quote:
-      "Their team helped me structure my term and health cover optimally—saved tax and gave peace of mind.",
-    author: "Arjun S.",
-    role: "Entrepreneur"
+      "Their understanding of RERA, TDR, and real estate-specific GST complications is exceptional. With Perficio handling our project audits and GST reconciliations, we’re always confident of staying compliant.",
+    author: "Sahil Mehta",
+    role: "CEO, Vardhman Group Of Builders and Developers",
   },
   {
     quote:
-      "Comprehensive wealth management with a focus on tax efficiency. Exactly what I needed!",
-    author: "Priya M.",
-    role: "Senior Executive"
+      "100% satisfied with the services provided. Extremely kind, humble, and always available to guide us with in-depth, quality knowledge. Truly appreciate the commitment and expertise.",
+    author: "Jitesh Shah",
+    role: "Hansraj Mathurdas Surveyors PVT LTD",
   },
   {
     quote:
-      "The best part is their unbiased approach. They truly put their clients' interests first.",
-    author: "Rahul K.",
-    role: "Business Owner"
-  },  {
-    quote:
-      "Their team helped me structure my term and health cover optimally—saved tax and gave peace of mind.",
-    author: "Arjun S.",
-    role: "Entrepreneur"
+      "We have been extremely satisfied with the services rendered by Perficio for our TDS and GST compliance. Their team is knowledgeable, prompt in their responses, and ensures timely guidance on complex matters. Their support has helped us stay compliant and focus on our core operations in the offshore oil services sector.",
+    author: "Chandan Papalkar",
+    role: "Manager in Finance",
   },
   {
     quote:
-      "Comprehensive wealth management with a focus on tax efficiency. Exactly what I needed!",
-    author: "Priya M.",
-    role: "Senior Executive"
+      "Our GST refunds were stuck for months until we engaged Perficio. Their clarity on export documentation, LUT, and refunds helped us recover significant amounts on time, without repeated follow-ups.",
+    author: "Gemini Exports",
+    role: "",
   },
   {
     quote:
-      "The best part is their unbiased approach. They truly put their clients' interests first.",
-    author: "Rahul K.",
-    role: "Business Owner"
-  }
+      "I am extremely happy to be a part of the Perficio family of clients.The professional approach to our business and dedication to giving us the best solutions to our problems has resulted in consistently positive outcomes. We are proud to say that we have no unresolved issues with any official agency and this is testament to correct and sound advice",
+    author: "Ashish Meghani",
+    role: "Founder, Wraptech Machines",
+  },
+  {
+    quote:
+      "Navigating GST in the infrastructure space is challenging, but Mehta & Shah made it seamless. Their hands-on approach to monthly filing, RCM advisory, and reconciliation has ensured zero disruptions and full compliance. Their team is dependable and thorough.",
+    author: "Premal Shah",
+    role: "Founder, Devance Infra",
+  },
+  {
+    quote:
+      "As a non-resident with investments in India, I struggled with understanding compliance requirements. Perficio provided structured guidance on capital gains, DTAA benefits, and repatriation, making tax filing completely stress-free.",
+    author: "Nadeem Saifi",
+    role: "NRI Investor",
+  },
+  {
+    quote:
+      "We have worked with Perficio for TDS Compliance, indirect tax audits and complex GST reconciliations. Their technical knowledge is exceptional, and their team has always ensured regulatory deadlines are met without compromising accuracy.",
+    author: "Sandeep Vaidya",
+    role: "Founder, Designplus Infra",
+  },
 ];
 
-const Testinomials = () => {
-  const wrapperRef = useRef<HTMLDivElement>(null);
-  const contentRef = useRef<HTMLDivElement>(null);
-  const animRef = useRef<gsap.core.Tween | null>(null);
+// Duplicate list to enable smooth infinite loop
+const infiniteTestimonials = [...testimonials, ...testimonials];
 
+const InfiniteTestimonials = () => {
+  const controls = useAnimation();
+  const containerRef = useRef<HTMLDivElement>(null);
+
+  // Start scrolling on mount
   useEffect(() => {
-    const wrapper = wrapperRef.current;
-    const content = contentRef.current;
-    if (!wrapper || !content) return;
-
-    // Duplicate content for seamless looping
-    const totalWidth = content.scrollWidth / 2;
-
-    const anim = gsap.to(content, {
-      x: `-=${totalWidth}`,
-      duration: 30,
-      ease: "linear",
-      repeat: -1,
-      modifiers: {
-        x: gsap.utils.unitize((x) => parseFloat(x) % totalWidth)
-      }
+    controls.start({
+      x: ["0%", "-50%"],
+      transition: {
+        duration: 30,
+        ease: "linear",
+        repeat: Infinity,
+      },
     });
+  }, [controls]);
 
-    animRef.current = anim;
+  const handleMouseEnter = () => {
+    controls.stop(); // pause at current position
+  };
 
-    // Pause/resume on hover
-    const pause = () => anim.pause();
-    const resume = () => anim.resume();
-
-    wrapper.addEventListener("mouseenter", pause);
-    wrapper.addEventListener("mouseleave", resume);
-
-    return () => {
-      anim.kill();
-      wrapper.removeEventListener("mouseenter", pause);
-      wrapper.removeEventListener("mouseleave", resume);
-    };
-  }, []);
+  const handleMouseLeave = () => {
+    controls.start({
+      x: ["0%", "-50%"],
+      transition: {
+        duration: 30,
+        ease: "linear",
+        repeat: Infinity,
+      },
+    });
+  };
 
   return (
-    <div className="py-12 md:py-20 bg-amber-100 overflow-hidden">
-      <div className="container mx-auto px-4">
-        <h2 className="text-3xl md:text-4xl font-bold text-center mb-12 text-[#1D4ED8] font-montserrat">
-          What Our <span className="text-[#B91C1C]">Clients Say</span>
+    <section className="py-16 bg-amber-100 overflow-hidden">
+      <div className="max-w-6xl mx-auto px-4">
+        <h2 className="text-3xl font-bold text-center mb-12">
+          What Our Clients Say
         </h2>
 
-        <div className="overflow-hidden" ref={wrapperRef}>
-          <div className="flex gap-6 w-max cursor-pointer" ref={contentRef}>
-            {[...testimonials, ...testimonials].map((testimonial, index) => (
+        <div
+          className="relative overflow-hidden"
+          onMouseEnter={handleMouseEnter}
+          onMouseLeave={handleMouseLeave}
+        >
+          <motion.div
+            ref={containerRef}
+            animate={controls}
+            className="flex w-max gap-6 cursor-pointer"
+          >
+            {infiniteTestimonials.map((t, i) => (
               <div
-                key={index}
-                className="w-[280px] sm:w-[320px] flex-shrink-0 bg-white border border-gray-200 rounded-xl p-5 shadow hover:shadow-md transition relative"
+                key={i}
+                className="bg-amber-50 rounded-2xl shadow-md p-6 w-[300px] flex-shrink-0 flex flex-col justify-between"
               >
-                <div className="absolute top-3 right-3">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    strokeWidth={1.5}
-                    stroke="currentColor"
-                    className="w-5 h-5 text-[#1D4ED8]"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      d="M9 12h.01M15 12h.01M9 16h6m-7.5 3a9 9 0 1115.732-6.897"
-                    />
-                  </svg>
+                <p className="text-gray-700 text-sm mb-4">“{t.quote}”</p>
+                <div className="mt-4">
+                  <p className="font-semibold">{t.author}</p>
+                  <p className="text-xs text-gray-500">{t.role}</p>
                 </div>
-                <div className="flex items-center mb-3">
-                  <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-[#EFF6FF] text-[#1D4ED8] font-bold flex items-center justify-center mr-3 text-sm sm:text-base">
-                    {testimonial.author
-                      .split(" ")
-                      .map((word) => word[0])
-                      .join("")
-                      .toUpperCase()}
-                  </div>
-                  <div>
-                    <p className="font-semibold text-[#B91C1C] text-sm sm:text-base">
-                      {testimonial.author}
-                    </p>
-                    <p className="text-xs sm:text-sm text-gray-600">
-                      {testimonial.role}
-                    </p>
-                  </div>
-                </div>
-                <p className="text-gray-700 text-xs sm:text-sm leading-relaxed">
-                  {testimonial.quote}
-                </p>
               </div>
             ))}
-          </div>
+          </motion.div>
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 
-export default Testinomials;
+export default InfiniteTestimonials;
