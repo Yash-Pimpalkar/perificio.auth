@@ -42,13 +42,15 @@ export default function DisplayContent() {
     getPosts().then(setPosts);
     getPdfs().then(setPdfs);
   }, []);
-const visiblePosts = posts
-  ? (showAllPosts
-      ? [...posts]?.sort((a, b) => new Date(b.createdAt)?.getTime() - new Date(a.createdAt)?.getTime())
-      : [...posts]
-          ?.sort((a, b) => new Date(b.createdAt)?.getTime() - new Date(a.createdAt)?.getTime())
-          ?.slice(0, 3))
-  : [];
+
+  const sortedPosts = posts
+    ? [...posts].sort(
+        (a, b) =>
+          new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime()
+      )
+    : [];
+
+  const visiblePosts = showAllPosts ? sortedPosts : sortedPosts.slice(0, 3);
 
   return (
     <div className="max-w-6xl mx-auto px-4 py-10">
@@ -92,13 +94,13 @@ const visiblePosts = posts
               ))}
             </div>
 
-            {!showAllPosts && posts && posts.length > 3 && (
+                {posts && posts.length > 3 && (
               <div className="text-center mt-8">
                 <button
-                  onClick={() => setShowAllPosts(true)}
+                  onClick={() => setShowAllPosts((prev) => !prev)}
                   className="px-6 py-2 bg-[#1D4ED8] text-white font-semibold rounded-md hover:bg-[#2563EB] transition"
                 >
-                  View More
+                  {showAllPosts ? "View Less" : "View All Posts"}
                 </button>
               </div>
             )}
