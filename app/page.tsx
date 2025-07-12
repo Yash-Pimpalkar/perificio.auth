@@ -12,7 +12,7 @@ const rubik = Rubik({
 });
 
 const Home = () => {
-  const headerBanner = "/assets/welcome1.jpg"; // Path to your main header banner
+  const headerBanner = "/assets/welcomeimage.jpg"; // Path to your main header banner
 
   return (
     <div className="min-h-screen bg-amber-100 text-gray-900 relative">
@@ -24,7 +24,7 @@ const Home = () => {
         <Image
           src={headerBanner}
           alt="Banner"
-          className="object-contain md:object-cover object-center"
+          className="object-contain md:object-cover"
           fill
           sizes="(max-width: 640px) 100vw, (max-width: 1024px) 100vw, 100vw"
           priority
