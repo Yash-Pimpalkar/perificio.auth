@@ -84,9 +84,6 @@ export default function Post({
 
   {/* Footer: Actions */}
   <div className="px-4 pb-4 pt-2 flex justify-between items-center border-t border-gray-200">
-    <Link href={`/posts/${id}`} className="text-[#1D4ED8] hover:text-[#3B82F6] hover:underline font-semibold text-sm">
-      Read More →
-    </Link>
 
     {isEditable && (
       <div className="flex items-center gap-3 text-sm font-semibold">

@@ -110,7 +110,7 @@ const InfiniteTestimonials = () => {
                 key={i}
                 className="bg-amber-50 rounded-2xl shadow-md p-6 w-[300px] flex-shrink-0 flex flex-col justify-between"
               >
-                <p className="text-gray-700 text-sm mb-4">“{t.quote}”</p>
+                <p className="text-gray-700 text-sm mb-4 text-justify">“{t.quote}”</p>
                 <div className="mt-4">
                   <p className="font-semibold">{t.author}</p>
                   <p className="text-xs text-gray-500">{t.role}</p>
