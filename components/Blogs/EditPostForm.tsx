@@ -31,7 +31,7 @@ export default function EditPostForm({ post }: { post: TPost }) {
 
     const initValues = () => {
       setTitle(post.title);
-      setContent(post.content);
+      setContent(post.content || "");
       setImageUrl(post.imageUrl || "");
       setPublicId(post.publicId || "");
       setLinks(post.links || []);

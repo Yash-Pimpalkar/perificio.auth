@@ -43,9 +43,7 @@ export default async function ViewBlogs() {
               authorEmail={post.authorEmail}
               date={post.createdAt}
               thumbnail={post.imageUrl}
-              category={post.catName}
               title={post.title}
-              content={post.content}
               links={post.links || []}
             />
           ))}
