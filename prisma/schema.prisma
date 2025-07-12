@@ -128,6 +128,8 @@ model Pdf {
   description   String?
   pdfUrl        String
   publicId      String
+  thumbnailUrl     String?   
+  thumbnailPublicId String? 
   uploaderEmail String
   uploadedAt    DateTime? @default(now())
 }

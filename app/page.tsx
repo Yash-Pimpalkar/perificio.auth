@@ -68,14 +68,6 @@ const Home = () => {
       <section className="py-12 md:py-20 px-3 md:px-6 sm:px-4 bg-orange-50">
         <DisplayContent />
       </section>
-
-      {/* Contact Section */}
-      {/* <section id="contact"> */}
-      {/* Alice Blue background */}
-      {/* <QuickContactSection /> */}
-      {/* </section> */}
-
-      {/* Floating Help Button */}
     </div>
   );
 };

@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import { useSession } from "next-auth/react";
 import Post from "./Posts";
 import { TPost, TPdf } from "@/types";
+import PdfCard from "./pdfs";
 
 export default function DisplayContent() {
   const { data: session } = useSession();
@@ -41,8 +42,13 @@ export default function DisplayContent() {
     getPosts().then(setPosts);
     getPdfs().then(setPdfs);
   }, []);
-
-  const visiblePosts = posts ? (showAllPosts ? posts : posts.slice(0, 3)) : [];
+const visiblePosts = posts
+  ? (showAllPosts
+      ? [...posts]?.sort((a, b) => new Date(b.createdAt)?.getTime() - new Date(a.createdAt)?.getTime())
+      : [...posts]
+          ?.sort((a, b) => new Date(b.createdAt)?.getTime() - new Date(a.createdAt)?.getTime())
+          ?.slice(0, 3))
+  : [];
 
   return (
     <div className="max-w-6xl mx-auto px-4 py-10">
@@ -102,24 +108,25 @@ export default function DisplayContent() {
         )
       ) : pdfs ? (
         <>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {pdfs.slice(0, 3).map((pdf) => (
-              <div key={pdf.id} className="bg-white p-4 rounded shadow">
-                <h3 className="font-bold">{pdf.title}</h3>
-                <p className="text-sm text-gray-500">
-                  {new Date(pdf?.uploadedAt || "").toLocaleDateString()}
-                </p>
-                <a
-                  href={pdf.pdfUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-blue-600 hover:underline block mt-2"
-                >
-                  View PDF
-                </a>
-              </div>
-            ))}
-          </div>
+         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+ {[...pdfs]
+  ?.sort((a, b) => new Date(b.uploadedAt || "")?.getTime() - new Date(a.uploadedAt || "")?.getTime())
+  ?.slice(0, 3)
+  ?.map((pdf) => (
+    <PdfCard
+      key={pdf.id}
+      id={pdf.id}
+      title={pdf.title}
+      pdfUrl={pdf.pdfUrl}
+      publicId={pdf.publicId}
+      uploadedAt={pdf.uploadedAt || ""}
+      uploaderEmail={pdf.uploaderEmail}
+      thumbnailUrl={pdf.thumbnailUrl || ""}
+      isEditable={isEditable}
+    />
+  ))}
+</div>
+
           <div className="flex items-center justify-center pt-6">
             <a
               href="/all-pdfs"

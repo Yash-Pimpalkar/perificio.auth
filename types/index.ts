@@ -42,6 +42,8 @@ export interface TPdf {
   title: string;
   pdfUrl: string;
   publicId: string;
+  thumbnailUrl: string | null;
+  thumbnailPublicId: string | null;
   uploaderEmail: string;
   uploadedAt?: string; // or Date, depending on how you handle timestamps
 }

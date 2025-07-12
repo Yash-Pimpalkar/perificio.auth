@@ -1,7 +1,8 @@
+"use client";
+
+import { HiOutlineDocumentText } from "react-icons/hi";
 import Image from "next/image";
-import Link from "next/link";
-import { auth } from "@/auth";
-import DeleteButton from "./DeleteButton";
+import DeletePdfButton from "./DeletePdfButton"; // Default thumbnail image
 
 interface PdfCardProps {
   id: string;
@@ -11,79 +12,61 @@ interface PdfCardProps {
   publicId: string;
   uploadedAt: string;
   uploaderEmail: string;
+  thumbnailUrl?: string;
+  isEditable: boolean;
 }
 
-export default async function PdfCard({
+export default function PdfCard({
   id,
   title,
-  description,
   pdfUrl,
   publicId,
   uploadedAt,
-  uploaderEmail,
+  thumbnailUrl,
+  isEditable,
 }: PdfCardProps) {
-  const session = await auth();
-  const isEditable = session?.user?.email === uploaderEmail;
-
   const formattedDate = new Date(uploadedAt).toLocaleDateString("en-US", {
     month: "short",
     day: "numeric",
     year: "numeric",
   });
-
-  const pdfThumbnail = `https://res.cloudinary.com/YOUR_CLOUD_NAME/image/upload/w_600,h_400,c_fill/pg_1/${publicId}.jpg`;
+ // Use the imported default thumbnail image
+  const previewImage = thumbnailUrl;
 
   return (
-    <div className="bg-white rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1 hover:scale-[1.02] w-full max-w-sm flex flex-col h-[400px]
-       px-12 sm:px-6 lg:px-4">
-
-      {/* Thumbnail from Cloudinary */}
-      <div className="relative w-full h-48">
-        <Image
-          src={pdfThumbnail}
-          alt={`Thumbnail for ${title}`}
-          fill
-          className="object-cover rounded-t-xl"
-        />
-        <div className="absolute top-3 right-3 bg-white/80 px-2 py-1 rounded-full text-xs font-semibold border border-gray-200">
-          PDF
+    <div className="w-full max-w-sm bg-white rounded-xl shadow-md overflow-hidden border border-gray-200 hover:shadow-lg transition transform hover:-translate-y-1">
+      <a
+        href={pdfUrl}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="block"
+      >
+        {/* Thumbnail */}
+        <div className="relative w-full h-44">
+          <Image
+            src={previewImage || "/assets/pdf.png"} // Fallback to default thumbnail if none provided
+            alt={`Thumbnail for ${title}`}
+            fill
+            className="object-cover object-top"
+          />
         </div>
-      </div>
 
-      {/* Text Section */}
-      <div className="p-4 sm:p-6 text-left flex-1 overflow-hidden">
-        <h3 className="text-lg sm:text-xl font-bold text-[#1D4ED8] mb-1 line-clamp-2">
-          {title}
-        </h3>
-        <p className="text-xs sm:text-sm text-gray-600 mb-2">
-          {formattedDate}
-        </p>
-        <p className="text-gray-700 text-sm leading-relaxed line-clamp-4 text-justify">
-          {description || "No description provided."}
-        </p>
-      </div>
-
-      {/* Footer */}
-      <div className="px-4 pb-5 pt-0 text-right flex justify-between items-center mt-auto">
-        <a
-          href={pdfUrl}
-          target="_blank"
-          rel="noopener noreferrer"
-          aria-label={`View PDF: ${title}`}
-          className="text-blue-600 hover:underline font-semibold text-sm"
-        >
-          View PDF →
-        </a>
-
-        {isEditable && (
-          <div className="flex items-center gap-3 text-sm font-semibold">
-            <Link href={`/edit-pdf/${id}`} className="text-yellow-600 hover:underline">
-              Edit
-            </Link>
-            <DeleteButton id={id} />
+        {/* Info Strip */}
+        <div className="bg-gray-900 text-white px-4 py-3 flex items-center gap-3">
+          <HiOutlineDocumentText className="text-red-500 text-2xl flex-shrink-0" />
+          <div className="flex-1 min-w-0">
+            <p className="truncate font-medium text-sm">{title}</p>
+            <p className="text-xs text-gray-300">{formattedDate}</p>
           </div>
-        )}
-      </div>
+        </div>
+      </a>
+
+      {/* Editable Actions */}
+      {isEditable && (
+        <div className="px-4 py-3 flex justify-between items-center text-sm text-gray-600">
+       <DeletePdfButton id={id} />
+        </div>
+      )}
     </div>
   );
 }

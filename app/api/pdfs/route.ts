@@ -9,10 +9,10 @@ export async function POST(req: Request) {
     return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
   }
 
-  const { title, pdfUrl, publicId } = await req.json();
+  const { title, pdfUrl, publicId, thumbnailUrl, thumbnailPublicId } = await req.json();
 
-  if (!title || !pdfUrl) {
-    return NextResponse.json({ error: "Title and PDF URL are required." }, { status: 400 });
+  if (!title || !pdfUrl || !thumbnailUrl) {
+    return NextResponse.json({ error: "Missing required fields" }, { status: 400 });
   }
 
   try {
@@ -21,6 +21,8 @@ export async function POST(req: Request) {
         title,
         pdfUrl,
         publicId,
+        thumbnailUrl,
+        thumbnailPublicId,
         uploaderEmail: session.user.email,
       },
     });
@@ -40,7 +42,6 @@ export async function GET() {
     });
     return NextResponse.json(pdfs);
   } catch (error) {
-    console.error("Failed to fetch PDFs:", error);
     console.log(error)
     return NextResponse.json({ error: "Internal Server Error" }, { status: 500 });
   }
