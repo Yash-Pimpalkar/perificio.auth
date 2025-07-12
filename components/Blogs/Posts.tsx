@@ -81,19 +81,16 @@ export default function Post({
       </div>
     )}
   </div>
-
-  {/* Footer: Actions */}
+  {isEditable && (
   <div className="px-4 pb-4 pt-2 flex justify-between items-center border-t border-gray-200">
-
-    {isEditable && (
       <div className="flex items-center gap-3 text-sm font-semibold">
         <Link href={`/edit-post/${id}`} className="text-yellow-600 hover:underline">
           Edit
         </Link>
         <DeleteButton id={id} />
       </div>
-    )}
   </div>
+    )}
 </div>
 
   );
