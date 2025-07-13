@@ -144,7 +144,7 @@ const ContactUsPage: React.FC = () => {
                     <a href="tel:+91 022 49764411" className="hover:underline">
                       +91 022 49764411
                     </a><br />
-                    Available Mon-Fri, 9 AM - 6 PM
+                    Available Mon-Fri, 10 AM - 7 PM
                   </p>
                 </div>
               </div>

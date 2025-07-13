@@ -38,7 +38,7 @@ const testimonials = [
     quote:
       "Navigating GST in the infrastructure space is challenging, but Mehta & Shah made it seamless. Their hands-on approach to monthly filing, RCM advisory, and reconciliation has ensured zero disruptions and full compliance. Their team is dependable and thorough.",
     author: "Premal Shah",
-    role: "Founder, Devance Infra",
+    role: "Founder, Devanse Infra",
   },
   {
     quote:
