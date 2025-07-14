@@ -145,22 +145,15 @@ const ChatBot: React.FC = () => {
               <span
                 className={
                   msg.sender === "user"
-                    ? "inline-block bg-blue-500 text-white px-3 py-2 rounded-lg"
-                    : "inline-block bg-gray-200 text-gray-900 px-3 py-2 rounded-lg"
+                    ? "inline-block bg-blue-500 text-white px-3 py-2 rounded-lg text-justify"
+                    : "inline-block bg-gray-200 text-gray-900 px-3 py-2 rounded-lg text-justify"
                 }
               >
-                {msg.sender === "bot"
-                  ? msg.text.split("*").map((part, i, arr) =>
-                      i < arr.length - 1 ? (
-                        <React.Fragment key={i}>
-                          {part}
-                          <br />
-                        </React.Fragment>
-                      ) : (
-                        part
-                      )
-                    )
-                  : msg.text}
+                {msg.sender === "bot" ? (
+                  <span dangerouslySetInnerHTML={{ __html: msg.text }} />
+                ) : (
+                  msg.text
+                )}
               </span>
             </div>
           ))}{" "}
