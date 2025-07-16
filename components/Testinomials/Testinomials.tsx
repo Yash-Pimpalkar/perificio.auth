@@ -42,15 +42,20 @@ const testimonials = [
   },
   {
     quote:
-      "As a non-resident with investments in India, I struggled with understanding compliance requirements. Perficio provided structured guidance on capital gains, DTAA benefits, and repatriation, making tax filing completely stress-free.",
-    author: "Nadeem Saifi",
-    role: "NRI Investor",
+      "We have been working with Perficio for past 8yrs now and we are pleased to be associated with them for a long time. Their discipline and meticulous approach towards their work, and commitment to deadlines is noteworthy. We wish them all the best for their endeavours",
+    author: "Amol Chaphekar Suyash Global Pvt Ltd",
   },
   {
     quote:
       "We have worked with Perficio for TDS Compliance, indirect tax audits and complex GST reconciliations. Their technical knowledge is exceptional, and their team has always ensured regulatory deadlines are met without compromising accuracy.",
     author: "Sandeep Vaidya",
     role: "Founder, Designplus Infra",
+  },
+  {
+    quote:
+      "We have been working with Perficio for our GST-related needs and are extremely satisfied with their services. The team is highly knowledgeable, proactive, and well-versed with evolving tax regulations. Their clear, timely, and practical advice has made our GST compliance smooth and hassle-free. We highly recommend Perficio to anyone seeking a reliable tax consultant.",
+    author: "Bhavesh Doshi",
+    role: "Founder, Entelechy group",
   },
 ];
 
