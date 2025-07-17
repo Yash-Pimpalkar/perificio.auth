@@ -14,10 +14,10 @@ import {
   RiLinkM,
   // RiNewspaperFill
 } from "react-icons/ri";
+
 const Footer = () => {
   return (
     <footer className="relative bg-blue-950 text-white px-6 md:px-20 pt-16 pb-10 text-sm font-inter overflow-hidden">
-      {/* Optional: Subtle top border with a gradient for a premium feel */}
       {/* Main Grid */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-y-12 gap-x-10 z-10 relative">
         {/* Column 1: Logo, Contact & Social */}
@@ -65,7 +65,7 @@ const Footer = () => {
             </a>
             {/* LinkedIn */}
             <a
-              href="https://www.linkedin.com"
+              href="https://www.linkedin.com/in/deepali-mehta-0b45137"
               target="_blank"
               rel="noopener noreferrer"
               className="p-3 rounded-full bg-blue-700 text-white hover:scale-110 transition-transform duration-300 flex items-center justify-center shadow-lg"
@@ -164,10 +164,35 @@ const Footer = () => {
             <FaMapMarkerAlt className="text-xl" /> Our Location
           </h3>
           <address className="text-white/70 not-italic text-base leading-relaxed">
-           Office no 23/24 | A Wing | Mezzanine Floor | Satyam Shopping Centre | M.G.Road | Ghatkopar (East) | Mumbai-400 077| T:022 49764411
+            Office no 23/24 | A Wing | Mezzanine Floor | Satyam Shopping Centre
+            | M.G.Road | Ghatkopar (East) | Mumbai-400 077| T:022 49764411
           </address>
         </div>
       </div>
+
+      {/* ===== START: ADDED SECTION ===== */}
+      {/* Divider */}
+      <hr className="my-8 border-blue-800/50" />
+
+      {/* Bottom Section: Copyright and Credit */}
+      <div className="text-center text-white/70 text-sm">
+        <p className="mb-2">
+          Copyright &copy; 2025 Perficio. All rights reserved.
+        </p>
+        <p>
+          Designed & Developed by{" "}
+          <a
+            href="https://www.linkedin.com/in/pratik-ohol-344b9b30b"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="font-semibold text-white/90 hover:text-white hover:underline transition-colors duration-300"
+          >
+            Pratik Ohol
+          </a>
+        </p>
+      </div>
+      {/* ===== END: ADDED SECTION ===== */}
+      
     </footer>
   );
 };
